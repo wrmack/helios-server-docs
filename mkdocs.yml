@@ -1,0 +1,33 @@
+site_name: 'Helios server documentation'
+nav:
+  - Home: 'index.md'
+  - Installation: 
+    - Environment : 'inst_env.md'
+    - Django : 'inst_django.md'
+    - Authentication systems : 'inst_auth.md'
+    - Local development : 'inst_dev.md'
+    - Deployment : 'inst_deploy.md'
+  - Concepts:
+    - 'Voting' : 'con_voting.md'
+  - Use cases:
+    - 'Admin creates an election' : 'use_create_election.md'
+    - 'Admin retrieves ballots' : 'use_admin_retrieves_ballots.md'
+    - 'Admin tallies ballots' : 'use_admin_tallies_ballots.md'
+    - 'Admin announces results' : 'use_admin_announces_results.md'
+    - 'Voter registers' : 'use_register_voter.md'
+    - 'Voter votes' : 'use_voter_votes.md'
+    - 'Voter saves ballot' : 'use_voter_saves_ballot.md'
+    - 'Verifier verifies all counted' : 'use_verifier_ballots.md'
+    - 'Verifier verifies correctness' : 'use_verifier_count_correct.md'
+    - 'All uses cases on a page' : 'use_usecases.md'
+  - Reference:
+    - 'Terms' : 'ref_terms.md'
+    - 'Components' : 'ref_components.md'
+    - 'Models' : 'ref_models.md'
+    - 'Academic papers' : 'ref_literature.md'
+  - 'Acknowledgements' : 'acknowledgements.md'
+
+theme:
+  name: 'material'
+
+# mkdocs serve -a 127.0.01:8001
