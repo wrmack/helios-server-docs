@@ -606,6 +606,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../faq_faq1/" title="FAQs" class="md-nav__link">
+      FAQs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../acknowledgements/" title="Acknowledgements" class="md-nav__link">
       Acknowledgements
     </a>
@@ -718,32 +730,27 @@
 <p>The following assumes <code>RabbitMQ</code> has been installed with binaries in /usr/local/sbin.</p>
 <h2 id="flow-for-starting-helios">Flow for starting helios</h2>
 <h3 id="start-rabbitmq">Start rabbitmq</h3>
-<p>In a new terminal:</p>
-<pre><code>/usr/local/sbin/rabbitmq-server
-</code></pre>
-
+<p>In a new terminal:
+<div class="highlight"><pre><span></span>/usr/local/sbin/rabbitmq-server
+</pre></div></p>
 <h3 id="start-celery">Start celery</h3>
-<p>In a new terminal, in helios-server root folder:</p>
-<pre><code>source venv/bin/activate
+<p>In a new terminal, in helios-server root folder:
+<div class="highlight"><pre><span></span>source venv/bin/activate
 celery -A helios worker -l info
-</code></pre>
-
+</pre></div></p>
 <h3 id="start-helios">Start helios</h3>
-<p>In settings.py </p>
-<pre><code>PRODUCTION = False
-</code></pre>
-
-<p>In a new terminal:</p>
-<pre><code>source venv/bin/activate
+<p>In settings.py 
+<div class="highlight"><pre><span></span>PRODUCTION = False
+</pre></div></p>
+<p>In a new terminal:
+<div class="highlight"><pre><span></span>source venv/bin/activate
 python manage.py runserver
-</code></pre>
-
+</pre></div></p>
 <h3 id="view-in-browser">View in browser</h3>
 <p>In browser go to: <code>http://localhost:8000</code></p>
 <h3 id="visual-studio-code">Visual Studio Code</h3>
-<p>If using Visual Studio Code, to launch helios using the debugger, add this to "configurations" in launch.json:</p>
-<pre><code>
-    {
+<p>If using Visual Studio Code, to launch helios using the debugger, add this to "configurations" in launch.json:
+<div class="highlight"><pre><span></span>    {
         &quot;name&quot;: &quot;Python: Django&quot;,
         &quot;type&quot;: &quot;python&quot;,
         &quot;request&quot;: &quot;launch&quot;,
@@ -754,8 +761,7 @@ python manage.py runserver
         ],
         &quot;django&quot;: true
     }
-
-</code></pre>
+</pre></div></p>
                 
                   
                 
