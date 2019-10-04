@@ -9,3 +9,6 @@ Philip Stark, UC Berkeley.
 Vanessa Teague, University of Melbourne.  
 Poorvi Vora, George Washington University.*
 </span>
+
+**[Helios Voting](https://en.wikipedia.org/wiki/Helios_Voting)**  
+Wikipedia

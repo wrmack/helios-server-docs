@@ -25,9 +25,37 @@ nav:
     - 'Components' : 'ref_components.md'
     - 'Models' : 'ref_models.md'
     - 'Academic papers' : 'ref_literature.md'
+  - 'FAQs' : 'faq_faq1.md'
   - 'Acknowledgements' : 'acknowledgements.md'
 
 theme:
   name: 'material'
 
+markdown_extensions:
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+
+# Quick reference
+
+# Local server
 # mkdocs serve -a 127.0.01:8001
+
+# Build docs into site folder
+# mkdocs build
+
+# Material extensions: https://squidfunk.github.io/mkdocs-material/extensions/admonition/
