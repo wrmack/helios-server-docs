@@ -12,3 +12,7 @@ Poorvi Vora, George Washington University.*
 
 **[Helios Voting](https://en.wikipedia.org/wiki/Helios_Voting)**  
 Wikipedia
+
+### Secrecy
+
+### Coercion

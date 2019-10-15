@@ -1,14 +1,5 @@
 # Local development
 
-## Tasks
-
-* install 'Celery' to run asynchronous tasks. 
-
-* install  RabbitMQ as the message broker
-
-The [celery project](https://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html#choosing-a-broker) recommends `RabbitMQ`.
-
-The following assumes `RabbitMQ` has been installed with binaries in /usr/local/sbin.
 
 ## Flow for starting helios 
 
@@ -25,10 +16,8 @@ celery -A helios worker -l info
 ```
 
 ### Start helios
-In settings.py 
-```
-PRODUCTION = False
-```
+*(In settings.py* PRODUCTION = False *to tell Django to use the development server)*
+
 
 In a new terminal:
 ```
@@ -39,7 +28,7 @@ python manage.py runserver
 In browser go to: `http://localhost:8000`
 
 ### Visual Studio Code
-If using Visual Studio Code, to launch helios using the debugger, add this to "configurations" in launch.json:
+If using Visual Studio Code, to launch helios using the debugger add this to "configurations" in launch.json:
 ```
 
     {
@@ -51,7 +40,10 @@ If using Visual Studio Code, to launch helios using the debugger, add this to "c
             "runserver",
             "--noreload"
         ],
-        "django": true
+        "django": true,
+        "justMyCode": false
     }
 
 ```
+
+<span style="font-size:10pt">Set "justMyCode" to True for Call Stack to show your own code only.</span>

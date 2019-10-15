@@ -2,9 +2,9 @@ site_name: 'Helios server documentation'
 nav:
   - Home: 'index.md'
   - Installation: 
-    - Environment : 'inst_env.md'
-    - Django : 'inst_django.md'
-    - Authentication systems : 'inst_auth.md'
+    - Environment essentials : 'inst_env.md'
+    - Setup authentication : 'inst_auth.md'
+    - Prepare Django : 'inst_django.md'
     - Local development : 'inst_dev.md'
     - Deployment : 'inst_deploy.md'
   - Concepts:
@@ -27,7 +27,7 @@ nav:
     - 'Academic papers' : 'ref_literature.md'
   - 'FAQs' : 'faq_faq1.md'
   - 'Acknowledgements' : 'acknowledgements.md'
-
+  - 'TODO' : 'todo.md'
 theme:
   name: 'material'
 
@@ -59,3 +59,5 @@ markdown_extensions:
 # mkdocs build
 
 # Material extensions: https://squidfunk.github.io/mkdocs-material/extensions/admonition/
+
+# FAQs Model on [POLYAS](https://www.polyas.com/online-voting/support/faq)

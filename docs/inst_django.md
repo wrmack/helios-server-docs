@@ -19,12 +19,12 @@ Customise the following in settings.py:
 
 What it does:
 
-* collects all static files that are located in the static of folders of the installed apps and stores them in `STATIC_ROOT`.
+* collects all static files that are located in the static folders of the installed apps and stores them in the folder that is set as `STATIC_ROOT` (currently the /static folder).
 
 When to use:
 
-* `STATIC_ROOT` is empty 
-* you have changed the static files in one of the installed app's static folders
+* the `STATIC_ROOT` folder is empty 
+* or you have changed the static files in one of the installed app's static folders
 
 How to use:
 
@@ -40,7 +40,11 @@ collectstatic
 
 What it does:
 
+* Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. `makemigrations` creates new migrations based on the changes you have made to your models.
+
 When to use:
+
+* After you make a change your models.
 
 How to use:
 
@@ -52,7 +56,11 @@ python manage.py makemigrations
 ### reset database 
 What it does:
 
+* deletes your helios database, creates a new helios database and migrates your models to the database.
+
 When to use:
+
+* After you have run `makemigrations`
 
 How to use:
 
