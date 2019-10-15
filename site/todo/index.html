@@ -36,7 +36,7 @@
     
     
       
-        <title>Environment essentials - Helios server documentation</title>
+        <title>TODO - Helios server documentation</title>
       
     
     
@@ -75,7 +75,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#environment-essentials-for-local-development" tabindex="1" class="md-skip">
+      <a href="#todo" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -101,7 +101,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Environment essentials
+                TODO
               
             </span>
           
@@ -180,12 +180,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Installation
@@ -201,20 +199,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Environment essentials" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../inst_env/" title="Environment essentials" class="md-nav__link">
       Environment essentials
     </a>
-    
   </li>
 
         
@@ -551,11 +540,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../todo/" title="TODO" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="TODO" class="md-nav__link md-nav__link--active">
       TODO
     </a>
+    
   </li>
 
     
@@ -587,54 +585,21 @@
               
                 
                 
-                <h1 id="environment-essentials-for-local-development">Environment essentials for local development</h1>
-<p>If not already installed:</p>
-<ul>
-<li>
-<p>install <a href="https://www.python.org/downloads/">Python 3</a></p>
-</li>
-<li>
-<p>install <a href="https://www.postgresql.org/download/">PostgreSQL</a></p>
-</li>
-<li>
-<p>install <a href="https://docs.celeryproject.org/en/latest/django/index.html">Celery</a> to run asynchronous tasks </p>
-</li>
-<li>
-<p>install <a href="https://www.rabbitmq.com">RabbitMQ</a> as the message broker <a href="https://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html#choosing-a-broker">recommended by Celery</a></p>
-</li>
-<li>
-<p>install <a href="https://packaging.python.org/tutorials/installing-packages/">pip</a>, the python package manager</p>
-</li>
-<li>
-<p>install <a href="http://www.virtualenv.org/en/latest/">Virtualenv</a></p>
-</li>
+                <h1 id="todo">TODO</h1>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Nulla lobortis egestas semper</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Curabitur elit nibh, euismod et ullamcorper at, iaculis feugiat est</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vestibulum convallis sit amet nisi a tincidunt<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In hac habitasse platea dictumst</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In scelerisque nibh non dolor mollis congue sed et metus</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Sed egestas felis quis elit dapibus, ac aliquet turpis mattis</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Praesent sed risus massa</li>
 </ul>
-<p>then:</p>
-<ul>
-<li>
-<p>download helios-server (usually from the master branch, however these instructions are currently for the wm-upgrade-python3 branch until it is merged into the master branch)</p>
 </li>
-<li>
-<p>cd into the helios-server directory</p>
-</li>
-<li>
-<p>create a virtualenv:</p>
-</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nulla vel eros venenatis, imperdiet enim id, faucibus nisi</li>
 </ul>
-<div class="highlight"><pre><span></span>virtualenv venv
-</pre></div>
-
-<ul>
-<li>activate virtual environment:</li>
-</ul>
-<div class="highlight"><pre><span></span>source venv/bin/activate
-</pre></div>
-
-<ul>
-<li>install dependency requirements:</li>
-</ul>
-<div class="highlight"><pre><span></span>pip install -r requirements.txt
-</pre></div>
                 
                   
                 
@@ -655,7 +620,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../acknowledgements/" title="Acknowledgements" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -664,25 +629,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Acknowledgements
               </span>
             </div>
           </a>
         
-        
-          <a href="../inst_auth/" title="Setup authentication" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Setup authentication
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>

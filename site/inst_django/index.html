@@ -36,7 +36,7 @@
     
     
       
-        <title>Django - Helios server documentation</title>
+        <title>Prepare Django - Helios server documentation</title>
       
     
     
@@ -101,7 +101,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Django
+                Prepare Django
               
             </span>
           
@@ -203,8 +203,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../inst_env/" title="Environment" class="md-nav__link">
-      Environment
+    <a href="../inst_env/" title="Environment essentials" class="md-nav__link">
+      Environment essentials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../inst_auth/" title="Setup authentication" class="md-nav__link">
+      Setup authentication
     </a>
   </li>
 
@@ -224,11 +236,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Django
+        Prepare Django
       </label>
     
-    <a href="./" title="Django" class="md-nav__link md-nav__link--active">
-      Django
+    <a href="./" title="Prepare Django" class="md-nav__link md-nav__link--active">
+      Prepare Django
     </a>
     
       
@@ -277,18 +289,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../inst_auth/" title="Authentication systems" class="md-nav__link">
-      Authentication systems
-    </a>
   </li>
 
         
@@ -597,6 +597,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../todo/" title="TODO" class="md-nav__link">
+      TODO
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -678,12 +690,12 @@ Email settings
 <h3 id="collectstatic">collectstatic</h3>
 <p>What it does:</p>
 <ul>
-<li>collects all static files that are located in the static of folders of the installed apps and stores them in <code>STATIC_ROOT</code>.</li>
+<li>collects all static files that are located in the static folders of the installed apps and stores them in the folder that is set as <code>STATIC_ROOT</code> (currently the /static folder).</li>
 </ul>
 <p>When to use:</p>
 <ul>
-<li><code>STATIC_ROOT</code> is empty </li>
-<li>you have changed the static files in one of the installed app's static folders</li>
+<li>the <code>STATIC_ROOT</code> folder is empty </li>
+<li>or you have changed the static files in one of the installed app's static folders</li>
 </ul>
 <p>How to use:</p>
 <ul>
@@ -695,7 +707,13 @@ Email settings
 
 <h3 id="makemigrations">makemigrations</h3>
 <p>What it does:</p>
+<ul>
+<li>Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. <code>makemigrations</code> creates new migrations based on the changes you have made to your models.</li>
+</ul>
 <p>When to use:</p>
+<ul>
+<li>After you make a change your models.</li>
+</ul>
 <p>How to use:</p>
 <ul>
 <li>in terminal: 
@@ -704,7 +722,13 @@ Email settings
 </ul>
 <h3 id="reset-database">reset database</h3>
 <p>What it does:</p>
+<ul>
+<li>deletes your helios database, creates a new helios database and migrates your models to the database.</li>
+</ul>
 <p>When to use:</p>
+<ul>
+<li>After you have run <code>makemigrations</code></li>
+</ul>
 <p>How to use:</p>
 <div class="highlight"><pre><span></span>./reset.sh
 </pre></div>
@@ -728,7 +752,7 @@ Email settings
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../inst_env/" title="Environment" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../inst_auth/" title="Setup authentication" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -737,19 +761,19 @@ Email settings
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Environment
+                Setup authentication
               </span>
             </div>
           </a>
         
         
-          <a href="../inst_auth/" title="Authentication systems" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../inst_dev/" title="Local development" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Authentication systems
+                Local development
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
