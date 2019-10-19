@@ -8,7 +8,9 @@ nav:
     - Local development : 'inst_dev.md'
     - Deployment : 'inst_deploy.md'
   - Concepts:
-    - 'Voting' : 'con_voting.md'
+    - 'Verifiability' : 'con_e2ev.md'
+    - 'Coercion' : 'con_coercion.md'
+    - 'Helios' : 'con_helios.md'
   - Use cases:
     - 'Admin creates an election' : 'use_create_election.md'
     - 'Admin retrieves ballots' : 'use_admin_retrieves_ballots.md'
@@ -27,7 +29,7 @@ nav:
     - 'Academic papers' : 'ref_literature.md'
   - 'FAQs' : 'faq_faq1.md'
   - 'Acknowledgements' : 'acknowledgements.md'
-  - 'TODO' : 'todo.md'
+
 theme:
   name: 'material'
 
@@ -48,7 +50,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
+  - footnotes
 
 # Quick reference
 
@@ -57,6 +59,9 @@ markdown_extensions:
 
 # Build docs into site folder
 # mkdocs build
+
+# Upgrade theme
+# pip install --upgrade mkdocs-material
 
 # Material extensions: https://squidfunk.github.io/mkdocs-material/extensions/admonition/
 

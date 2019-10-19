@@ -36,7 +36,7 @@
     
     
       
-        <title>Terms - Helios server documentation</title>
+        <title>Verifiability - Helios server documentation</title>
       
     
     
@@ -75,7 +75,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#terms" tabindex="1" class="md-skip">
+      <a href="#end-to-end-verifiability" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -101,7 +101,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Terms
+                Verifiability
               
             </span>
           
@@ -264,10 +264,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Concepts
@@ -283,11 +285,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../con_e2ev/" title="Verifiability" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Verifiability" class="md-nav__link md-nav__link--active">
       Verifiability
     </a>
+    
   </li>
 
         
@@ -468,12 +479,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Reference
@@ -489,84 +498,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Terms
-      </label>
-    
-    <a href="./" title="Terms" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ref_terms/" title="Terms" class="md-nav__link">
       Terms
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ballot" class="md-nav__link">
-    ballot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#election" class="md-nav__link">
-    election
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#election-admin" class="md-nav__link">
-    election admin
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user" class="md-nav__link">
-    user
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voter" class="md-nav__link">
-    voter
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voting-booth" class="md-nav__link">
-    voting booth
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -652,57 +588,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ballot" class="md-nav__link">
-    ballot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#election" class="md-nav__link">
-    election
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#election-admin" class="md-nav__link">
-    election admin
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user" class="md-nav__link">
-    user
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voter" class="md-nav__link">
-    voter
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voting-booth" class="md-nav__link">
-    voting booth
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -714,30 +599,19 @@
               
                 
                 
-                <h1 id="terms">Terms</h1>
-<h3 id="ballot">ballot</h3>
-<p>A ballot is a document setting out the choices the voter is entitled to make.  It is presented to the voter in the voting booth.  The voter makes their choices and saves the encrypted ballot to their pod.  The application automatically sends a notification to the election admin for that election. </p>
-<h3 id="election">election</h3>
-<p>An election which is created by an election admin.  Information relating to the election is stored on a database. The information includes:</p>
-<ul>
-<li>all voter webids</li>
-<li>encrypted ballots, once retrieved from pods</li>
-</ul>
-<h3 id="election-admin">election admin</h3>
-<p>A person entitled to administer an election. An election admin may create an election.  An election admin who creates an election:</p>
-<ul>
-<li>will receive notifications of ballots saved to voters' pods</li>
-<li>may retrieve ballots from pods following notification</li>
-<li>may tally all retrieved ballots</li>
-<li>may announce the result of the tally</li>
-</ul>
-<p>A person is entitled to administer an election if ....</p>
-<h3 id="user">user</h3>
-<p>The currently logged in user who may be an election admin and / or a voter.  </p>
-<p>Or: the currently logged in user who will be a voter and may be an election admin.</p>
-<h3 id="voter">voter</h3>
-<p>A person who is registered to vote in the current election.</p>
-<h3 id="voting-booth">voting booth</h3>
+                <h1 id="end-to-end-verifiability">End-to-end verifiability</h1>
+<ol>
+<li><strong>Cast As Intended</strong>: voters can verify that their selections (whether indicated electronically, on paper, or by other means) are correctly recorded, and</li>
+<li><strong>Tallied As Cast</strong>: any member of the public can verify that every recorded vote is correctly included in the tally.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+</ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://arxiv.org/ftp/arxiv/papers/1504/1504.03778.pdf">End-to-end verifiability (2014)</a> <span style="font-size:10pt;line-height:1.0"> <em>Josh Benaloh, Microsoft Research. Ronald Rivest, MIT.  Peter Y. A. Ryan University of Luxembourg.  Philip Stark, UC Berkeley.  Vanessa Teague, University of Melbourne.  Poorvi Vora, George Washington University.</em></span>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
                   
                 
@@ -758,7 +632,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../use_usecases/" title="All uses cases on a page" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../inst_deploy/" title="Deployment" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -767,19 +641,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                All uses cases on a page
+                Deployment
               </span>
             </div>
           </a>
         
         
-          <a href="../ref_components/" title="Components" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../con_coercion/" title="Coercion" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Components
+                Coercion
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

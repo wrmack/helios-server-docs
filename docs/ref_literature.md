@@ -18,6 +18,9 @@ Philippe Bulens, Damien Giry, Olivier Pereira
 **[User study of the improved Helios voting system interfaces](https://www.researchgate.net/profile/Melanie_Volkamer/publication/262933761_User_Study_of_the_Improved_Helios_Voting_System_Interface/links/0f31753a802b532004000000/User-Study-of-the-Improved-Helios-Voting-System-Interface.pdf)**  
 Fatih Karayumak, Michaela Kauer, M. Maina Olembo, Tobias Volk, Melanie Volkamer
 
+**[Usability Analysis of Helios - An Open Source Verifiable Remote Electronic Voting System](http://static.usenix.org/events/evtwote11/tech/final_files/Karayumak7-8-11.pdf)**  
+Fatih Karayumak, Maina M. Olembo, Michaela Kauer and Melanie Volkamer
+
 ## 2013
 **[A generic construction for voting correctness at minimum cost - Application to Helios](https://eprint.iacr.org/2013/177.pdf)**  
 Véronique Cortier, David Galindo, Stéphane Glondu, Malika Izabachène  
