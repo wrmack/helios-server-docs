@@ -1,7 +1,13 @@
 # Terms
 
+### audit
+
+
 ### ballot
 A ballot is a document setting out the choices the voter is entitled to make.  It is presented to the voter in the voting booth.  The voter makes their choices and saves the encrypted ballot to their pod.  The application automatically sends a notification to the election admin for that election. 
+
+### ballot tracker
+
 
 
 ### election
@@ -14,12 +20,10 @@ An election which is created by an election admin.  Information relating to the 
 ### election admin
 A person entitled to administer an election. An election admin may create an election.  An election admin who creates an election:
 
-* will receive notifications of ballots saved to voters' pods
-* may retrieve ballots from pods following notification
-* may tally all retrieved ballots
-* may announce the result of the tally
 
 A person is entitled to administer an election if ....
+
+### fingerprint
 
 
 ### user

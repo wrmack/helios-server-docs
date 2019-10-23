@@ -20,13 +20,13 @@ then:
 
 * cd into the helios-server directory
 
-* create a virtualenv:
+* create a virtual environment:
 
 ```
 virtualenv venv
 ```
 
-* activate virtual environment:
+* activate the virtual environment:
 
 ```
 source venv/bin/activate

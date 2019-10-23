@@ -357,32 +357,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../use_admin_retrieves_ballots/" title="Admin retrieves ballots" class="md-nav__link">
-      Admin retrieves ballots
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../use_admin_tallies_ballots/" title="Admin tallies ballots" class="md-nav__link">
       Admin tallies ballots
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_admin_announces_results/" title="Admin announces results" class="md-nav__link">
-      Admin announces results
     </a>
   </li>
 
@@ -407,54 +383,6 @@
   <li class="md-nav__item">
     <a href="../use_voter_votes/" title="Voter votes" class="md-nav__link">
       Voter votes
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_voter_saves_ballot/" title="Voter saves ballot" class="md-nav__link">
-      Voter saves ballot
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_verifier_ballots/" title="Verifier verifies all counted" class="md-nav__link">
-      Verifier verifies all counted
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_verifier_count_correct/" title="Verifier verifies correctness" class="md-nav__link">
-      Verifier verifies correctness
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_usecases/" title="All uses cases on a page" class="md-nav__link">
-      All uses cases on a page
     </a>
   </li>
 
@@ -518,8 +446,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    audit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ballot" class="md-nav__link">
     ballot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ballot-tracker" class="md-nav__link">
+    ballot tracker
   </a>
   
 </li>
@@ -534,6 +476,13 @@
         <li class="md-nav__item">
   <a href="#election-admin" class="md-nav__link">
     election admin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fingerprint" class="md-nav__link">
+    fingerprint
   </a>
   
 </li>
@@ -656,8 +605,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    audit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ballot" class="md-nav__link">
     ballot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ballot-tracker" class="md-nav__link">
+    ballot tracker
   </a>
   
 </li>
@@ -672,6 +635,13 @@
         <li class="md-nav__item">
   <a href="#election-admin" class="md-nav__link">
     election admin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fingerprint" class="md-nav__link">
+    fingerprint
   </a>
   
 </li>
@@ -715,8 +685,10 @@
                 
                 
                 <h1 id="terms">Terms</h1>
+<h3 id="audit">audit</h3>
 <h3 id="ballot">ballot</h3>
 <p>A ballot is a document setting out the choices the voter is entitled to make.  It is presented to the voter in the voting booth.  The voter makes their choices and saves the encrypted ballot to their pod.  The application automatically sends a notification to the election admin for that election. </p>
+<h3 id="ballot-tracker">ballot tracker</h3>
 <h3 id="election">election</h3>
 <p>An election which is created by an election admin.  Information relating to the election is stored on a database. The information includes:</p>
 <ul>
@@ -725,13 +697,8 @@
 </ul>
 <h3 id="election-admin">election admin</h3>
 <p>A person entitled to administer an election. An election admin may create an election.  An election admin who creates an election:</p>
-<ul>
-<li>will receive notifications of ballots saved to voters' pods</li>
-<li>may retrieve ballots from pods following notification</li>
-<li>may tally all retrieved ballots</li>
-<li>may announce the result of the tally</li>
-</ul>
 <p>A person is entitled to administer an election if ....</p>
+<h3 id="fingerprint">fingerprint</h3>
 <h3 id="user">user</h3>
 <p>The currently logged in user who may be an election admin and / or a voter.  </p>
 <p>Or: the currently logged in user who will be a voter and may be an election admin.</p>
@@ -758,7 +725,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../use_usecases/" title="All uses cases on a page" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../use_voter_votes/" title="Voter votes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -767,7 +734,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                All uses cases on a page
+                Voter votes
               </span>
             </div>
           </a>

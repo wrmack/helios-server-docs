@@ -44,11 +44,11 @@ What it does:
 
 When to use:
 
-* After you make a change your models.
+* After you make a change to your models.
 
 How to use:
 
-* in terminal: 
+* in a terminal: 
 ```
 python manage.py makemigrations
 ```

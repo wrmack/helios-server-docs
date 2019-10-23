@@ -1,7 +1,8 @@
-# FAQs
 
 
-## FAQs for voters
+[To be completed]
+
+## For voters
 
 ??? faq "How does online voting with Helios Voting work?"
     This is the explanation
@@ -16,7 +17,7 @@
 ??? faq "How can I be assured my vote is counted?"
     Explanation
 
-## FAQs for election admins
+## For election admins
 
 
-## FAQs about security
+## About security

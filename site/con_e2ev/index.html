@@ -368,32 +368,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../use_admin_retrieves_ballots/" title="Admin retrieves ballots" class="md-nav__link">
-      Admin retrieves ballots
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../use_admin_tallies_ballots/" title="Admin tallies ballots" class="md-nav__link">
       Admin tallies ballots
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_admin_announces_results/" title="Admin announces results" class="md-nav__link">
-      Admin announces results
     </a>
   </li>
 
@@ -418,54 +394,6 @@
   <li class="md-nav__item">
     <a href="../use_voter_votes/" title="Voter votes" class="md-nav__link">
       Voter votes
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_voter_saves_ballot/" title="Voter saves ballot" class="md-nav__link">
-      Voter saves ballot
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_verifier_ballots/" title="Verifier verifies all counted" class="md-nav__link">
-      Verifier verifies all counted
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_verifier_count_correct/" title="Verifier verifies correctness" class="md-nav__link">
-      Verifier verifies correctness
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_usecases/" title="All uses cases on a page" class="md-nav__link">
-      All uses cases on a page
     </a>
   </li>
 
@@ -600,15 +528,26 @@
                 
                 
                 <h1 id="end-to-end-verifiability">End-to-end verifiability</h1>
-<ol>
-<li><strong>Cast As Intended</strong>: voters can verify that their selections (whether indicated electronically, on paper, or by other means) are correctly recorded, and</li>
-<li><strong>Tallied As Cast</strong>: any member of the public can verify that every recorded vote is correctly included in the tally.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-</ol>
+<p>Voters and candidates should not have to blindly trust that electronic election technology works.  It might be compromised by an attacker or it might be incorrectly coded.  How do voters and candidates know the result is correct?  End-to-end verifiability (E2E-V) provides for voters and candidates to verify an election result is correct.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>  </p>
+<p>Verifiability is generally exhibited by:</p>
+<ul>
+<li><strong>Individual Verifiability</strong>: a voter can verify that her vote is included in the set of all cast votes.</li>
+<li><strong>Universal Verifiability</strong>: an observer can verify that the tally has been correctly computed from the set of all cast votes.</li>
+</ul>
+<p>Verifiability can be acheived as follows:</p>
+<ul>
+<li><strong>Cast As Intended</strong>: voters make their selections and, at the time of vote casting, can get convincing evidence that their encrypted votes accurately reflect their choices;</li>
+<li><strong>Recorded As Cast</strong>: voters or their designees can check that their encrypted votes have been correctly included, by finding exactly the encrypted value they cast on a public list of encrypted cast votes; and</li>
+<li><strong>Tallied As Recorded</strong>: any member of the public can check that all the published encrypted votes are correctly included in the tally, without knowing how any individual voted.</li>
+</ul>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://arxiv.org/ftp/arxiv/papers/1504/1504.03778.pdf">End-to-end verifiability (2014)</a> <span style="font-size:10pt;line-height:1.0"> <em>Josh Benaloh, Microsoft Research. Ronald Rivest, MIT.  Peter Y. A. Ryan University of Luxembourg.  Philip Stark, UC Berkeley.  Vanessa Teague, University of Melbourne.  Poorvi Vora, George Washington University.</em></span>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://arxiv.org/ftp/arxiv/papers/1504/1504.03778.pdf">End-to-end verifiability</a> <span style="font-size:10pt;line-height:1.0"> <em>Josh Benaloh, Microsoft Research. Ronald Rivest, MIT.  Peter Y. A. Ryan University of Luxembourg.  Philip Stark, UC Berkeley.  Vanessa Teague, University of Melbourne.  Poorvi Vora, George Washington University. (2014)</em></span>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://arxiv.org/pdf/1605.08554.pdf">An Overview of End-to-End Verifiable Voting Systems</a> <span style="font-size:10pt;line-height:1.0"><em>Syed Taha Ali and Judy Murray. (2016)</em></span>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

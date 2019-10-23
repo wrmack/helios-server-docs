@@ -368,32 +368,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../use_admin_retrieves_ballots/" title="Admin retrieves ballots" class="md-nav__link">
-      Admin retrieves ballots
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../use_admin_tallies_ballots/" title="Admin tallies ballots" class="md-nav__link">
       Admin tallies ballots
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_admin_announces_results/" title="Admin announces results" class="md-nav__link">
-      Admin announces results
     </a>
   </li>
 
@@ -418,54 +394,6 @@
   <li class="md-nav__item">
     <a href="../use_voter_votes/" title="Voter votes" class="md-nav__link">
       Voter votes
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_voter_saves_ballot/" title="Voter saves ballot" class="md-nav__link">
-      Voter saves ballot
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_verifier_ballots/" title="Verifier verifies all counted" class="md-nav__link">
-      Verifier verifies all counted
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_verifier_count_correct/" title="Verifier verifies correctness" class="md-nav__link">
-      Verifier verifies correctness
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../use_usecases/" title="All uses cases on a page" class="md-nav__link">
-      All uses cases on a page
     </a>
   </li>
 
@@ -600,9 +528,16 @@
                 
                 
                 <h1 id="how-helios-works">How Helios works.</h1>
-<p>An election is created by naming a set of trustees and running a protocol that provides each of them with a share of the secret part of a public key pair. The public part of the key is published. Each of the eligible voters is also provided with a private pseudo-identity. The steps that participants take during a run of Helios are as follows.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>(A general description is provided in <a href="https://en.wikipedia.org/wiki/Helios_Voting">Wikipedia</a>.)</p>
+<p>Helios is a truly verifiable voting system, which means that:</p>
+<ul>
+<li>Alice can verify that her vote was correctly captured,</li>
+<li>all captured votes are displayed (in encrypted form) for all to see.</li>
+<li>anyone can verify that the captured votes were correctly tallied.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+</ul>
+<p>An election is created by naming a set of trustees and running a protocol that provides each of them with a share of the secret part of a public key pair. The public part of the key is published. Each of the eligible voters is also provided with a private pseudo-identity. The steps that participants take during a run of Helios are as follows.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <ol>
-<li>To cast a vote, the user runs a browser script that inputs her vote and creates a ballot that is encrypted with the public key of the election. The ballot includes a ZKP that the ballot represents an allowed vote (this is needed because the ballots are never decrypted individually).</li>
+<li>To cast a vote, the user runs a browser script that inputs her vote and creates a ballot that is encrypted with the public key of the election. The ballot includes a ZKP (Zero Knowledge Proof) that the ballot represents an allowed vote (this is needed because the ballots are never decrypted individually).</li>
 <li>The user can audit the ballot to check if it really represents a vote for her chosen candidate; if she elects to do this, the script provides her with the random data used in the ballot creation. She can then independently verify that the ballot was correctly constructed, but the ballot is now invalid and she has to create another one.</li>
 <li>When the voter has decided to cast her ballot, the voter’s browser submits it along with her pseudo-identity to the server. The server checks the ZKPs of the ballots, and publishes them on a bulletin board.</li>
 <li>Individual voters can check that their ballots appear on the bulletin board. Any observer can check that the ballots that appear on the bulletin board represent allowed votes, by checking the ZKPs.</li>
@@ -610,15 +545,15 @@
 <li>The server submits the encrypted tally to each of the trustees, and obtains their share of the decryption key for that particular ciphertext, together with a proof that the key share is well-formed. The server publishes these key shares along with the proofs. Anyone can check the proofs.</li>
 <li>The server decrypts the tally and publishes the result. Anyone can check this decryption.</li>
 </ol>
-<p>Wikipedia<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>There is also a good explanation in <a href="http://static.usenix.org/events/evtwote11/tech/final_files/Karayumak7-8-11.pdf">Usability Analysis of Helios - An Open Source Verifiable Remote Electronic Voting System</a></p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p>This description is taken from <a href="https://bensmyth.com/files/Smyth10-definition-verifiability.LNCS.pdf">https://bensmyth.com/files/Smyth10-definition-verifiability.LNCS.pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://documentation.heliosvoting.org/verification-specs/helios-v4">Helios documentation</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://en.wikipedia.org/wiki/Helios_Voting">Helios Voting</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>This description is taken from <a href="https://bensmyth.com/files/Smyth10-definition-verifiability.LNCS.pdf">https://bensmyth.com/files/Smyth10-definition-verifiability.LNCS.pdf</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

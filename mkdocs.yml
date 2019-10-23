@@ -12,16 +12,10 @@ nav:
     - 'Coercion' : 'con_coercion.md'
     - 'Helios' : 'con_helios.md'
   - Use cases:
-    - 'Admin creates an election' : 'use_create_election.md'
-    - 'Admin retrieves ballots' : 'use_admin_retrieves_ballots.md'
+    - 'Admin creates an election' : 'use_create_election.md'   
     - 'Admin tallies ballots' : 'use_admin_tallies_ballots.md'
-    - 'Admin announces results' : 'use_admin_announces_results.md'
     - 'Voter registers' : 'use_register_voter.md'
     - 'Voter votes' : 'use_voter_votes.md'
-    - 'Voter saves ballot' : 'use_voter_saves_ballot.md'
-    - 'Verifier verifies all counted' : 'use_verifier_ballots.md'
-    - 'Verifier verifies correctness' : 'use_verifier_count_correct.md'
-    - 'All uses cases on a page' : 'use_usecases.md'
   - Reference:
     - 'Terms' : 'ref_terms.md'
     - 'Components' : 'ref_components.md'
@@ -52,7 +46,16 @@ markdown_extensions:
   - pymdownx.tilde
   - footnotes
 
-# Quick reference
+###
+### Quick reference
+###
+
+##
+## Receipes 
+##
+
+# Virtual env
+# source venv/bin/activate
 
 # Local server
 # mkdocs serve -a 127.0.01:8001
@@ -60,9 +63,28 @@ markdown_extensions:
 # Build docs into site folder
 # mkdocs build
 
-# Upgrade theme
+# Upgrade material theme
 # pip install --upgrade mkdocs-material
 
 # Material extensions: https://squidfunk.github.io/mkdocs-material/extensions/admonition/
 
+##
+## FAQs 
+##
+
 # FAQs Model on [POLYAS](https://www.polyas.com/online-voting/support/faq)
+# Explanations on http://www.easiestelection.com/index.html
+
+##
+## Google analytics - paste into <Head>
+##
+
+# <!-- Global site tag (gtag.js) - Google Analytics -->
+# <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150810154-1"></script>
+# <script>
+#   window.dataLayer = window.dataLayer || [];
+#   function gtag(){dataLayer.push(arguments);}
+#   gtag('js', new Date());
+#
+#   gtag('config', 'UA-150810154-1');
+# </script>
