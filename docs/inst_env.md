@@ -23,7 +23,7 @@ then:
 * create a virtual environment:
 
 ```
-virtualenv venv
+python -m venv venv  
 ```
 
 * activate the virtual environment:
