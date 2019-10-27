@@ -6,7 +6,8 @@ nav:
     - Setup authentication : 'inst_auth.md'
     - Prepare Django : 'inst_django.md'
     - Local development : 'inst_dev.md'
-    - Deployment : 'inst_deploy.md'
+  - Deployment :
+    - Heroku: 'deploy_heroku.md'
   - Concepts:
     - 'Verifiability' : 'con_e2ev.md'
     - 'Coercion' : 'con_coercion.md'

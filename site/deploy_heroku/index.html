@@ -36,7 +36,7 @@
     
     
       
-        <title>Deployment - Helios server documentation</title>
+        <title>Heroku - Helios server documentation</title>
       
     
     
@@ -75,7 +75,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#deployment" tabindex="1" class="md-skip">
+      <a href="#heroku" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -101,7 +101,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Deployment
+                Heroku
               
             </span>
           
@@ -180,12 +180,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Installation
@@ -245,6 +243,32 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
@@ -259,9 +283,38 @@
       
     
     
-    <a href="./" title="Deployment" class="md-nav__link md-nav__link--active">
-      Deployment
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Heroku
+      </label>
+    
+    <a href="./" title="Heroku" class="md-nav__link md-nav__link--active">
+      Heroku
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -278,13 +331,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-4">
       Concepts
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         Concepts
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -338,13 +391,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       Use cases
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         Use cases
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -410,13 +463,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Reference
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         Reference
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -516,6 +569,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -527,8 +596,33 @@
               
                 
                 
-                <h1 id="deployment">Deployment</h1>
-<p>[To be completed]</p>
+                <h1 id="heroku">Heroku</h1>
+<p><strong>About Heroku</strong></p>
+<p>Heroku is a subsidiary of salesforce.com. Its servers are hosted on Amazon's EC2 cloud-computing platform.</p>
+<p>Heroku’s pricing includes a <a href="https://www.heroku.com/pricing">free plan</a> which is suitable for experimental purposes. It provides for 1 web process and 1 worker process (Celery in our case).  The Heroku Postgres database is free within a limit of 10K rows.</p>
+<p>When an app is deployed it runs in a container called a ‘dyno’.  There is no direct access to its filesystem. </p>
+<p><strong>Deployment</strong></p>
+<p>There are options for deploying an app.  One option is to link to a Github repository so that a push to Github triggers a build and deployment.</p>
+<p><strong>Configuration</strong></p>
+<p>There is one required configuration file - Procfile.  This tells Heroku what to run when an app is deployed.  I use the following for running one web server process and one Celery worker process:</p>
+<div class="highlight"><pre><span></span>web: gunicorn wsgi
+worker: celery worker -A helios -l info
+</pre></div>
+
+<p><strong>Building and debugging</strong></p>
+<p>Build logs can be viewed through Heroku’s web interface, but for anything more than that it is important to become familiar with the Heroku CLI application.  Heroku CLI can also run a psql shell for examining the database. Run this for a real-time display of logs generated on the Heroku site (if helios-heroku is the name of your app on Heroku):</p>
+<div class="highlight"><pre><span></span>heroku logs --tail -a helios-heroku
+</pre></div>
+
+<p><strong>Helios requirements</strong></p>
+<p>For tasks, Celery may be used and there are options for a broker (for example Redis).</p>
+<p>For sending email, an add-on, <a href="https://elements.heroku.com/addons/sendgrid">SendGrid</a>, can be used. This is free up to 12,000 emails per month. </p>
+<h2 id="demo">Demo</h2>
+<p><strong>Code</strong></p>
+<p>My <code>wm-py3-django2-heroku</code> branch:</p>
+<p><a href="https://github.com/wrmack/helios-server/tree/wm-py3-django2-heroku">https://github.com/wrmack/helios-server/tree/wm-py3-django2-heroku</a></p>
+<p><strong>Live</strong></p>
+<p><a href="https://helios-heroku.herokuapp.com">https://helios-heroku.herokuapp.com</a></p>
                 
                   
                 
