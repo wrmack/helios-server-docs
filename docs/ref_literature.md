@@ -10,6 +10,10 @@ Ben Adida
 Ben Adida, Olivier Pereira, Olivier de Marneffe, Jean-Jacques Quisquater  
 *Presentation to Electronic Voting Technology Workshop/Workshop on Trustworthy Elections, 2009* 
 
+## 2010
+**[Exploiting the Client Vulnerabilities in Internet E-voting Systems: Hacking Helios 2.0 as an Example](https://www.usenix.org/legacy/events/evt/tech/full_papers/Estehghari.pdf)**   
+Saghar Estehghari, Yvo Desmedt
+
 ## 2011
 **[Running mixnet-based elections with Helios](https://www.usenix.org/legacy/events/evtwote11/tech/final_files/Bulens.pdf)**  
 Philippe Bulens, Damien Giry, Olivier Pereira  

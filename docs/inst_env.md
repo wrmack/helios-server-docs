@@ -12,7 +12,6 @@ If not already installed:
 
 * install [pip](https://packaging.python.org/tutorials/installing-packages/), the python package manager
 
-* install [Virtualenv](http://www.virtualenv.org/en/latest/)
 
 then:
 
