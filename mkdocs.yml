@@ -86,6 +86,6 @@ markdown_extensions:
 #   window.dataLayer = window.dataLayer || [];
 #   function gtag(){dataLayer.push(arguments);}
 #   gtag('js', new Date());
-#
+
 #   gtag('config', 'UA-150810154-1');
 # </script>
