@@ -6,6 +6,10 @@
 [^2]:
     [An Overview of End-to-End Verifiable Voting Systems](https://arxiv.org/pdf/1605.08554.pdf) <span style="font-size:10pt;line-height:1.0">*Syed Taha Ali and Judy Murray. (2016)*</span> 
 
+[^3]:
+    [The Future of Voting: End-to-End Verifiable Internet Voting - Specification and Feasibility Study](https://www.usvotefoundation.org/E2E-VIV)   
+    *U.S. Vote Foundation (2015)*
+
 Voters and candidates should not have to blindly trust that electronic election technology works.  It might be compromised by an attacker or it might be incorrectly coded.  How do voters and candidates know the result is correct?  End-to-end verifiability (E2E-V) provides for voters and candidates to verify an election result is correct.[^1] [^2]  
 
 Verifiability is generally exhibited by:

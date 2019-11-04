@@ -14,6 +14,9 @@ Ben Adida, Olivier Pereira, Olivier de Marneffe, Jean-Jacques Quisquater
 **[Exploiting the Client Vulnerabilities in Internet E-voting Systems: Hacking Helios 2.0 as an Example](https://www.usenix.org/legacy/events/evt/tech/full_papers/Estehghari.pdf)**   
 Saghar Estehghari, Yvo Desmedt
 
+**[The Helios e-Voting Demo for the IACR](https://www.iacr.org/elections/eVoting/heliosDemo.pdf)**   
+Stuart Haber Josh Benaloh Shai Halevi
+
 ## 2011
 **[Running mixnet-based elections with Helios](https://www.usenix.org/legacy/events/evtwote11/tech/final_files/Bulens.pdf)**  
 Philippe Bulens, Damien Giry, Olivier Pereira  
@@ -29,10 +32,13 @@ Fatih Karayumak, Maina M. Olembo, Michaela Kauer and Melanie Volkamer
 **[A generic construction for voting correctness at minimum cost - Application to Helios](https://eprint.iacr.org/2013/177.pdf)**  
 Véronique Cortier, David Galindo, Stéphane Glondu, Malika Izabachène  
 
-
 **[Attacking and fixing Helios: An analysis of ballot secrecy](https://bensmyth.com/files/Smyth12-attacking-Helios.pdf)**  
 Véronique Cortier and Ben Smyth  
 
+
+## 2014
+**[Usability of Voter Verifiable, End-to-end Voting Systems: Baseline Data for Helios, Prêt à Voter, and Scantegrity II](https://www.usenix.org/system/files/conference/evtwote14/jets_0203-acemyan.pdf)**   
+Claudia Z. Acemyan, Philip Kortum, Michael D. Byrne, Dan S. Wallach
 
 ## 2015
 **[Extending Helios Towards Private Eligibility Verifiability](https://www.researchgate.net/publication/281526028_Extending_Helios_Towards_Private_Eligibility_Verifiability)**  
@@ -75,3 +81,4 @@ Karola Marky, Oksana Kulyk, Melanie Volkamer
 **[A protocolized, comparative study of Helios Voting and Scytl/iVote](http://www.ctg.albany.edu/media/pubs/pdfs/A_Protocolized_Comparative_Study_of_Helios_Voting_and_Scytl_iVote.pdf)**  
 David Y Marcos del Blanco and Mila Gascó  
 *Sixth International Conference on eDemocracy & eGovernment (ICEDEG), 2019*
+
