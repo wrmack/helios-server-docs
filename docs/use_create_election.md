@@ -64,3 +64,11 @@ A trustee uses a private key to decrypt the result of the tally.  Helios is auto
 ### Freeze ballot and open election
 
 Once you have set up the questions made your selection in the voters & ballots section you can then freeze the election and open it for voting.  If you uploaded a list of voters, you can, in the Voters & ballots section, send an email to all voters giving each of them their Voter ID and password.
+
+
+<!-- 
+
+See for good description:
+https://github.com/python/psf-election 
+
+-->
