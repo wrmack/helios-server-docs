@@ -79,7 +79,7 @@ David Bernhard, Olivier Pereira, and Bogdan Warinschi
 **[Adapting Helios for provable ballot privacy](https://eprint.iacr.org/2016/756.pdf)**  
 David Bernhard, Véronique Cortier, Olivier Pereira, Ben Smyth, Bogdan Warinschi  
 
-****[Introducing Proxy Voting to Helios](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwjy6NGtkNLlAhXL6XMBHZrrAqYQFjABegQIBBAB&url=https%3A%2F%2Fpublikationen.bibliothek.kit.edu%2F1000081973%2F15444670&usg=AOvVaw0yJSpWfxCNSdiZ32xtFVqK)**    
+**[Introducing Proxy Voting to Helios](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwjy6NGtkNLlAhXL6XMBHZrrAqYQFjABegQIBBAB&url=https%3A%2F%2Fpublikationen.bibliothek.kit.edu%2F1000081973%2F15444670&usg=AOvVaw0yJSpWfxCNSdiZ32xtFVqK)**    
 Oksana Kulyk, Karola Marky, Stephan Neumann, Melanie Volkamer
 
 ## 2018

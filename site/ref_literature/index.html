@@ -59,6 +59,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-150810154-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -778,7 +803,7 @@ Michael Backes, Christian Hammer, David Pfaff, Malte Skoruppa<br />
 David Bernhard, Olivier Pereira, and Bogdan Warinschi  </p>
 <p><strong><a href="https://eprint.iacr.org/2016/756.pdf">Adapting Helios for provable ballot privacy</a></strong><br />
 David Bernhard, Véronique Cortier, Olivier Pereira, Ben Smyth, Bogdan Warinschi  </p>
-<p>****<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=2ahUKEwjy6NGtkNLlAhXL6XMBHZrrAqYQFjABegQIBBAB&amp;url=https%3A%2F%2Fpublikationen.bibliothek.kit.edu%2F1000081973%2F15444670&amp;usg=AOvVaw0yJSpWfxCNSdiZ32xtFVqK">Introducing Proxy Voting to Helios</a>**  <br />
+<p><strong><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=2ahUKEwjy6NGtkNLlAhXL6XMBHZrrAqYQFjABegQIBBAB&amp;url=https%3A%2F%2Fpublikationen.bibliothek.kit.edu%2F1000081973%2F15444670&amp;usg=AOvVaw0yJSpWfxCNSdiZ32xtFVqK">Introducing Proxy Voting to Helios</a></strong>  <br />
 Oksana Kulyk, Karola Marky, Stephan Neumann, Melanie Volkamer</p>
 <h2 id="2018">2018</h2>
 <p><strong><a href="https://www.researchgate.net/publication/329062508_E-voting_system_evaluation_based_on_the_Council_of_Europe_recommendations_Helios_Voting">E-voting system evaluation based on the Council of Europe recommendations: Helios Voting</a></strong><br />
