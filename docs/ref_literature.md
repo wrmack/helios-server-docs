@@ -18,7 +18,7 @@ Janna-Lynn Weber, Urs Hengartner
 Saghar Estehghari, Yvo Desmedt
 
 **[The Helios e-Voting Demo for the IACR](https://www.iacr.org/elections/eVoting/heliosDemo.pdf)**   
-Stuart Haber Josh Benaloh Shai Halevi
+Stuart Haber, Josh Benaloh, Shai Halevi
 
 ## 2011
 **[Running mixnet-based elections with Helios](https://www.usenix.org/legacy/events/evtwote11/tech/final_files/Bulens.pdf)**  
@@ -55,7 +55,7 @@ Oksana Kulyk, Vanessa Teague, and Melanie Volkamer
 *E-Voting and Identity: 5th International Conference, VoteID 2015*
 
 **[Election Verifiability for Helios under Weaker Trust Assumptions](https://members.loria.fr/VCortier/files/Papers/ESORICS2014.pdf)**    
-Véronique Cortier1, David Galindo1, Stéphane Glondu2 and Malika Izabachène
+Véronique Cortier, David Galindo, Stéphane Glondu and Malika Izabachène
 
 ## 2016
 **[Internet voting with Helios](https://pdfs.semanticscholar.org/84d2/477c92d054ca02cdcd79c7f6480b8984a53f.pdf?_ga=2.145867508.194133291.1556955935-1456367824.1555042003)**  
@@ -100,3 +100,9 @@ David Y Marcos del Blanco and Mila Gascó
 
 **[A Framework for I-Voting based on Helios and Public- Key Certificates](https://poseidon01.ssrn.com/delivery.php?ID=255100081087114095122126116015002023016039060039010087100115108070068085029100069022019117103061008030027113121016104103095072043075078051054004004098021099088123105003079016087010088025100024123089002122006004099076076012075100086124102083125086003027&EXT=pdf)**   
 Noor Hamad Abid, Sufyan T. Faraj Al-Janabi
+
+**[A simple alternative to Benaloh challenge for the cast-as-intended property in Helios/Belenios](https://hal.inria.fr/hal-02346420/document)**    
+Véronique Cortier, Jannik Dreier, Pierrick Gaudry, Mathieu Turuani
+
+**[Election Verifiability: Cryptographic Definitions and an Analysis of Helios, Helios-C, and JCJ](https://eprint.iacr.org/2015/233.pdf)**    
+Ben Smyth, Steven Frink, Michael R. Clarkson
