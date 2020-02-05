@@ -49,6 +49,9 @@ Véronique Cortier, David Galindo, Stéphane Glondu, Malika Izabachène
 **[Usability of Voter Verifiable, End-to-end Voting Systems: Baseline Data for Helios, Prêt à Voter, and Scantegrity II](https://www.usenix.org/system/files/conference/evtwote14/jets_0203-acemyan.pdf)**   
 Claudia Z. Acemyan, Philip Kortum, Michael D. Byrne, Dan S. Wallach
 
+**[Helios Verification: To Alleviate, or to Nominate: Is That The Question, Or Shall We Have Both?](https://www.researchgate.net/publication/262933494_Helios_Verification_To_Alleviate_or_to_Nominate_Is_That_The_Question_Or_Shall_We_Have_Both_to_appear)**    
+Stephan Neumann, M. Maina Olembo, Karen Renaud, and Melanie Volkamer
+
 ## 2015
 **[Extending Helios Towards Private Eligibility Verifiability](https://www.researchgate.net/publication/281526028_Extending_Helios_Towards_Private_Eligibility_Verifiability)**  
 Oksana Kulyk, Vanessa Teague, and Melanie Volkamer  
