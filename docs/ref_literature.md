@@ -72,7 +72,6 @@ Nicholas Chang-Fong, Aleksander Essex
 Michael Backes, Christian Hammer, David Pfaff, Malte Skoruppa  
 *Proceedings of the 31st Annual ACM Symposium on Applied Computing, 2016*
 
-
 **[How not to Prove Yourself: Pitfalls of the Fiat-Shamir Heuristic and Applications to Helios](https://eprint.iacr.org/2016/771.pdf)**  
 David Bernhard, Olivier Pereira, and Bogdan Warinschi  
 
@@ -81,6 +80,15 @@ David Bernhard, Véronique Cortier, Olivier Pereira, Ben Smyth, Bogdan Warinschi
 
 **[Introducing Proxy Voting to Helios](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwjy6NGtkNLlAhXL6XMBHZrrAqYQFjABegQIBBAB&url=https%3A%2F%2Fpublikationen.bibliothek.kit.edu%2F1000081973%2F15444670&usg=AOvVaw0yJSpWfxCNSdiZ32xtFVqK)**    
 Oksana Kulyk, Karola Marky, Stephan Neumann, Melanie Volkamer
+
+**[Apollo – End-to-end Verifiable Internet Voting with Recovery from Vote Manipulation](https://eprint.iacr.org/2016/1037.pdf)**     
+Dawid Gawel, Maciej Kosarzecki, Poorvi L. Vora, Hua Wu, and Filip Zagórski
+
+## 2017
+
+**[Machine-Checked Proofs of Privacy for Electronic Voting Protocols](https://ieeexplore.ieee.org/document/7958621)**    
+Véronique Cortier, Constantin Cătălin Drăgan, François Dupressoir, Benedikt Schmidt, Pierre-Yves Strub, Bogdan Warinschi
+
 
 ## 2018
 **[E-voting system evaluation based on the Council of Europe recommendations: Helios Voting](https://www.researchgate.net/publication/329062508_E-voting_system_evaluation_based_on_the_Council_of_Europe_recommendations_Helios_Voting)**  
