@@ -57,10 +57,17 @@ google_analytics:
 ###
 
 ##
-## Receipes 
+## Recipes 
 ##
 
-# Virtual env
+# Setup virtual env:
+# python -m venv venv
+
+# Install mkdocs:
+# pip install mkdocs
+# pip install mkdocs-material
+
+# After creating terminal:
 # source venv/bin/activate
 
 # Local server
