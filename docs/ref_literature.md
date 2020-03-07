@@ -109,7 +109,7 @@ Ben Smyth
 David Y Marcos del Blanco and Mila Gascó  
 *Sixth International Conference on eDemocracy & eGovernment (ICEDEG), 2019*
 
-**[A Framework for I-Voting based on Helios and Public- Key Certificates](https://poseidon01.ssrn.com/delivery.php?ID=255100081087114095122126116015002023016039060039010087100115108070068085029100069022019117103061008030027113121016104103095072043075078051054004004098021099088123105003079016087010088025100024123089002122006004099076076012075100086124102083125086003027&EXT=pdf)**   
+**[A Framework for I-Voting based on Helios and Public-Key Certificates](https://poseidon01.ssrn.com/delivery.php?ID=255100081087114095122126116015002023016039060039010087100115108070068085029100069022019117103061008030027113121016104103095072043075078051054004004098021099088123105003079016087010088025100024123089002122006004099076076012075100086124102083125086003027&EXT=pdf)**   
 Noor Hamad Abid, Sufyan T. Faraj Al-Janabi
 
 **[A simple alternative to Benaloh challenge for the cast-as-intended property in Helios/Belenios](https://hal.inria.fr/hal-02346420/document)**    
@@ -117,3 +117,7 @@ Véronique Cortier, Jannik Dreier, Pierrick Gaudry, Mathieu Turuani
 
 **[Election Verifiability: Cryptographic Definitions and an Analysis of Helios, Helios-C, and JCJ](https://eprint.iacr.org/2015/233.pdf)**    
 Ben Smyth, Steven Frink, Michael R. Clarkson
+
+## 2020
+**[Fifty Shades of Ballot Privacy: Privacy against a Malicious Board](https://eprint.iacr.org/2020/127.pdf)**      
+Véronique Cortier, Joseph Lallemand, Bogdan Warinschi
