@@ -104,6 +104,12 @@ Karola Marky, Oksana Kulyk, Melanie Volkamer
 **[Ballot secrecy: Security definition, sufficient conditions, and analysis of Helios](https://eprint.iacr.org/2015/942.pdf)**    
 Ben Smyth
 
+**[Exploiting re-voting in the Helios election system](https://arxiv.org/pdf/1612.04099.pdf)**    
+Maxime Meyera, Ben Smyth
+
+**[Verifiability of Helios Mixnet](https://orbilu.uni.lu/bitstream/10993/35919/1/Smyth18-Verifiability-Helios-Mixnet.pdf)**     
+Ben Smyth
+
 ## 2019
 **[A protocolized, comparative study of Helios Voting and Scytl/iVote](http://www.ctg.albany.edu/media/pubs/pdfs/A_Protocolized_Comparative_Study_of_Helios_Voting_and_Scytl_iVote.pdf)**  
 David Y Marcos del Blanco and Mila Gascó  
