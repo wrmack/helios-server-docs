@@ -110,6 +110,9 @@ Maxime Meyera, Ben Smyth
 **[Verifiability of Helios Mixnet](https://orbilu.uni.lu/bitstream/10993/35919/1/Smyth18-Verifiability-Helios-Mixnet.pdf)**     
 Ben Smyth
 
+**[A foundation for secret, verifiable elections](https://eprint.iacr.org/2018/225.pdf)**     
+Ben Smyth
+
 ## 2019
 **[A protocolized, comparative study of Helios Voting and Scytl/iVote](http://www.ctg.albany.edu/media/pubs/pdfs/A_Protocolized_Comparative_Study_of_Helios_Voting_and_Scytl_iVote.pdf)**  
 David Y Marcos del Blanco and Mila Gascó  
@@ -127,3 +130,6 @@ Ben Smyth, Steven Frink, Michael R. Clarkson
 ## 2020
 **[Fifty Shades of Ballot Privacy: Privacy against a Malicious Board](https://eprint.iacr.org/2020/127.pdf)**      
 Véronique Cortier, Joseph Lallemand, Bogdan Warinschi
+
+**[Election Verifiability Revisited: Automated Security Proofs and Attacks on Helios and Belenios](https://eprint.iacr.org/2020/982.pdf)**     
+Sevdenur Baloglu, Sergiu Bursuc, Sjouke Mauw, Jun Pang
