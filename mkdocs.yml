@@ -6,6 +6,7 @@ nav:
     - Setup authentication : 'inst_auth.md'
     - Prepare Django : 'inst_django.md'
     - Local development : 'inst_dev.md'
+    - Walk-through with Ubuntu: 'inst_virtualbox.md'
   - Deployment :
     - Heroku: 'deploy_heroku.md'
   - Concepts:
@@ -59,6 +60,9 @@ google_analytics:
 ##
 ## Recipes 
 ##
+
+# Upgrade pip:
+# python -m pip install --upgrade pip
 
 # Setup virtual env:
 # python -m venv venv
