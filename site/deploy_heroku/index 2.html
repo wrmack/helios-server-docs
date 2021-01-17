@@ -14,7 +14,7 @@
     
     
       
-        <title>Walk-through with Ubuntu - Helios server documentation</title>
+        <title>Heroku - Helios server documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#walk-through-of-installing-helios-on-ubuntu-204" class="md-skip">
+        <a href="#heroku" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Walk-through with Ubuntu
+              Heroku
             
           </span>
         </div>
@@ -184,14 +184,12 @@
       
 
 
-  
-
 
   
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     
     <label class="md-nav__link" for="nav-2">
       Installation
@@ -262,20 +260,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../inst_virtualbox/" class="md-nav__link">
       Walk-through with Ubuntu
     </a>
-    
   </li>
 
         
@@ -289,12 +278,14 @@
       
 
 
+  
+
 
   
-  <li class="md-nav__item md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Deployment
@@ -313,11 +304,49 @@
           
 
 
+  
 
-  <li class="md-nav__item">
-    <a href="../deploy_heroku/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Heroku
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Heroku
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -600,6 +629,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -611,99 +655,31 @@
               
                 
                 
-                <h1 id="walk-through-of-installing-helios-on-ubuntu-204">Walk-through of installing Helios on Ubuntu 20.4</h1>
-<ul>
-<li>install VSCode (optional)</li>
-<li>check python3 is installed with Ubuntu and, if not, install it<ul>
-<li><code>python3 --version</code></li>
-</ul>
-</li>
-<li>install pip3<ul>
-<li><code>sudo apt install python3-pip</code></li>
-</ul>
-</li>
-<li>install python3-venv <code>sudo apt install python3-venv</code></li>
-<li>install Postgresql<ul>
-<li><code>sudo apt-get update</code></li>
-<li><code>sudo apt install postgresql</code></li>
-<li><code>sudo systemctl start postgresql@12-main</code> (prompted by the installation) </li>
-<li><code>sudo -i -u postgres</code> (become the postgres user)</li>
-<li><code>psql postgres</code> (connect to the postgres database)</li>
-<li><code>CREATE USER [your login name] WITH SUPERUSER;</code> (create Helios database user)</li>
-<li><code>CREATE DATABASE helios WITH OWNER [your login name];</code>  (create Helios database)</li>
-<li><code>\q</code> (quit psql)</li>
-<li><code>exit</code> (logout as the postgres user)</li>
-<li><code>psql helios</code> (connect to the new helios database)</li>
-<li><code>\l</code> (list databases - check helios is there)</li>
-<li><code>\q</code></li>
-</ul>
-</li>
-<li>install RabbitMQ<ul>
-<li><code>sudo apt install rabbitmq-server</code></li>
-</ul>
-</li>
-<li>
-<p>setup Google OAuth authentication</p>
-<ul>
-<li>in a browser go to: <a href="https://console.developers.google.com/apis">https://console.developers.google.com/apis</a>  (you should have a Google account)</li>
-<li>select <code>Credentials</code></li>
-<li><code>Create a project</code> and give it a name (eg Helios) then <code>CREATE CREDENTIALS</code></li>
-<li><code>OAuth client ID</code></li>
-<li><code>CONFIGURE CONSENT SCREEN</code> - select <code>External</code> then <code>CREATE</code></li>
-<li>Just complete the required fields (App name, User support email and Developer contact email) then <code>SAVE AND CONTINUE</code></li>
-<li>Under <code>Scopes</code> and <code>Optional info</code> add nothing just <code>SAVE AND CONTINUE</code> then on Summary page <code>BACK TO DASHBOARD</code></li>
-<li>select <code>Credentials</code> then <code>CREATE CREDENTIALS</code></li>
-<li>Application type is <code>Web application</code></li>
-<li>Name is your choice (eg Helios)</li>
-<li>Authorised Javascript origins: <code>http://localhost:8000</code></li>
-<li>Authorised redirect URIs: <code>http://localhost:8000/auth/after/</code></li>
-<li><code>CREATE</code></li>
-<li>copy <code>Client ID</code> and <code>Client secret</code> for using in Helios</li>
-<li>Select <code>Dashboard</code> then <code>ENABLE APIS AND SERVICES</code></li>
-<li>Select <code>Google People API</code> and <code>ENABLE</code></li>
-</ul>
-</li>
-<li>
-<p>download Helios code: in a browser </p>
-<ul>
-<li>go to <a href="https://github.com/wrmack/helios-server">https://github.com/wrmack/helios-server</a></li>
-<li>change <code>master</code> to <code>wm-python3-django2</code></li>
-<li>under <code>Code</code> choose <code>Download ZIP</code></li>
-<li>once downloaded double-click the Zip arhive to unarchive it and move all to a project folder of your choice for working on (ie move code out of the Downloads folder)</li>
-</ul>
-</li>
-<li>prepare helios<ul>
-<li>cd to your project folder</li>
-<li>create a virtual environment <code>python3 -m venv my-venv</code></li>
-<li>activate the virtual environment: <code>source my-venv/bin/activate</code></li>
-<li>install all dependencies in requirements.txt: <ul>
-<li><code>python3 -m pip install wheel</code>  (in response to an error message)</li>
-<li><code>sudo apt install libpq-dev</code> (required for installation of psycopg2)</li>
-<li>(in <code>requirements.txt</code> I upgraded celery to 5.0.0 and replaced pycrypto with pycryptodome for compatability with python 3.8)</li>
-<li><code>python3 -m pip install -r requirements.txt</code></li>
-</ul>
-</li>
-<li>create an <code>.env</code> file with stored secrets
-    <div class="highlight"><pre><span></span><code>    <span class="nv">DBPWD</span><span class="o">=</span>xxxx
-    <span class="nv">GOOGLESECRET</span><span class="o">=</span>xxxx
-    <span class="nv">GOOGLEID</span><span class="o">=</span>xxxx
-</code></pre></div></li>
-</ul>
-</li>
-<li>in a separate terminal start celery<ul>
-<li>cd to your helios project</li>
-<li><code>source my-venv/bin/activate</code></li>
-<li><code>celery -A helios worker -l INFO</code> </li>
-</ul>
-</li>
-<li>back at first terminal, run helios<ul>
-<li><code>python3 manage.py makemigrations</code></li>
-<li><code>./reset.sh</code></li>
-<li><code>python3 manage.py runserver</code></li>
-<li>in a browser go to <code>127.0.0.1:8000</code></li>
-</ul>
-</li>
-</ul>
+                <h1 id="heroku">Heroku</h1>
+<p><strong>About Heroku</strong></p>
+<p>Heroku is a subsidiary of salesforce.com. Its servers are hosted on Amazon's EC2 cloud-computing platform.</p>
+<p>Heroku’s pricing includes a <a href="https://www.heroku.com/pricing">free plan</a> which is suitable for experimental purposes. It provides for 1 web process and 1 worker process (Celery in our case).  The Heroku Postgres database is free within a limit of 10K rows.</p>
+<p>When an app is deployed it runs in a container called a ‘dyno’.  There is no direct access to its filesystem. </p>
+<p><strong>Deployment</strong></p>
+<p>There are options for deploying an app.  One option is to link to a Github repository so that a push to Github triggers a build and deployment.</p>
+<p><strong>Configuration</strong></p>
+<p>There is one required configuration file - Procfile.  This tells Heroku what to run when an app is deployed.  I use the following for running one web server process and one Celery worker process:</p>
+<div class="highlight"><pre><span></span><code>web: gunicorn wsgi
+worker: celery worker -A helios -l info
+</code></pre></div>
+<p><strong>Building and debugging</strong></p>
+<p>Build logs can be viewed through Heroku’s web interface, but for anything more than that it is important to become familiar with the Heroku CLI application.  Heroku CLI can also run a psql shell for examining the database. Run this for a real-time display of logs generated on the Heroku site (if helios-heroku is the name of your app on Heroku):</p>
+<div class="highlight"><pre><span></span><code>heroku logs --tail -a helios-heroku
+</code></pre></div>
+<p><strong>Helios requirements</strong></p>
+<p>For tasks, Celery may be used and there are options for a broker (for example Redis).</p>
+<p>For sending email, an add-on, <a href="https://elements.heroku.com/addons/sendgrid">SendGrid</a>, can be used. This is free up to 12,000 emails per month. </p>
+<h2 id="demo">Demo</h2>
+<p><strong>Code</strong></p>
+<p>My <code>wm-py3-django2-heroku</code> branch:</p>
+<p><a href="https://github.com/wrmack/helios-server/tree/wm-py3-django2-heroku">https://github.com/wrmack/helios-server/tree/wm-py3-django2-heroku</a></p>
+<p><strong>Live</strong></p>
+<p><a href="https://helios-heroku.herokuapp.com">https://helios-heroku.herokuapp.com</a></p>
                 
               
               
@@ -722,7 +698,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../inst_dev/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../inst_virtualbox/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -731,19 +707,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Local development
+                Walk-through with Ubuntu
               </div>
             </div>
           </a>
         
         
-          <a href="../deploy_heroku/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../con_e2ev/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Heroku
+                Verifiability
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

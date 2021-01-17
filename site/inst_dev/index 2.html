@@ -14,7 +14,7 @@
     
     
       
-        <title>Walk-through with Ubuntu - Helios server documentation</title>
+        <title>Local development - Helios server documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#walk-through-of-installing-helios-on-ubuntu-204" class="md-skip">
+        <a href="#local-development" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Walk-through with Ubuntu
+              Local development
             
           </span>
         </div>
@@ -249,19 +249,6 @@
           
 
 
-
-  <li class="md-nav__item">
-    <a href="../inst_dev/" class="md-nav__link">
-      Local development
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   
 
 
@@ -272,10 +259,93 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Local development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
-      Walk-through with Ubuntu
+      Local development
     </a>
     
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flow-for-starting-helios" class="md-nav__link">
+    Flow for starting helios
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow for starting helios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-rabbitmq" class="md-nav__link">
+    Start rabbitmq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-celery" class="md-nav__link">
+    Start celery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-helios" class="md-nav__link">
+    Start helios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-in-browser" class="md-nav__link">
+    View in browser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    Visual Studio Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../inst_virtualbox/" class="md-nav__link">
+      Walk-through with Ubuntu
+    </a>
   </li>
 
         
@@ -600,6 +670,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flow-for-starting-helios" class="md-nav__link">
+    Flow for starting helios
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow for starting helios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-rabbitmq" class="md-nav__link">
+    Start rabbitmq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-celery" class="md-nav__link">
+    Start celery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-helios" class="md-nav__link">
+    Start helios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-in-browser" class="md-nav__link">
+    View in browser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    Visual Studio Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -611,99 +737,41 @@
               
                 
                 
-                <h1 id="walk-through-of-installing-helios-on-ubuntu-204">Walk-through of installing Helios on Ubuntu 20.4</h1>
-<ul>
-<li>install VSCode (optional)</li>
-<li>check python3 is installed with Ubuntu and, if not, install it<ul>
-<li><code>python3 --version</code></li>
-</ul>
-</li>
-<li>install pip3<ul>
-<li><code>sudo apt install python3-pip</code></li>
-</ul>
-</li>
-<li>install python3-venv <code>sudo apt install python3-venv</code></li>
-<li>install Postgresql<ul>
-<li><code>sudo apt-get update</code></li>
-<li><code>sudo apt install postgresql</code></li>
-<li><code>sudo systemctl start postgresql@12-main</code> (prompted by the installation) </li>
-<li><code>sudo -i -u postgres</code> (become the postgres user)</li>
-<li><code>psql postgres</code> (connect to the postgres database)</li>
-<li><code>CREATE USER [your login name] WITH SUPERUSER;</code> (create Helios database user)</li>
-<li><code>CREATE DATABASE helios WITH OWNER [your login name];</code>  (create Helios database)</li>
-<li><code>\q</code> (quit psql)</li>
-<li><code>exit</code> (logout as the postgres user)</li>
-<li><code>psql helios</code> (connect to the new helios database)</li>
-<li><code>\l</code> (list databases - check helios is there)</li>
-<li><code>\q</code></li>
-</ul>
-</li>
-<li>install RabbitMQ<ul>
-<li><code>sudo apt install rabbitmq-server</code></li>
-</ul>
-</li>
-<li>
-<p>setup Google OAuth authentication</p>
-<ul>
-<li>in a browser go to: <a href="https://console.developers.google.com/apis">https://console.developers.google.com/apis</a>  (you should have a Google account)</li>
-<li>select <code>Credentials</code></li>
-<li><code>Create a project</code> and give it a name (eg Helios) then <code>CREATE CREDENTIALS</code></li>
-<li><code>OAuth client ID</code></li>
-<li><code>CONFIGURE CONSENT SCREEN</code> - select <code>External</code> then <code>CREATE</code></li>
-<li>Just complete the required fields (App name, User support email and Developer contact email) then <code>SAVE AND CONTINUE</code></li>
-<li>Under <code>Scopes</code> and <code>Optional info</code> add nothing just <code>SAVE AND CONTINUE</code> then on Summary page <code>BACK TO DASHBOARD</code></li>
-<li>select <code>Credentials</code> then <code>CREATE CREDENTIALS</code></li>
-<li>Application type is <code>Web application</code></li>
-<li>Name is your choice (eg Helios)</li>
-<li>Authorised Javascript origins: <code>http://localhost:8000</code></li>
-<li>Authorised redirect URIs: <code>http://localhost:8000/auth/after/</code></li>
-<li><code>CREATE</code></li>
-<li>copy <code>Client ID</code> and <code>Client secret</code> for using in Helios</li>
-<li>Select <code>Dashboard</code> then <code>ENABLE APIS AND SERVICES</code></li>
-<li>Select <code>Google People API</code> and <code>ENABLE</code></li>
-</ul>
-</li>
-<li>
-<p>download Helios code: in a browser </p>
-<ul>
-<li>go to <a href="https://github.com/wrmack/helios-server">https://github.com/wrmack/helios-server</a></li>
-<li>change <code>master</code> to <code>wm-python3-django2</code></li>
-<li>under <code>Code</code> choose <code>Download ZIP</code></li>
-<li>once downloaded double-click the Zip arhive to unarchive it and move all to a project folder of your choice for working on (ie move code out of the Downloads folder)</li>
-</ul>
-</li>
-<li>prepare helios<ul>
-<li>cd to your project folder</li>
-<li>create a virtual environment <code>python3 -m venv my-venv</code></li>
-<li>activate the virtual environment: <code>source my-venv/bin/activate</code></li>
-<li>install all dependencies in requirements.txt: <ul>
-<li><code>python3 -m pip install wheel</code>  (in response to an error message)</li>
-<li><code>sudo apt install libpq-dev</code> (required for installation of psycopg2)</li>
-<li>(in <code>requirements.txt</code> I upgraded celery to 5.0.0 and replaced pycrypto with pycryptodome for compatability with python 3.8)</li>
-<li><code>python3 -m pip install -r requirements.txt</code></li>
-</ul>
-</li>
-<li>create an <code>.env</code> file with stored secrets
-    <div class="highlight"><pre><span></span><code>    <span class="nv">DBPWD</span><span class="o">=</span>xxxx
-    <span class="nv">GOOGLESECRET</span><span class="o">=</span>xxxx
-    <span class="nv">GOOGLEID</span><span class="o">=</span>xxxx
-</code></pre></div></li>
-</ul>
-</li>
-<li>in a separate terminal start celery<ul>
-<li>cd to your helios project</li>
-<li><code>source my-venv/bin/activate</code></li>
-<li><code>celery -A helios worker -l INFO</code> </li>
-</ul>
-</li>
-<li>back at first terminal, run helios<ul>
-<li><code>python3 manage.py makemigrations</code></li>
-<li><code>./reset.sh</code></li>
-<li><code>python3 manage.py runserver</code></li>
-<li>in a browser go to <code>127.0.0.1:8000</code></li>
-</ul>
-</li>
-</ul>
+                <h1 id="local-development">Local development</h1>
+<h2 id="flow-for-starting-helios">Flow for starting helios</h2>
+<h3 id="start-rabbitmq">Start rabbitmq</h3>
+<p>In a new terminal:
+<div class="highlight"><pre><span></span><code>/usr/local/sbin/rabbitmq-server
+</code></pre></div></p>
+<h3 id="start-celery">Start celery</h3>
+<p>In a new terminal, in helios-server root folder:
+<div class="highlight"><pre><span></span><code>source venv/bin/activate
+celery -A helios worker -l info
+</code></pre></div></p>
+<h3 id="start-helios">Start helios</h3>
+<p><em>(In settings.py</em> PRODUCTION = False <em>to tell Django to use the development server)</em></p>
+<p>In a new terminal:
+<div class="highlight"><pre><span></span><code>source venv/bin/activate
+python manage.py runserver
+</code></pre></div></p>
+<h3 id="view-in-browser">View in browser</h3>
+<p>In browser go to: <code>http://localhost:8000</code></p>
+<h3 id="visual-studio-code">Visual Studio Code</h3>
+<p>If using Visual Studio Code, to launch helios using the debugger add this to "configurations" in launch.json:
+<div class="highlight"><pre><span></span><code>    {
+        &quot;name&quot;: &quot;Python: Django&quot;,
+        &quot;type&quot;: &quot;python&quot;,
+        &quot;request&quot;: &quot;launch&quot;,
+        &quot;program&quot;: &quot;${workspaceFolder}/manage.py&quot;,
+        &quot;args&quot;: [
+            &quot;runserver&quot;,
+            &quot;--noreload&quot;
+        ],
+        &quot;django&quot;: true,
+        &quot;justMyCode&quot;: false
+    }
+</code></pre></div></p>
+<p><span style="font-size:10pt">Set "justMyCode" to True for Call Stack to show your own code only.</span></p>
                 
               
               
@@ -722,7 +790,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../inst_dev/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../inst_django/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -731,19 +799,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Local development
+                Prepare Django
               </div>
             </div>
           </a>
         
         
-          <a href="../deploy_heroku/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../inst_virtualbox/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Heroku
+                Walk-through with Ubuntu
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

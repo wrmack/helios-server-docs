@@ -14,7 +14,7 @@
     
     
       
-        <title>Walk-through with Ubuntu - Helios server documentation</title>
+        <title>Admin creates an election - Helios server documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#walk-through-of-installing-helios-on-ubuntu-204" class="md-skip">
+        <a href="#election-admin-creates-an-election" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Walk-through with Ubuntu
+              Admin creates an election
             
           </span>
         </div>
@@ -184,14 +184,12 @@
       
 
 
-  
-
 
   
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     
     <label class="md-nav__link" for="nav-2">
       Installation
@@ -262,20 +260,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../inst_virtualbox/" class="md-nav__link">
       Walk-through with Ubuntu
     </a>
-    
   </li>
 
         
@@ -399,12 +388,14 @@
       
 
 
+  
+
 
   
-  <li class="md-nav__item md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Use cases
@@ -423,11 +414,90 @@
           
 
 
+  
 
-  <li class="md-nav__item">
-    <a href="../use_create_election/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Admin creates an election
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Admin creates an election
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-election" class="md-nav__link">
+    Create election
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#election-main-page" class="md-nav__link">
+    Election main page
+  </a>
+  
+    <nav class="md-nav" aria-label="Election main page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    Questions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voters-ballots" class="md-nav__link">
+    Voters &amp; ballots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trustees" class="md-nav__link">
+    Trustees
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freeze-ballot-and-open-election" class="md-nav__link">
+    Freeze ballot and open election
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -600,6 +670,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-election" class="md-nav__link">
+    Create election
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#election-main-page" class="md-nav__link">
+    Election main page
+  </a>
+  
+    <nav class="md-nav" aria-label="Election main page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    Questions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voters-ballots" class="md-nav__link">
+    Voters &amp; ballots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trustees" class="md-nav__link">
+    Trustees
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freeze-ballot-and-open-election" class="md-nav__link">
+    Freeze ballot and open election
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -611,99 +737,101 @@
               
                 
                 
-                <h1 id="walk-through-of-installing-helios-on-ubuntu-204">Walk-through of installing Helios on Ubuntu 20.4</h1>
+                <h1 id="election-admin-creates-an-election">Election admin creates an election</h1>
+<p>To create and administer an election, you will need to log in using Google, Facebook, Yahoo, or Twitter. Helios queries and retains only the basic information needed to authenticate you the next time around: your name, email address, and user ID. Helios will use this information to message you when your election requires attention.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>As an election administrator, you have the power to designate who can vote, when the election starts, when the election stops, and when the results are released. Other than that, you have no power beyond what voters in your election have. This is by design.<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>On the home page for Helios, after logging in, click on <code>create election</code>.</p>
+<h2 id="create-election">Create election</h2>
+<p>Complete the fields on the form and press <code>Next &gt;&gt;</code>.  Once the election is added it will be possible to come back and edit it up until you choose to freeze it.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Short name</td>
+<td>no spaces, will be part of the URL for your election, e.g. my-club-2010</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>the pretty name for your election, e.g. My Club 2010 Election</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>appears on main page for this election / referendum</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>election / referendum; ???</td>
+</tr>
+<tr>
+<td>Use voter aliases</td>
+<td>If selected, voter identities will be replaced with aliases, e.g. "V12", in the ballot tracking center</td>
+</tr>
+<tr>
+<td>Randomize answer order</td>
+<td>enable this if you want the answers to questions to appear in random order for each voter</td>
+</tr>
+<tr>
+<td>Private?</td>
+<td>A private election is only visible to registered voters.</td>
+</tr>
+<tr>
+<td>Help email address</td>
+<td>An email address voters should contact if they need help.</td>
+</tr>
+<tr>
+<td>Voting starts at</td>
+<td>UTC date and time when voting begins</td>
+</tr>
+<tr>
+<td>Voting ends at</td>
+<td>UTC date and time when voting ends</td>
+</tr>
+</tbody>
+</table>
+<p>Pressing <code>Next &gt;&gt;</code> takes you to the main page for the election.</p>
+<h2 id="election-main-page">Election main page</h2>
+<p>There is a statement about whether this election is featured on the front page.  In order to feature elections on the front page the user field <code>admin_p</code> in the helios_auth_user database table needs to be set to True.  Connect to the database in a termimal and run the SQL query:</p>
+<div class="highlight"><pre><span></span><code>UPDATE helios_auth_user SET admin_p = &#39;t&#39; WHERE user_id = [your_user_id];
+</code></pre></div>
+<p>From this page you can set up:</p>
 <ul>
-<li>install VSCode (optional)</li>
-<li>check python3 is installed with Ubuntu and, if not, install it<ul>
-<li><code>python3 --version</code></li>
+<li>the questions for voting on</li>
+<li>voters and ballots</li>
+<li>trustees</li>
 </ul>
-</li>
-<li>install pip3<ul>
-<li><code>sudo apt install python3-pip</code></li>
-</ul>
-</li>
-<li>install python3-venv <code>sudo apt install python3-venv</code></li>
-<li>install Postgresql<ul>
-<li><code>sudo apt-get update</code></li>
-<li><code>sudo apt install postgresql</code></li>
-<li><code>sudo systemctl start postgresql@12-main</code> (prompted by the installation) </li>
-<li><code>sudo -i -u postgres</code> (become the postgres user)</li>
-<li><code>psql postgres</code> (connect to the postgres database)</li>
-<li><code>CREATE USER [your login name] WITH SUPERUSER;</code> (create Helios database user)</li>
-<li><code>CREATE DATABASE helios WITH OWNER [your login name];</code>  (create Helios database)</li>
-<li><code>\q</code> (quit psql)</li>
-<li><code>exit</code> (logout as the postgres user)</li>
-<li><code>psql helios</code> (connect to the new helios database)</li>
-<li><code>\l</code> (list databases - check helios is there)</li>
-<li><code>\q</code></li>
-</ul>
-</li>
-<li>install RabbitMQ<ul>
-<li><code>sudo apt install rabbitmq-server</code></li>
-</ul>
-</li>
-<li>
-<p>setup Google OAuth authentication</p>
+<h3 id="questions">Questions</h3>
+<p>For each 'question' a voter may vote for one or more 'answers'.  A question might be 'Which two candidates should be elected?' and the available answers might be similar to candidate-one, candidate-two, candidate-three, candidate-four.  You can set how many answers may be chosen and whether the results should be expressed in absolute number of votes or relative numbers of votes (percentages). You can associate a link with each answer (for example a link to further information about a candidate).</p>
+<h3 id="voters-ballots">Voters &amp; ballots</h3>
+<p>You may select one of:</p>
 <ul>
-<li>in a browser go to: <a href="https://console.developers.google.com/apis">https://console.developers.google.com/apis</a>  (you should have a Google account)</li>
-<li>select <code>Credentials</code></li>
-<li><code>Create a project</code> and give it a name (eg Helios) then <code>CREATE CREDENTIALS</code></li>
-<li><code>OAuth client ID</code></li>
-<li><code>CONFIGURE CONSENT SCREEN</code> - select <code>External</code> then <code>CREATE</code></li>
-<li>Just complete the required fields (App name, User support email and Developer contact email) then <code>SAVE AND CONTINUE</code></li>
-<li>Under <code>Scopes</code> and <code>Optional info</code> add nothing just <code>SAVE AND CONTINUE</code> then on Summary page <code>BACK TO DASHBOARD</code></li>
-<li>select <code>Credentials</code> then <code>CREATE CREDENTIALS</code></li>
-<li>Application type is <code>Web application</code></li>
-<li>Name is your choice (eg Helios)</li>
-<li>Authorised Javascript origins: <code>http://localhost:8000</code></li>
-<li>Authorised redirect URIs: <code>http://localhost:8000/auth/after/</code></li>
-<li><code>CREATE</code></li>
-<li>copy <code>Client ID</code> and <code>Client secret</code> for using in Helios</li>
-<li>Select <code>Dashboard</code> then <code>ENABLE APIS AND SERVICES</code></li>
-<li>Select <code>Google People API</code> and <code>ENABLE</code></li>
+<li>anyone can vote, a voter simply needs to log on, eg using Google authentication</li>
+<li>only the listed voters can vote</li>
 </ul>
+<p>If you choose the second option, you need to upload a list of voters contained in a csv file.</p>
+<h3 id="trustees">Trustees</h3>
+<p>A trustee uses a private key to decrypt the result of the tally.  Helios is automatically a trustee.  It is not necessary to add further trustees, but if you do, it is important they retain their secret keys.  All secret keys will be required to decrypt the result.</p>
+<h3 id="freeze-ballot-and-open-election">Freeze ballot and open election</h3>
+<p>Once you have set up the questions made your selection in the voters &amp; ballots section you can then freeze the election and open it for voting.  If you uploaded a list of voters, you can, in the Voters &amp; ballots section, send an email to all voters giving each of them their Voter ID and password.</p>
+<!-- 
+
+See for good description:
+https://github.com/python/psf-election 
+
+-->
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://heliosvoting.org/privacy">https://heliosvoting.org/privacy</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li>
-<p>download Helios code: in a browser </p>
-<ul>
-<li>go to <a href="https://github.com/wrmack/helios-server">https://github.com/wrmack/helios-server</a></li>
-<li>change <code>master</code> to <code>wm-python3-django2</code></li>
-<li>under <code>Code</code> choose <code>Download ZIP</code></li>
-<li>once downloaded double-click the Zip arhive to unarchive it and move all to a project folder of your choice for working on (ie move code out of the Downloads folder)</li>
-</ul>
-</li>
-<li>prepare helios<ul>
-<li>cd to your project folder</li>
-<li>create a virtual environment <code>python3 -m venv my-venv</code></li>
-<li>activate the virtual environment: <code>source my-venv/bin/activate</code></li>
-<li>install all dependencies in requirements.txt: <ul>
-<li><code>python3 -m pip install wheel</code>  (in response to an error message)</li>
-<li><code>sudo apt install libpq-dev</code> (required for installation of psycopg2)</li>
-<li>(in <code>requirements.txt</code> I upgraded celery to 5.0.0 and replaced pycrypto with pycryptodome for compatability with python 3.8)</li>
-<li><code>python3 -m pip install -r requirements.txt</code></li>
-</ul>
-</li>
-<li>create an <code>.env</code> file with stored secrets
-    <div class="highlight"><pre><span></span><code>    <span class="nv">DBPWD</span><span class="o">=</span>xxxx
-    <span class="nv">GOOGLESECRET</span><span class="o">=</span>xxxx
-    <span class="nv">GOOGLEID</span><span class="o">=</span>xxxx
-</code></pre></div></li>
-</ul>
-</li>
-<li>in a separate terminal start celery<ul>
-<li>cd to your helios project</li>
-<li><code>source my-venv/bin/activate</code></li>
-<li><code>celery -A helios worker -l INFO</code> </li>
-</ul>
-</li>
-<li>back at first terminal, run helios<ul>
-<li><code>python3 manage.py makemigrations</code></li>
-<li><code>./reset.sh</code></li>
-<li><code>python3 manage.py runserver</code></li>
-<li>in a browser go to <code>127.0.0.1:8000</code></li>
-</ul>
-</li>
-</ul>
+</ol>
+</div>
                 
               
               
@@ -722,7 +850,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../inst_dev/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../con_helios/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -731,19 +859,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Local development
+                Helios
               </div>
             </div>
           </a>
         
         
-          <a href="../deploy_heroku/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../use_admin_tallies_ballots/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Heroku
+                Admin tallies ballots
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

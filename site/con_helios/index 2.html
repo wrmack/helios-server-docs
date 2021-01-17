@@ -14,7 +14,7 @@
     
     
       
-        <title>Walk-through with Ubuntu - Helios server documentation</title>
+        <title>Helios - Helios server documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#walk-through-of-installing-helios-on-ubuntu-204" class="md-skip">
+        <a href="#how-helios-works" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Walk-through with Ubuntu
+              Helios
             
           </span>
         </div>
@@ -184,14 +184,12 @@
       
 
 
-  
-
 
   
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     
     <label class="md-nav__link" for="nav-2">
       Installation
@@ -262,20 +260,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../inst_virtualbox/" class="md-nav__link">
       Walk-through with Ubuntu
     </a>
-    
   </li>
 
         
@@ -331,12 +320,14 @@
       
 
 
+  
+
 
   
-  <li class="md-nav__item md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Concepts
@@ -381,11 +372,20 @@
           
 
 
+  
 
-  <li class="md-nav__item">
-    <a href="../con_helios/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Helios
     </a>
+    
   </li>
 
         
@@ -611,99 +611,36 @@
               
                 
                 
-                <h1 id="walk-through-of-installing-helios-on-ubuntu-204">Walk-through of installing Helios on Ubuntu 20.4</h1>
+                <h1 id="how-helios-works">How Helios works.</h1>
+<p>(A general description is provided in <a href="https://en.wikipedia.org/wiki/Helios_Voting">Wikipedia</a>.)</p>
+<p>Helios is a truly verifiable voting system, which means that:</p>
 <ul>
-<li>install VSCode (optional)</li>
-<li>check python3 is installed with Ubuntu and, if not, install it<ul>
-<li><code>python3 --version</code></li>
+<li>Alice can verify that her vote was correctly captured,</li>
+<li>all captured votes are displayed (in encrypted form) for all to see.</li>
+<li>anyone can verify that the captured votes were correctly tallied.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
 </ul>
+<p>An election is created by naming a set of trustees and running a protocol that provides each of them with a share of the secret part of a public key pair. The public part of the key is published. Each of the eligible voters is also provided with a private pseudo-identity. The steps that participants take during a run of Helios are as follows.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<ol>
+<li>To cast a vote, the user runs a browser script that inputs her vote and creates a ballot that is encrypted with the public key of the election. The ballot includes a ZKP (Zero Knowledge Proof) that the ballot represents an allowed vote (this is needed because the ballots are never decrypted individually).</li>
+<li>The user can audit the ballot to check if it really represents a vote for her chosen candidate; if she elects to do this, the script provides her with the random data used in the ballot creation. She can then independently verify that the ballot was correctly constructed, but the ballot is now invalid and she has to create another one.</li>
+<li>When the voter has decided to cast her ballot, the voter’s browser submits it along with her pseudo-identity to the server. The server checks the ZKPs of the ballots, and publishes them on a bulletin board.</li>
+<li>Individual voters can check that their ballots appear on the bulletin board. Any observer can check that the ballots that appear on the bulletin board represent allowed votes, by checking the ZKPs.</li>
+<li>The server homomorphically combines the ballots, and publishes the encrypted tally. Anyone can check that this tally is done correctly.</li>
+<li>The server submits the encrypted tally to each of the trustees, and obtains their share of the decryption key for that particular ciphertext, together with a proof that the key share is well-formed. The server publishes these key shares along with the proofs. Anyone can check the proofs.</li>
+<li>The server decrypts the tally and publishes the result. Anyone can check this decryption.</li>
+</ol>
+<p>There is also a good explanation in <a href="http://static.usenix.org/events/evtwote11/tech/final_files/Karayumak7-8-11.pdf">Usability Analysis of Helios - An Open Source Verifiable Remote Electronic Voting System</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://documentation.heliosvoting.org/verification-specs/helios-v4">Helios documentation</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li>install pip3<ul>
-<li><code>sudo apt install python3-pip</code></li>
-</ul>
+<li id="fn:2">
+<p>This description is taken from <a href="https://bensmyth.com/files/Smyth10-definition-verifiability.LNCS.pdf">https://bensmyth.com/files/Smyth10-definition-verifiability.LNCS.pdf</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li>install python3-venv <code>sudo apt install python3-venv</code></li>
-<li>install Postgresql<ul>
-<li><code>sudo apt-get update</code></li>
-<li><code>sudo apt install postgresql</code></li>
-<li><code>sudo systemctl start postgresql@12-main</code> (prompted by the installation) </li>
-<li><code>sudo -i -u postgres</code> (become the postgres user)</li>
-<li><code>psql postgres</code> (connect to the postgres database)</li>
-<li><code>CREATE USER [your login name] WITH SUPERUSER;</code> (create Helios database user)</li>
-<li><code>CREATE DATABASE helios WITH OWNER [your login name];</code>  (create Helios database)</li>
-<li><code>\q</code> (quit psql)</li>
-<li><code>exit</code> (logout as the postgres user)</li>
-<li><code>psql helios</code> (connect to the new helios database)</li>
-<li><code>\l</code> (list databases - check helios is there)</li>
-<li><code>\q</code></li>
-</ul>
-</li>
-<li>install RabbitMQ<ul>
-<li><code>sudo apt install rabbitmq-server</code></li>
-</ul>
-</li>
-<li>
-<p>setup Google OAuth authentication</p>
-<ul>
-<li>in a browser go to: <a href="https://console.developers.google.com/apis">https://console.developers.google.com/apis</a>  (you should have a Google account)</li>
-<li>select <code>Credentials</code></li>
-<li><code>Create a project</code> and give it a name (eg Helios) then <code>CREATE CREDENTIALS</code></li>
-<li><code>OAuth client ID</code></li>
-<li><code>CONFIGURE CONSENT SCREEN</code> - select <code>External</code> then <code>CREATE</code></li>
-<li>Just complete the required fields (App name, User support email and Developer contact email) then <code>SAVE AND CONTINUE</code></li>
-<li>Under <code>Scopes</code> and <code>Optional info</code> add nothing just <code>SAVE AND CONTINUE</code> then on Summary page <code>BACK TO DASHBOARD</code></li>
-<li>select <code>Credentials</code> then <code>CREATE CREDENTIALS</code></li>
-<li>Application type is <code>Web application</code></li>
-<li>Name is your choice (eg Helios)</li>
-<li>Authorised Javascript origins: <code>http://localhost:8000</code></li>
-<li>Authorised redirect URIs: <code>http://localhost:8000/auth/after/</code></li>
-<li><code>CREATE</code></li>
-<li>copy <code>Client ID</code> and <code>Client secret</code> for using in Helios</li>
-<li>Select <code>Dashboard</code> then <code>ENABLE APIS AND SERVICES</code></li>
-<li>Select <code>Google People API</code> and <code>ENABLE</code></li>
-</ul>
-</li>
-<li>
-<p>download Helios code: in a browser </p>
-<ul>
-<li>go to <a href="https://github.com/wrmack/helios-server">https://github.com/wrmack/helios-server</a></li>
-<li>change <code>master</code> to <code>wm-python3-django2</code></li>
-<li>under <code>Code</code> choose <code>Download ZIP</code></li>
-<li>once downloaded double-click the Zip arhive to unarchive it and move all to a project folder of your choice for working on (ie move code out of the Downloads folder)</li>
-</ul>
-</li>
-<li>prepare helios<ul>
-<li>cd to your project folder</li>
-<li>create a virtual environment <code>python3 -m venv my-venv</code></li>
-<li>activate the virtual environment: <code>source my-venv/bin/activate</code></li>
-<li>install all dependencies in requirements.txt: <ul>
-<li><code>python3 -m pip install wheel</code>  (in response to an error message)</li>
-<li><code>sudo apt install libpq-dev</code> (required for installation of psycopg2)</li>
-<li>(in <code>requirements.txt</code> I upgraded celery to 5.0.0 and replaced pycrypto with pycryptodome for compatability with python 3.8)</li>
-<li><code>python3 -m pip install -r requirements.txt</code></li>
-</ul>
-</li>
-<li>create an <code>.env</code> file with stored secrets
-    <div class="highlight"><pre><span></span><code>    <span class="nv">DBPWD</span><span class="o">=</span>xxxx
-    <span class="nv">GOOGLESECRET</span><span class="o">=</span>xxxx
-    <span class="nv">GOOGLEID</span><span class="o">=</span>xxxx
-</code></pre></div></li>
-</ul>
-</li>
-<li>in a separate terminal start celery<ul>
-<li>cd to your helios project</li>
-<li><code>source my-venv/bin/activate</code></li>
-<li><code>celery -A helios worker -l INFO</code> </li>
-</ul>
-</li>
-<li>back at first terminal, run helios<ul>
-<li><code>python3 manage.py makemigrations</code></li>
-<li><code>./reset.sh</code></li>
-<li><code>python3 manage.py runserver</code></li>
-<li>in a browser go to <code>127.0.0.1:8000</code></li>
-</ul>
-</li>
-</ul>
+</ol>
+</div>
                 
               
               
@@ -722,7 +659,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../inst_dev/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../con_coercion/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -731,19 +668,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Local development
+                Coercion
               </div>
             </div>
           </a>
         
         
-          <a href="../deploy_heroku/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../use_create_election/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Heroku
+                Admin creates an election
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
