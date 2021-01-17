@@ -14,6 +14,7 @@
     - `psql postgres` (connect to the postgres database)
     - `CREATE USER [your login name] WITH SUPERUSER;` (create Helios database user)
     - `CREATE DATABASE helios WITH OWNER [your login name];`  (create Helios database)
+    - `\q` (quit psql)
     - `exit` (logout as the postgres user)
     - `psql helios` (connect to the new helios database)
     - `\l` (list databases - check helios is there)
