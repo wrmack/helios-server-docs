@@ -673,13 +673,13 @@
 </li>
 <li>prepare helios<ul>
 <li>cd to your project folder</li>
-<li>create a virtual environment <code>python -m venv venv</code></li>
-<li>activate the virtual environment: <code>source venv/bin/activate</code></li>
+<li>create a virtual environment <code>python3 -m venv my-venv</code></li>
+<li>activate the virtual environment: <code>source my-venv/bin/activate</code></li>
 <li>install all dependencies in requirements.txt: <ul>
-<li><code>pip3 install wheel</code>  (in response to an error message)</li>
+<li><code>python3 -m pip install wheel</code>  (in response to an error message)</li>
 <li><code>sudo apt install libpq-dev</code> (required for installation of psycopg2)</li>
 <li>(in <code>requirements.txt</code> I upgraded celery to 5.0.0 and replaced pycrypto with pycryptodome for compatability with python 3.8)</li>
-<li><code>pip3 install -r requirements.txt</code></li>
+<li><code>python3 -m pip install -r requirements.txt</code></li>
 </ul>
 </li>
 <li>create an <code>.env</code> file with stored secrets
@@ -691,7 +691,7 @@
 </li>
 <li>in a separate terminal start celery<ul>
 <li>cd to your helios project</li>
-<li><code>source venv/bin/activate</code></li>
+<li><code>source my-venv/bin/activate</code></li>
 <li><code>celery -A helios worker -l INFO</code> </li>
 </ul>
 </li>

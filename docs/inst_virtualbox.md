@@ -45,13 +45,13 @@
     - once downloaded double-click the Zip arhive to unarchive it and move all to a project folder of your choice for working on (ie move code out of the Downloads folder)
 - prepare helios
     - cd to your project folder
-    - create a virtual environment `python -m venv venv`
-    - activate the virtual environment: `source venv/bin/activate`
+    - create a virtual environment `python3 -m venv my-venv`
+    - activate the virtual environment: `source my-venv/bin/activate`
     - install all dependencies in requirements.txt: 
-        - `pip3 install wheel`  (in response to an error message)
+        - `python3 -m pip install wheel`  (in response to an error message)
         - `sudo apt install libpq-dev` (required for installation of psycopg2)
         - (in `requirements.txt` I upgraded celery to 5.0.0 and replaced pycrypto with pycryptodome for compatability with python 3.8)
-        - `pip3 install -r requirements.txt`
+        - `python3 -m pip install -r requirements.txt`
     - create an `.env` file with stored secrets
         ```shell
             DBPWD=xxxx
@@ -60,7 +60,7 @@
         ```
 - in a separate terminal start celery
     - cd to your helios project
-    - `source venv/bin/activate`
+    - `source my-venv/bin/activate`
     - `celery -A helios worker -l INFO` 
 - back at first terminal, run helios
     - `python3 manage.py makemigrations`
