@@ -61,27 +61,27 @@ google_analytics:
 ## Recipes 
 ##
 
-# Upgrade pip:
-# python -m pip install --upgrade pip
-
 # Setup virtual env:
-# python -m venv venv
-
-# Install mkdocs:
-# pip install mkdocs
-# pip install mkdocs-material
+# python3 -m venv my-venv
 
 # After creating terminal:
 # source venv/bin/activate
 
+# Upgrade pip:
+# python3 -m pip install --upgrade pip
+
+# Install mkdocs:
+# python3 -m pip install mkdocs
+# python3 -m pip install mkdocs-material
+
 # Local server
-# mkdocs serve -a 127.0.01:8001
+# mkdocs serve -a 127.0.0.1:8001
 
 # Build docs into site folder
 # mkdocs build
 
 # Upgrade material theme
-# pip install --upgrade mkdocs-material
+# python3 -m pip install --upgrade mkdocs-material
 
 # Material extensions: https://squidfunk.github.io/mkdocs-material/extensions/admonition/
 

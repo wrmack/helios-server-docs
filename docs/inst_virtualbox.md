@@ -7,10 +7,16 @@
     - `sudo apt install python3-pip`
 - install python3-venv `sudo apt install python3-venv`
 - install Postgresql
-    - `sudo apt install postgresql-12`
-    - `psql -u postgres`
-    - `CREATE USER [your login name] WITH SUPERUSER`
-    - `CREATE DATABASE helios WITH OWNER [your login name]`
+    - `sudo apt-get update`
+    - `sudo apt install postgresql`
+    - `sudo systemctl start postgresql@12-main` (prompted by the installation) 
+    - `sudo -i -u postgres` (become the postgres user)
+    - `psql postgres` (connect to the postgres database)
+    - `CREATE USER [your login name] WITH SUPERUSER;` (create Helios database user)
+    - `CREATE DATABASE helios WITH OWNER [your login name];`  (create Helios database)
+    - `exit` (logout as the postgres user)
+    - `psql helios` (connect to the new helios database)
+    - `\l` (list databases - check helios is there)
     - `\q`
 - install RabbitMQ
     - `sudo apt install rabbitmq-server`
