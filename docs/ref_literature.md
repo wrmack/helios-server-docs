@@ -92,7 +92,7 @@ Dawid Gawel, Maciej Kosarzecki, Poorvi L. Vora, Hua Wu, and Filip Zagórski
 **[Machine-Checked Proofs of Privacy for Electronic Voting Protocols](https://ieeexplore.ieee.org/document/7958621)**    
 Véronique Cortier, Constantin Cătălin Drăgan, François Dupressoir, Benedikt Schmidt, Pierre-Yves Strub, Bogdan Warinschi
 
-**[Security Proofs for Participation Privacy, Receipt-Freeness, Ballot Privacy for the Helios Voting Scheme](https://publikationen.bibliothek.kit.edu/1000081999/16421070)**
+**[Security Proofs for Participation Privacy, Receipt-Freeness, Ballot Privacy for the Helios Voting Scheme](https://publikationen.bibliothek.kit.edu/1000081999/16421070)**    
 David Bernhard, Oksana Kulyk, Melanie Volkamer
 
 ## 2018
