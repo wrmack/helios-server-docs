@@ -1,6 +1,6 @@
-# Walk-through of installing Helios on Ubuntu 20.4 
+# Walk-through of installing Ben Adida's Helios on Ubuntu 20.10 
 
-- install VSCode (optional)
+- (optional) install VSCode or VSCodium for editing code, having an integrated terminal
 - check python3 is installed with Ubuntu and, if not, install it
     - `python3 --version`
 - install pip3
@@ -40,8 +40,7 @@
     - Select `Google People API` and `ENABLE`
 
 - download Helios code: in a browser 
-    - go to https://github.com/wrmack/helios-server
-    - change `master` to `wm-python3-django2`
+    - go to https://github.com/benadida/helios-server
     - under `Code` choose `Download ZIP`
     - once downloaded double-click the Zip arhive to unarchive it and move all to a project folder of your choice for working on (ie move code out of the Downloads folder)
 - prepare helios
@@ -53,12 +52,33 @@
         - `sudo apt install libpq-dev` (required for installation of psycopg2)
         - (in `requirements.txt` I upgraded celery to 5.0.0 and replaced pycrypto with pycryptodome for compatability with python 3.8)
         - `python3 -m pip install -r requirements.txt`
+- safe storage of secrets 
+    - optional but if your code is kept on Github this is preferable to hard-coding your Google credentials into settings.py
+    - `python3 -m pip install django-environ`    
     - create an `.env` file with stored secrets
         ```shell
             DBPWD=xxxx
             GOOGLESECRET=xxxx
             GOOGLEID=xxxx
         ```
+    - in `settings.py` insert following after `import os`
+        ```shell
+            import environ
+
+            # Read in secrets from .env file
+            env = environ.Env()
+            environ.Env.read_env()  
+            DBPWD = env('DBPWD')
+            GOOGLESECRET = env('GOOGLESECRET')
+            GOOGLEID = env('GOOGLEID')
+        ```
+    - in `settings.py`:
+        ```shell
+            # google
+            GOOGLE_CLIENT_ID = get_from_env('GOOGLE_CLIENT_ID', GOOGLEID)
+            GOOGLE_CLIENT_SECRET = get_from_env('GOOGLE_CLIENT_SECRET', GOOGLESECRET)
+        ```
+    - add `.env` to `.gitignore` so it is not uploaded to Github
 - in a separate terminal start celery
     - cd to your helios project
     - `source my-venv/bin/activate`
@@ -67,7 +87,7 @@
     - `python3 manage.py makemigrations`
     - `./reset.sh`
     - `python3 manage.py runserver`
-    - in a browser go to `127.0.0.1:8000`
+    - in a browser go to `127.0.0.1:8000` or `localhost:8000`
 
 
 

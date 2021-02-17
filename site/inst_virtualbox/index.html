@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#walk-through-of-installing-helios-on-ubuntu-204" class="md-skip">
+        <a href="#walk-through-of-installing-ben-adidas-helios-on-ubuntu-2010" class="md-skip">
           Skip to content
         </a>
       
@@ -611,9 +611,9 @@
               
                 
                 
-                <h1 id="walk-through-of-installing-helios-on-ubuntu-204">Walk-through of installing Helios on Ubuntu 20.4</h1>
+                <h1 id="walk-through-of-installing-ben-adidas-helios-on-ubuntu-2010">Walk-through of installing Ben Adida's Helios on Ubuntu 20.10</h1>
 <ul>
-<li>install VSCode (optional)</li>
+<li>(optional) install VSCode or VSCodium for editing code, having an integrated terminal</li>
 <li>check python3 is installed with Ubuntu and, if not, install it<ul>
 <li><code>python3 --version</code></li>
 </ul>
@@ -666,8 +666,7 @@
 <li>
 <p>download Helios code: in a browser </p>
 <ul>
-<li>go to <a href="https://github.com/wrmack/helios-server">https://github.com/wrmack/helios-server</a></li>
-<li>change <code>master</code> to <code>wm-python3-django2</code></li>
+<li>go to <a href="https://github.com/benadida/helios-server">https://github.com/benadida/helios-server</a></li>
 <li>under <code>Code</code> choose <code>Download ZIP</code></li>
 <li>once downloaded double-click the Zip arhive to unarchive it and move all to a project folder of your choice for working on (ie move code out of the Downloads folder)</li>
 </ul>
@@ -683,11 +682,32 @@
 <li><code>python3 -m pip install -r requirements.txt</code></li>
 </ul>
 </li>
+</ul>
+</li>
+<li>safe storage of secrets <ul>
+<li>optional but if your code is kept on Github this is preferable to hard-coding your Google credentials into settings.py</li>
+<li><code>python3 -m pip install django-environ</code>    </li>
 <li>create an <code>.env</code> file with stored secrets
     <div class="highlight"><pre><span></span><code>    <span class="nv">DBPWD</span><span class="o">=</span>xxxx
     <span class="nv">GOOGLESECRET</span><span class="o">=</span>xxxx
     <span class="nv">GOOGLEID</span><span class="o">=</span>xxxx
 </code></pre></div></li>
+<li>in <code>settings.py</code> insert following after <code>import os</code>
+    <div class="highlight"><pre><span></span><code>    import environ
+
+    <span class="c1"># Read in secrets from .env file</span>
+    <span class="nv">env</span> <span class="o">=</span> environ.Env<span class="o">()</span>
+    environ.Env.read_env<span class="o">()</span>  
+    <span class="nv">DBPWD</span> <span class="o">=</span> env<span class="o">(</span><span class="s1">&#39;DBPWD&#39;</span><span class="o">)</span>
+    <span class="nv">GOOGLESECRET</span> <span class="o">=</span> env<span class="o">(</span><span class="s1">&#39;GOOGLESECRET&#39;</span><span class="o">)</span>
+    <span class="nv">GOOGLEID</span> <span class="o">=</span> env<span class="o">(</span><span class="s1">&#39;GOOGLEID&#39;</span><span class="o">)</span>
+</code></pre></div></li>
+<li>in <code>settings.py</code>:
+    <div class="highlight"><pre><span></span><code>    <span class="c1"># google</span>
+    <span class="nv">GOOGLE_CLIENT_ID</span> <span class="o">=</span> get_from_env<span class="o">(</span><span class="s1">&#39;GOOGLE_CLIENT_ID&#39;</span>, GOOGLEID<span class="o">)</span>
+    <span class="nv">GOOGLE_CLIENT_SECRET</span> <span class="o">=</span> get_from_env<span class="o">(</span><span class="s1">&#39;GOOGLE_CLIENT_SECRET&#39;</span>, GOOGLESECRET<span class="o">)</span>
+</code></pre></div></li>
+<li>add <code>.env</code> to <code>.gitignore</code> so it is not uploaded to Github</li>
 </ul>
 </li>
 <li>in a separate terminal start celery<ul>
@@ -700,7 +720,7 @@
 <li><code>python3 manage.py makemigrations</code></li>
 <li><code>./reset.sh</code></li>
 <li><code>python3 manage.py runserver</code></li>
-<li>in a browser go to <code>127.0.0.1:8000</code></li>
+<li>in a browser go to <code>127.0.0.1:8000</code> or <code>localhost:8000</code></li>
 </ul>
 </li>
 </ul>
