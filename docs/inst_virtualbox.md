@@ -1,4 +1,4 @@
-# Walk-through of installing Ben Adida's Helios on Ubuntu 20.10 
+# Walk-through of installing Ben Adida's Helios Election System on Ubuntu 20.10 
 
 - (optional) install VSCode or VSCodium for editing code, having an integrated terminal
 - check python3 is installed with Ubuntu and, if not, install it
