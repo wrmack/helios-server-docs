@@ -4,9 +4,9 @@
 
 Heroku is a subsidiary of salesforce.com. Its servers are hosted on Amazon's EC2 cloud-computing platform.
 
-Heroku’s pricing includes a [free plan](https://www.heroku.com/pricing ) which is suitable for experimental purposes. It provides for 1 web process and 1 worker process (Celery in our case).  The Heroku Postgres database is free within a limit of 10K rows.
+When an app is deployed it runs in a container called a ‘dyno’.  There is no direct access to its filesystem.  There is more about dynos [here](https://www.heroku.com/dynos).
 
-When an app is deployed it runs in a container called a ‘dyno’.  There is no direct access to its filesystem. 
+Heroku’s pricing includes a [free plan](https://www.heroku.com/pricing ) which is suitable for experimental purposes. It provides for 1 web process and 1 worker process (Celery in our case).  The Heroku Postgres database is free within a limit of 10K rows.  There is more about the free dyno [here](https://devcenter.heroku.com/articles/free-dyno-hours).
 
 **Deployment**
 

@@ -9,6 +9,7 @@ nav:
     - Walk-through with Ubuntu: 'inst_virtualbox.md'
   - Deployment :
     - Heroku: 'deploy_heroku.md'
+    - Walk-through: 'deploy_walkthrough.md'
   - Concepts:
     - 'Verifiability' : 'con_e2ev.md'
     - 'Coercion' : 'con_coercion.md'
