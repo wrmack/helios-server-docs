@@ -14,7 +14,7 @@
     
     
       
-        <title>Admin creates an election - Helios server documentation</title>
+        <title>Walk-through - Helios server documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#election-admin-creates-an-election" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Admin creates an election
+              Walk-through
             
           </span>
         </div>
@@ -278,12 +278,14 @@
       
 
 
+  
+
 
   
-  <li class="md-nav__item md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Deployment
@@ -315,11 +317,73 @@
           
 
 
+  
 
-  <li class="md-nav__item">
-    <a href="../deploy_walkthrough/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Walk-through
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Walk-through
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-web-app-to-run-the-helios-server-on-heroku-by-using-heroku-dashboard" class="md-nav__link">
+    Create a web app to run the helios server on Heroku by using Heroku dashboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-helios-server-for-deployment-to-heroku" class="md-nav__link">
+    Preparing helios server for deployment to Heroku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-by-using-the-heroku-dashboard" class="md-nav__link">
+    Deploy by using the Heroku dashboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    Email
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -401,14 +465,12 @@
       
 
 
-  
-
 
   
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
     
     <label class="md-nav__link" for="nav-5">
       Use cases
@@ -427,90 +489,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Admin creates an election
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../use_create_election/" class="md-nav__link">
       Admin creates an election
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-election" class="md-nav__link">
-    Create election
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#election-main-page" class="md-nav__link">
-    Election main page
-  </a>
-  
-    <nav class="md-nav" aria-label="Election main page">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#questions" class="md-nav__link">
-    Questions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#voters-ballots" class="md-nav__link">
-    Voters &amp; ballots
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trustees" class="md-nav__link">
-    Trustees
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#freeze-ballot-and-open-election" class="md-nav__link">
-    Freeze ballot and open election
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -680,8 +663,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -690,50 +671,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-election" class="md-nav__link">
-    Create election
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#election-main-page" class="md-nav__link">
-    Election main page
-  </a>
-  
-    <nav class="md-nav" aria-label="Election main page">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#questions" class="md-nav__link">
-    Questions
+  <a href="#create-a-web-app-to-run-the-helios-server-on-heroku-by-using-heroku-dashboard" class="md-nav__link">
+    Create a web app to run the helios server on Heroku by using Heroku dashboard
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#voters-ballots" class="md-nav__link">
-    Voters &amp; ballots
+      
+        <li class="md-nav__item">
+  <a href="#preparing-helios-server-for-deployment-to-heroku" class="md-nav__link">
+    Preparing helios server for deployment to Heroku
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#trustees" class="md-nav__link">
-    Trustees
+      
+        <li class="md-nav__item">
+  <a href="#deploy-by-using-the-heroku-dashboard" class="md-nav__link">
+    Deploy by using the Heroku dashboard
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#freeze-ballot-and-open-election" class="md-nav__link">
-    Freeze ballot and open election
+      
+        <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    Email
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -750,101 +718,161 @@
               
                 
                 
-                <h1 id="election-admin-creates-an-election">Election admin creates an election</h1>
-<p>To create and administer an election, you will need to log in using Google, Facebook, Yahoo, or Twitter. Helios queries and retains only the basic information needed to authenticate you the next time around: your name, email address, and user ID. Helios will use this information to message you when your election requires attention.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<p>As an election administrator, you have the power to designate who can vote, when the election starts, when the election stops, and when the results are released. Other than that, you have no power beyond what voters in your election have. This is by design.<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<p>On the home page for Helios, after logging in, click on <code>create election</code>.</p>
-<h2 id="create-election">Create election</h2>
-<p>Complete the fields on the form and press <code>Next &gt;&gt;</code>.  Once the election is added it will be possible to come back and edit it up until you choose to freeze it.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Short name</td>
-<td>no spaces, will be part of the URL for your election, e.g. my-club-2010</td>
-</tr>
-<tr>
-<td>Name</td>
-<td>the pretty name for your election, e.g. My Club 2010 Election</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>appears on main page for this election / referendum</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>election / referendum; ???</td>
-</tr>
-<tr>
-<td>Use voter aliases</td>
-<td>If selected, voter identities will be replaced with aliases, e.g. "V12", in the ballot tracking center</td>
-</tr>
-<tr>
-<td>Randomize answer order</td>
-<td>enable this if you want the answers to questions to appear in random order for each voter</td>
-</tr>
-<tr>
-<td>Private?</td>
-<td>A private election is only visible to registered voters.</td>
-</tr>
-<tr>
-<td>Help email address</td>
-<td>An email address voters should contact if they need help.</td>
-</tr>
-<tr>
-<td>Voting starts at</td>
-<td>UTC date and time when voting begins</td>
-</tr>
-<tr>
-<td>Voting ends at</td>
-<td>UTC date and time when voting ends</td>
-</tr>
-</tbody>
-</table>
-<p>Pressing <code>Next &gt;&gt;</code> takes you to the main page for the election.</p>
-<h2 id="election-main-page">Election main page</h2>
-<p>There is a statement about whether this election is featured on the front page.  In order to feature elections on the front page the user field <code>admin_p</code> in the helios_auth_user database table needs to be set to True.  Connect to the database in a termimal and run the SQL query:</p>
-<div class="highlight"><pre><span></span><code>UPDATE helios_auth_user SET admin_p = &#39;t&#39; WHERE user_id = [your_user_id];
+                  <h1>Walk-through</h1>
+                
+                <p>Deploying Helios to Heroku.</p>
+<h2 id="introduction">Introduction</h2>
+<p>This walk-through uses Heroku's free tier and uses free versions of add-ons for the database, process worker and email.</p>
+<p>It assumes:</p>
+<ul>
+<li>helios server is installed locally</li>
+<li>helios server is managed through git</li>
+<li>helios server has a remote repository on Github</li>
+<li>you have created an account on Heroku and are logged in</li>
+<li>you have downloaded and installed <a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a> which we will use for accessing the database.</li>
+</ul>
+<h2 id="create-a-web-app-to-run-the-helios-server-on-heroku-by-using-heroku-dashboard">Create a web app to run the helios server on Heroku by using Heroku dashboard</h2>
+<ul>
+<li>go to <a href="https://dashboard.heroku.com">https://dashboard.heroku.com</a></li>
+<li>go to New - <strong>Create new app</strong></li>
+<li>give it a name and click <strong>Create app</strong></li>
+<li>you should now be in the "Deploy" tab</li>
+<li>for "Deployment method" select <strong>Github</strong></li>
+<li>for "Connect to Github" enter your repository name eg helios-server</li>
+<li>when Heroku has found your Github repository it will list it with a Connect button alongside</li>
+<li>click <strong>Connect</strong></li>
+<li>your app name is referred to below as <strong>APPNAME</strong> - substitute the actual name you gave it</li>
+</ul>
+<h2 id="preparing-helios-server-for-deployment-to-heroku">Preparing helios server for deployment to Heroku</h2>
+<ul>
+<li>you may go to <a href="#deploy-by-using-the-heroku-dashboard">"Deploy by using the Heroku dashboard"</a> below at any time to examine error messages and comfirm whether you need to do the following.</li>
+</ul>
+<p><strong>Secret environment variables</strong> (such as passwords)</p>
+<ul>
+<li>secrets need to be passed to Heroku as environment variables when you set up your Heroku app (so they are not visible in any files you have on Github)</li>
+<li>if you added a <code>.env</code> file and imported <code>environ</code> into <code>settings.py</code> for local development, remove them for deployment to Heroku</li>
+<li>go to the <strong>Settings</strong> tab on Heroku's dashboard page for your app and select <strong>Reveal Config Vars</strong></li>
+<li>
+<p>add your authentication credentials, eg in <code>settings.py</code> you might have:
+          <div class="highlight"><pre><span></span><code><span class="nv">GOOGLE_CLIENT_ID</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;GOOGLEID&#39;</span><span class="o">]</span>
+<span class="nv">GOOGLE_CLIENT_SECRET</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;GOOGLESECRET&#39;</span><span class="o">]</span>
 </code></pre></div>
-<p>From this page you can set up:</p>
-<ul>
-<li>the questions for voting on</li>
-<li>voters and ballots</li>
-<li>trustees</li>
-</ul>
-<h3 id="questions">Questions</h3>
-<p>For each 'question' a voter may vote for one or more 'answers'.  A question might be 'Which two candidates should be elected?' and the available answers might be similar to candidate-one, candidate-two, candidate-three, candidate-four.  You can set how many answers may be chosen and whether the results should be expressed in absolute number of votes or relative numbers of votes (percentages). You can associate a link with each answer (for example a link to further information about a candidate).</p>
-<h3 id="voters-ballots">Voters &amp; ballots</h3>
-<p>You may select one of:</p>
-<ul>
-<li>anyone can vote, a voter simply needs to log on, eg using Google authentication</li>
-<li>only the listed voters can vote</li>
-</ul>
-<p>If you choose the second option, you need to upload a list of voters contained in a csv file.</p>
-<h3 id="trustees">Trustees</h3>
-<p>A trustee uses a private key to decrypt the result of the tally.  Helios is automatically a trustee.  It is not necessary to add further trustees, but if you do, it is important they retain their secret keys.  All secret keys will be required to decrypt the result.</p>
-<h3 id="freeze-ballot-and-open-election">Freeze ballot and open election</h3>
-<p>Once you have set up the questions made your selection in the voters &amp; ballots section you can then freeze the election and open it for voting.  If you uploaded a list of voters, you can, in the Voters &amp; ballots section, send an email to all voters giving each of them their Voter ID and password.</p>
-<!-- 
+    in which case you would add the keys GOOGLEID and GOOGLESECRET as 'config vars' and enter the appropriate values for each.</p>
+<p>Make sure that in <a href="https://console.developers.google.com/apis/credentials">Google console</a> you enter the correct uris: 
+<div class="highlight"><pre><span></span><code><span class="c1"># Authorised JavaScript origins</span>
 
-See for good description:
-https://github.com/python/psf-election 
+https://APPNAME.herokuapp.com
 
--->
+<span class="c1">#Authorised redirect URIs</span>
 
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="https://heliosvoting.org/privacy">https://heliosvoting.org/privacy</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+https://APPNAME.herokuapp.com/auth/after/
+</code></pre></div></p>
 </li>
-</ol>
-</div>
+</ul>
+<p><strong>Settings</strong></p>
+<ul>
+<li>other changes in <code>settings.py</code>:<ul>
+<li>add the Heroku host to the ALLOWED_HOSTS array
+<div class="highlight"><pre><span></span><code><span class="nv">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;APPNAME.herokuapp.com&#39;</span><span class="o">]</span>
+</code></pre></div></li>
+<li>for URL_HOST add the Heroku url (it will automatically be used for the SECURE_URL_HOST)
+<div class="highlight"><pre><span></span><code><span class="nv">URL_HOST</span> <span class="o">=</span> get_from_env<span class="o">(</span><span class="s2">&quot;URL_HOST&quot;</span>, <span class="s2">&quot;https://APPNAME.herokuapp.com&quot;</span><span class="o">)</span>.rstrip<span class="o">(</span><span class="s2">&quot;/&quot;</span><span class="o">)</span>
+</code></pre></div></li>
+<li>database settings should be:
+<div class="highlight"><pre><span></span><code><span class="nv">DATABASES</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="s1">&#39;default&#39;</span>: <span class="o">{</span>
+      <span class="s1">&#39;ENGINE&#39;</span>: <span class="s1">&#39;django.db.backends.postgresql_psycopg2&#39;</span>,
+      <span class="s1">&#39;NAME&#39;</span>: <span class="s1">&#39;helios&#39;</span>,
+      <span class="s1">&#39;CONN_MAX_AGE&#39;</span>: <span class="m">600</span>,
+  <span class="o">}</span>,
+<span class="o">}</span>
+
+<span class="c1"># override if we have an env variable</span>
+<span class="k">if</span> get_from_env<span class="o">(</span><span class="s1">&#39;DATABASE_URL&#39;</span>, None<span class="o">)</span>:
+  import dj_database_url
+  DATABASES<span class="o">[</span><span class="s1">&#39;default&#39;</span><span class="o">]</span> <span class="o">=</span> dj_database_url.config<span class="o">(</span><span class="nv">conn_max_age</span><span class="o">=</span><span class="m">600</span>, <span class="nv">ssl_require</span><span class="o">=</span>True<span class="o">)</span>
+  DATABASES<span class="o">[</span><span class="s1">&#39;default&#39;</span><span class="o">][</span><span class="s1">&#39;ENGINE&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;django.db.backends.postgresql_psycopg2&#39;</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<p><strong>Celery</strong></p>
+<ul>
+<li>Celery requires a process worker - we will use CloudAMQP which is available as a Heroku add-on</li>
+<li>on the Heroku dashboard page for your app go to the <strong>Resources</strong> tab and select <strong>Find more add-ons</strong></li>
+<li>under <strong>Add-on categories</strong> go to <strong>Messaging and Queuing</strong></li>
+<li>select <strong>CloudAMQP</strong></li>
+<li>under <strong>Plans &amp; Pricing</strong> select <strong>Little Lemur</strong> (the free option) and <strong>Install CloudAMQP</strong></li>
+<li>to provision the add-on for your app enter the name of your app and click <strong>Submit Order Form</strong></li>
+<li>check it has been added by going to the <strong>Settings</strong> page  - Config Vars should now include a key CLOUDAMQP_URL</li>
+<li>on the <strong>Resources</strong> page switch on celery worker if it is not already</li>
+<li>in <code>settings.py</code> add:
+<div class="highlight"><pre><span></span><code><span class="nv">CELERY_BROKER_URL</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;CLOUDAMQP_URL&#39;</span><span class="o">]</span>
+<span class="nv">BROKER_URL</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;CLOUDAMQP_URL&#39;</span><span class="o">]</span>
+</code></pre></div></li>
+</ul>
+<p><strong>Dependencies</strong></p>
+<ul>
+<li>Heroku loads all dependencies that are in <code>requirements.txt</code></li>
+<li>if, in your local version of Helios, you loaded any dependency separately to what is in <code>requirements.txt</code> Heroku will not know about it, so put it in <code>requirements.txt</code>.</li>
+</ul>
+<p><strong>Collectstatic</strong></p>
+<ul>
+<li>by default, Heroku runs <code>python manage.py collectstatic</code> which we don't need so disable it:
+<div class="highlight"><pre><span></span><code>heroku config:set <span class="nv">DISABLE_COLLECTSTATIC</span><span class="o">=</span><span class="m">1</span> --app APPNAME
+</code></pre></div></li>
+</ul>
+<h2 id="deploy-by-using-the-heroku-dashboard">Deploy by using the Heroku dashboard</h2>
+<ul>
+<li>commit all your changes and push to Github</li>
+<li>in Heroku dashboard for your app, in the <strong>Deploy</strong> tab, if you haven't set <strong>Enable Automatic Deploys</strong>, next to <strong>Manual deploy</strong> select the branch you want to deploy and click <strong>Deploy branch</strong></li>
+<li>Heroku will attempt to install your helios server web app and it displays a log as it does this</li>
+<li>if it installs successfully Heroku will launch it</li>
+<li>click <strong>Open app</strong> at the top of the page to view your web page</li>
+<li>if launching fails, examine logs in a terminal with
+<div class="highlight"><pre><span></span><code>heroku logs --tail --app APPNAME
+</code></pre></div></li>
+<li>there will be an error message because we have not set up the Postgreslq database yet.</li>
+</ul>
+<p><strong>Database</strong></p>
+<ul>
+<li>Heroku should have attached a Postgresql database to your app and created the 'helios' database in line with your database settings in <code>settings.py</code></li>
+<li>create a Heroku shell and populate the 'helios' database
+<div class="highlight"><pre><span></span><code>heroku run bash --app APPNAME
+~ $ python manage.py makemigrations
+~ $ python manage.py migrate
+~ $ <span class="nb">exit</span>
+</code></pre></div></li>
+<li>check database tables have been created:
+<div class="highlight"><pre><span></span><code>heroku pg:psql --app APPNAME
+APPNAME::DATABASE<span class="o">=</span>&gt; <span class="se">\d</span>
+APPNAME::DATABASE<span class="o">=</span>&gt; <span class="se">\q</span>
+</code></pre></div></li>
+<li>(optional) open your app again, or refresh it if it is already open in your browser - it should run this time, but you should be able to create an election but cannot yet send emails.</li>
+</ul>
+<h2 id="email">Email</h2>
+<ul>
+<li>we need to set up an add-on that will take care of sending emails to voters - Heroku has a couple of third party add-ons that do this</li>
+<li>on the Heroku dashboard page for your app go to the <strong>Resources</strong> tab and select <strong>Find more add-ons</strong></li>
+<li>under <strong>Add-on categories</strong> go to <strong>Email/SMS</strong></li>
+<li>select <strong>Mailgun</strong> (or Sendgrid, Trustifi, CloudMailin)</li>
+<li>under <strong>Plans &amp; Pricing</strong> select <strong>Starter</strong> (the free option) and <strong>Install Mailgun</strong></li>
+<li>to provision the add-on for your app enter the name of your app and click <strong>Submit Order Form</strong></li>
+<li>check it has been added by going to the <strong>Settings</strong> page  - Config Vars should now include a number of keys relating to Mailgun</li>
+<li>add the following to settings.py
+<div class="highlight"><pre><span></span><code><span class="nv">EMAIL_HOST</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;MAILGUN_SMTP_SERVER&#39;</span><span class="o">]</span>
+<span class="nv">EMAIL_HOST_USER</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;MAILGUN_SMTP_LOGIN&#39;</span><span class="o">]</span>
+<span class="nv">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;MAILGUN_SMTP_PASSWORD&#39;</span><span class="o">]</span>
+<span class="nv">EMAIL_PORT</span> <span class="o">=</span> <span class="m">587</span>
+<span class="nv">EMAIL_USE_TLS</span> <span class="o">=</span> True
+</code></pre></div></li>
+<li>Mailgun places starting users in sandbox accounts which require email receipients to verify their email addresses (you can send an email to yourself without verification)</li>
+<li>to add recipients, on the Heroku dashboard page for your app go to the <strong>Resources</strong> tab and click on the Mailgun add-on </li>
+<li>on the Mailgun dashbord, select the sandbox account</li>
+<li>on the right there is a side-box where it is possible to add recipients</li>
+<li>after a recipient is added, a confirmation email is automatically sent to the recipient who has to click an "I agree" button</li>
+<li>you should now be able to send emails to yourself and verified recipients from within Helios</li>
+</ul>
                 
               
               
@@ -863,7 +891,7 @@ https://github.com/python/psf-election
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../con_helios/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../deploy_heroku/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -872,19 +900,19 @@ https://github.com/python/psf-election
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Helios
+                Heroku
               </div>
             </div>
           </a>
         
         
-          <a href="../use_admin_tallies_ballots/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../con_e2ev/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Admin tallies ballots
+                Verifiability
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

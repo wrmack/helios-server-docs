@@ -350,6 +350,19 @@
   </li>
 
         
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../deploy_walkthrough/" class="md-nav__link">
+      Walk-through
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -658,8 +671,8 @@
                 <h1 id="heroku">Heroku</h1>
 <p><strong>About Heroku</strong></p>
 <p>Heroku is a subsidiary of salesforce.com. Its servers are hosted on Amazon's EC2 cloud-computing platform.</p>
-<p>Heroku’s pricing includes a <a href="https://www.heroku.com/pricing">free plan</a> which is suitable for experimental purposes. It provides for 1 web process and 1 worker process (Celery in our case).  The Heroku Postgres database is free within a limit of 10K rows.</p>
-<p>When an app is deployed it runs in a container called a ‘dyno’.  There is no direct access to its filesystem. </p>
+<p>When an app is deployed it runs in a container called a ‘dyno’.  There is no direct access to its filesystem.  There is more about dynos <a href="https://www.heroku.com/dynos">here</a>.</p>
+<p>Heroku’s pricing includes a <a href="https://www.heroku.com/pricing">free plan</a> which is suitable for experimental purposes. It provides for 1 web process and 1 worker process (Celery in our case).  The Heroku Postgres database is free within a limit of 10K rows.  There is more about the free dyno <a href="https://devcenter.heroku.com/articles/free-dyno-hours">here</a>.</p>
 <p><strong>Deployment</strong></p>
 <p>There are options for deploying an app.  One option is to link to a Github repository so that a push to Github triggers a build and deployment.</p>
 <p><strong>Configuration</strong></p>
@@ -713,13 +726,13 @@ worker: celery worker -A helios -l info
           </a>
         
         
-          <a href="../con_e2ev/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../deploy_walkthrough/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Verifiability
+                Walk-through
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
