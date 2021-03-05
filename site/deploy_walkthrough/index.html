@@ -745,6 +745,10 @@
 </ul>
 <h2 id="preparing-helios-server-for-deployment-to-heroku">Preparing helios server for deployment to Heroku</h2>
 <ul>
+<li>Heroku requires a Procfile - create a file <code>Procfile</code> with the following content
+<div class="highlight"><pre><span></span><code>web: gunicorn wsgi:application -b <span class="m">0</span>.0.0.0:<span class="nv">$PORT</span> -w <span class="m">8</span>
+worker: celery worker --app helios --events --beat --concurrency <span class="m">1</span>
+</code></pre></div></li>
 <li>you may go to <a href="#deploy-by-using-the-heroku-dashboard">"Deploy by using the Heroku dashboard"</a> below at any time to examine error messages and comfirm whether you need to do the following.</li>
 </ul>
 <p><strong>Secret environment variables</strong> (such as passwords)</p>

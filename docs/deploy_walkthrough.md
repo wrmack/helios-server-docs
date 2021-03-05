@@ -27,6 +27,11 @@ It assumes:
 
 ## Preparing helios server for deployment to Heroku
 
+- Heroku requires a Procfile - create a file `Procfile` with the following content
+```shell
+web: gunicorn wsgi:application -b 0.0.0.0:$PORT -w 8
+worker: celery worker --app helios --events --beat --concurrency 1
+```
 - you may go to ["Deploy by using the Heroku dashboard"](#deploy-by-using-the-heroku-dashboard) below at any time to examine error messages and comfirm whether you need to do the following.
 
 **Secret environment variables** (such as passwords)
