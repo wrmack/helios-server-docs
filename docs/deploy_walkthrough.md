@@ -168,6 +168,8 @@ EMAIL_USE_TLS = True
 - on the Mailgun dashbord, select the sandbox account
 - on the right there is a side-box where it is possible to add recipients
 - after a recipient is added, a confirmation email is automatically sent to the recipient who has to click an "I agree" button
+- following the changes to settings.py, commit and push to Github
+- go to the Heroku dashboard and, under Deploy, do a manual deploy if you have not set it up for automatic deploy
 - you should now be able to send emails to yourself and verified recipients from within Helios
 
 
