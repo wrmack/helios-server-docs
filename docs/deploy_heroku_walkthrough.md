@@ -13,6 +13,8 @@ It assumes:
 - you have created an account on Heroku and are logged in
 - you have downloaded and installed [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) which we will use for accessing the database.
 
+Caveat: this deployment has not been tested with a real election.  It may help to get you started.
+
 ## Create a web app to run the helios server on Heroku by using Heroku dashboard
 
 - go to [https://dashboard.heroku.com](https://dashboard.heroku.com)
@@ -155,7 +157,7 @@ APPNAME::DATABASE=> \q
 - under **Plans & Pricing** select **Starter** (the free option) and **Install Mailgun**
 - to provision the add-on for your app enter the name of your app and click **Submit Order Form**
 - check it has been added by going to the **Settings** page  - Config Vars should now include a number of keys relating to Mailgun
-- add the following to settings.py
+- your email settings in settings.py should be:
 ```shell
 EMAIL_HOST = os.environ['MAILGUN_SMTP_SERVER']
 EMAIL_HOST_USER = os.environ['MAILGUN_SMTP_LOGIN']
@@ -163,8 +165,8 @@ EMAIL_HOST_PASSWORD = os.environ['MAILGUN_SMTP_PASSWORD']
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 ```
-- Mailgun places starting users in sandbox accounts which require email receipients to verify their email addresses (you can send an email to yourself without verification)
-- to add recipients, on the Heroku dashboard page for your app go to the **Resources** tab and click on the Mailgun add-on 
+- Mailgun places starting users in sandbox accounts which require email recipients to verify their email addresses (you can send an email to yourself without verification)
+- to add recipients, on the Heroku dashboard page for your app go to the **Resources** tab and click on the Mailgun add-on which will take you to your account on Mailgun
 - on the Mailgun dashbord, select the sandbox account
 - on the right there is a side-box where it is possible to add recipients
 - after a recipient is added, a confirmation email is automatically sent to the recipient who has to click an "I agree" button

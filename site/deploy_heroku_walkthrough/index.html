@@ -14,7 +14,7 @@
     
     
       
-        <title>Walk-through - Helios server documentation</title>
+        <title>Heroku walk-through - Helios server documentation</title>
       
     
     
@@ -94,7 +94,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Walk-through
+              Heroku walk-through
             
           </span>
         </div>
@@ -326,12 +326,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Walk-through
+        Heroku walk-through
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Walk-through
+      Heroku walk-through
     </a>
     
       
@@ -384,6 +384,19 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../deploy_aws_walkthrough/" class="md-nav__link">
+      AWS walk-through
+    </a>
   </li>
 
         
@@ -718,7 +731,7 @@
               
                 
                 
-                  <h1>Walk-through</h1>
+                  <h1>Heroku walk-through</h1>
                 
                 <p>Deploying Helios to Heroku.</p>
 <h2 id="introduction">Introduction</h2>
@@ -731,6 +744,7 @@
 <li>you have created an account on Heroku and are logged in</li>
 <li>you have downloaded and installed <a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a> which we will use for accessing the database.</li>
 </ul>
+<p>Caveat: this deployment has not been tested with a real election.  It may help to get you started.</p>
 <h2 id="create-a-web-app-to-run-the-helios-server-on-heroku-by-using-heroku-dashboard">Create a web app to run the helios server on Heroku by using Heroku dashboard</h2>
 <ul>
 <li>go to <a href="https://dashboard.heroku.com">https://dashboard.heroku.com</a></li>
@@ -863,15 +877,15 @@ APPNAME::DATABASE<span class="o">=</span>&gt; <span class="se">\q</span>
 <li>under <strong>Plans &amp; Pricing</strong> select <strong>Starter</strong> (the free option) and <strong>Install Mailgun</strong></li>
 <li>to provision the add-on for your app enter the name of your app and click <strong>Submit Order Form</strong></li>
 <li>check it has been added by going to the <strong>Settings</strong> page  - Config Vars should now include a number of keys relating to Mailgun</li>
-<li>add the following to settings.py
+<li>your email settings in settings.py should be:
 <div class="highlight"><pre><span></span><code><span class="nv">EMAIL_HOST</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;MAILGUN_SMTP_SERVER&#39;</span><span class="o">]</span>
 <span class="nv">EMAIL_HOST_USER</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;MAILGUN_SMTP_LOGIN&#39;</span><span class="o">]</span>
 <span class="nv">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> os.environ<span class="o">[</span><span class="s1">&#39;MAILGUN_SMTP_PASSWORD&#39;</span><span class="o">]</span>
 <span class="nv">EMAIL_PORT</span> <span class="o">=</span> <span class="m">587</span>
 <span class="nv">EMAIL_USE_TLS</span> <span class="o">=</span> True
 </code></pre></div></li>
-<li>Mailgun places starting users in sandbox accounts which require email receipients to verify their email addresses (you can send an email to yourself without verification)</li>
-<li>to add recipients, on the Heroku dashboard page for your app go to the <strong>Resources</strong> tab and click on the Mailgun add-on </li>
+<li>Mailgun places starting users in sandbox accounts which require email recipients to verify their email addresses (you can send an email to yourself without verification)</li>
+<li>to add recipients, on the Heroku dashboard page for your app go to the <strong>Resources</strong> tab and click on the Mailgun add-on which will take you to your account on Mailgun</li>
 <li>on the Mailgun dashbord, select the sandbox account</li>
 <li>on the right there is a side-box where it is possible to add recipients</li>
 <li>after a recipient is added, a confirmation email is automatically sent to the recipient who has to click an "I agree" button</li>
@@ -912,13 +926,13 @@ APPNAME::DATABASE<span class="o">=</span>&gt; <span class="se">\q</span>
           </a>
         
         
-          <a href="../con_e2ev/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../deploy_aws_walkthrough/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Verifiability
+                AWS walk-through
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
