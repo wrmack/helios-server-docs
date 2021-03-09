@@ -9,6 +9,7 @@ AWS provides a large range of different services.  This deployment uses the foll
 - Elastic IP Address, which provides a persistent IP address (the IP address associated with an EC2 instance may change if the instance is stopped and restarted)
 - Route 53 for obtaining a domain name (required for setting up https)
 - Simple Email Service, or SES, for sending emails 
+- Identity and Access Management, or IAM, for obtaining keys for programmatic access to the SES API
 
 All of these services are in the free tier except for a domain name which costs $12 USD per year for a .com name.  The free tier includes services which are always free and services which are only free for the first 12 months.  The most expensive service of the above is the EC2 instance which is free for 12 months.  Once outside the free tier's 12 month period if you are paying on demand you might consider stopping the instance when you are not using it (eg if you are only using it for development purposes).  Data persists provided the EBS remains attached.
 
@@ -69,8 +70,9 @@ Filesystem      Size  Used Avail Use% Mounted on
 rsync -av -e "ssh -i path_to_keypair.pem" path_to/helios-server-master  ec2-user@elastic_ip_address:/home/ec2-user
 ```
 
-## Install python, postgresql, helios requirements, rabbitmq, 
+## Install python, postgresql, helios requirements, rabbitmq 
 
+- do the following:
 ```
 # ssh into your instance (if not already in it) 
 ssh -i path_to_keypair.pem ec2-user@elastic_ip_address
@@ -139,7 +141,7 @@ ListenStream=/run/gunicorn.sock
 [Install]      
 WantedBy=sockets.target
 ```
-- create etc/systemd/system/gunicorn.service
+- create /etc/systemd/system/gunicorn.service
 ```
 sudo nano /etc/systemd/system/gunicorn.service
 ```
@@ -198,17 +200,17 @@ http {
     include             /etc/nginx/mime.types;
     default_type        application/octet-stream;
 
-    include /etc/nginx/conf.d/*.conf;
-    include /etc/nginx/sites-enabled/*;   
+    include            /etc/nginx/conf.d/*.conf;
+    include            /etc/nginx/sites-enabled/*;   
 
     server {
-        listen       80;
-        listen       [::]:80;
-        server_name  _;
-        root         /usr/share/nginx/html;
+        listen         80;
+        listen         [::]:80;
+        server_name    _;
+        root           /usr/share/nginx/html;
 
         # Load configuration files for the default server block.
-        include /etc/nginx/default.d/*.conf;
+        include        /etc/nginx/default.d/*.conf;
 
         error_page 404 /404.html;
             location = /40x.html {
@@ -231,13 +233,13 @@ sudo nano /etc/nginx/sites-available/helios
 - content of helios (replace your_elastic_ip with your own)
 ```
 server {
-    listen 80;
-    server_name your_elastic_ip;
+    listen        80;
+    server_name   your_elastic_ip;
 
-    location = /favicon.ico { access_log off; log_not_found off; }
+    location =    /favicon.ico { access_log off; log_not_found off; }
 
     location / {
-    proxy_pass http://unix:/run/gunicorn.sock;
+      proxy_pass http://unix:/run/gunicorn.sock;
     }
 }
 ```
@@ -267,7 +269,7 @@ sudo systemctl start nginx
 ```
 - in your browser go to http://your_elastic_ip_address
 - it will not be possible to log in because we have not yet set up Google authentication which requires SSL
-- options for viewing error messages:
+- options for troubleshooting and viewing error messages:
 ```
 sudo nginx -t  # Checks configuration of Nginx
 sudo systemctl status nginx.service
@@ -293,16 +295,15 @@ sudo journalctl -xe
 - update /etc/nginx/sites-available/helios to automatically redirect http requests to https and add a server block for https (replace your_domain_name with your own one - there are four):
 ```shell
 server {
-  listen 80;
-  server_name your_domain_name;
-  return 301 https://$host$request_uri;    # Causes http to redirect to https
+  listen        80;
+  server_name   your_domain_name;
+  return        301 https://$host$request_uri;    # Causes http to redirect to https
 }
 
 server {
    listen       443 ssl http2;
    listen       [::]:443 ssl http2;
    server_name  your_domain_name;
-   #root         /usr/share/nginx/html;
 
    ssl_certificate "/etc/letsencrypt/live/your_domain_name/cert.pem";
    ssl_certificate_key "/etc/letsencrypt/live/your_domain_name/privkey.pem";
@@ -387,10 +388,10 @@ sudo systemctl restart nginx
 - to create a user who has access, go to the AWS service **IAM** (in the drop-down list of services under **Security, Identity & Compliance**) 
 - in the left side-bar select **Users** then click the blue button **Add user**
 - provide a user name and select **Programmatic access**
-- select **Attach existing policies directly** then search for **SES** and select **AmazonSESFUllAccess**
+- select **Attach existing policies directly** then search for **SES** and select **AmazonSESFullAccess**
 - (optional) add a tag
 - review and click blue button **Create user**
-- Important: record the **Access key ID** and **Secret access key**
+- important: record the **Access key ID** and **Secret access key**
 - in your .env file add 
 ```
 AWS_SES_ACCESS_KEY_ID=your_access_key_id
@@ -428,4 +429,4 @@ sudo systemctl daemon-reload
 sudo systemctl restart gunicorn.service
 sudo systemctl restart nginx
 ```
-- in your browser go to http://your_domain_name 
+- in your browser go to https://your_domain_name 
