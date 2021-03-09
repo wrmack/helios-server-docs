@@ -381,7 +381,7 @@
       
         <li class="md-nav__item">
   <a href="#install-python-postgresql-helios-requirements-rabbitmq" class="md-nav__link">
-    Install python, postgresql, helios requirements, rabbitmq,
+    Install python, postgresql, helios requirements, rabbitmq
   </a>
   
 </li>
@@ -748,7 +748,7 @@
       
         <li class="md-nav__item">
   <a href="#install-python-postgresql-helios-requirements-rabbitmq" class="md-nav__link">
-    Install python, postgresql, helios requirements, rabbitmq,
+    Install python, postgresql, helios requirements, rabbitmq
   </a>
   
 </li>
@@ -826,6 +826,7 @@
 <li>Elastic IP Address, which provides a persistent IP address (the IP address associated with an EC2 instance may change if the instance is stopped and restarted)</li>
 <li>Route 53 for obtaining a domain name (required for setting up https)</li>
 <li>Simple Email Service, or SES, for sending emails </li>
+<li>Identity and Access Management, or IAM, for obtaining keys for programmatic access to the SES API</li>
 </ul>
 <p>All of these services are in the free tier except for a domain name which costs $12 USD per year for a .com name.  The free tier includes services which are always free and services which are only free for the first 12 months.  The most expensive service of the above is the EC2 instance which is free for 12 months.  Once outside the free tier's 12 month period if you are paying on demand you might consider stopping the instance when you are not using it (eg if you are only using it for development purposes).  Data persists provided the EBS remains attached.</p>
 <p>Other options might include:</p>
@@ -884,7 +885,9 @@ Filesystem      Size  Used Avail Use% Mounted on
 <div class="highlight"><pre><span></span><code>rsync -av -e <span class="s2">&quot;ssh -i path_to_keypair.pem&quot;</span> path_to/helios-server-master  ec2-user@elastic_ip_address:/home/ec2-user
 </code></pre></div></li>
 </ul>
-<h2 id="install-python-postgresql-helios-requirements-rabbitmq">Install python, postgresql, helios requirements, rabbitmq,</h2>
+<h2 id="install-python-postgresql-helios-requirements-rabbitmq">Install python, postgresql, helios requirements, rabbitmq</h2>
+<ul>
+<li>do the following:
 <div class="highlight"><pre><span></span><code># ssh into your instance (if not already in it) 
 ssh -i path_to_keypair.pem ec2-user@elastic_ip_address
 
@@ -925,7 +928,8 @@ python3 manage.py migrate              # Initialise the helios database
 
 # start celery (still in venv environment)
 celery -A helios worker -l INFO
-</code></pre></div>
+</code></pre></div></li>
+</ul>
 <h2 id="nginx">Nginx</h2>
 <ul>
 <li>if you wish to leave celery running then open another termimal and 
@@ -948,7 +952,7 @@ ListenStream=/run/gunicorn.sock
 WantedBy=sockets.target
 </code></pre></div></li>
 <li>
-<p>create etc/systemd/system/gunicorn.service
+<p>create /etc/systemd/system/gunicorn.service
 <div class="highlight"><pre><span></span><code>sudo nano /etc/systemd/system/gunicorn.service
 </code></pre></div></p>
 </li>
@@ -1007,17 +1011,17 @@ http {
     include             /etc/nginx/mime.types;
     default_type        application/octet-stream;
 
-    include /etc/nginx/conf.d/*.conf;
-    include /etc/nginx/sites-enabled/*;   
+    include            /etc/nginx/conf.d/*.conf;
+    include            /etc/nginx/sites-enabled/*;   
 
     server {
-        listen       80;
-        listen       [::]:80;
-        server_name  _;
-        root         /usr/share/nginx/html;
+        listen         80;
+        listen         [::]:80;
+        server_name    _;
+        root           /usr/share/nginx/html;
 
         # Load configuration files for the default server block.
-        include /etc/nginx/default.d/*.conf;
+        include        /etc/nginx/default.d/*.conf;
 
         error_page 404 /404.html;
             location = /40x.html {
@@ -1038,13 +1042,13 @@ http {
 </code></pre></div></li>
 <li>content of helios (replace your_elastic_ip with your own)
 <div class="highlight"><pre><span></span><code>server {
-    listen 80;
-    server_name your_elastic_ip;
+    listen        80;
+    server_name   your_elastic_ip;
 
-    location = /favicon.ico { access_log off; log_not_found off; }
+    location =    /favicon.ico { access_log off; log_not_found off; }
 
     location / {
-    proxy_pass http://unix:/run/gunicorn.sock;
+      proxy_pass http://unix:/run/gunicorn.sock;
     }
 }
 </code></pre></div></li>
@@ -1071,7 +1075,7 @@ sudo systemctl start nginx
 </code></pre></div></li>
 <li>in your browser go to <a href="http://your_elastic_ip_address">http://your_elastic_ip_address</a></li>
 <li>it will not be possible to log in because we have not yet set up Google authentication which requires SSL</li>
-<li>options for viewing error messages:
+<li>options for troubleshooting and viewing error messages:
 <div class="highlight"><pre><span></span><code>sudo nginx -t  # Checks configuration of Nginx
 sudo systemctl status nginx.service
 sudo cat /var/log/nginx/error.log
@@ -1097,16 +1101,15 @@ sudo journalctl -xe
 </li>
 <li>update /etc/nginx/sites-available/helios to automatically redirect http requests to https and add a server block for https (replace your_domain_name with your own one - there are four):
 <div class="highlight"><pre><span></span><code>server <span class="o">{</span>
-  listen <span class="m">80</span><span class="p">;</span>
-  server_name your_domain_name<span class="p">;</span>
-  <span class="k">return</span> <span class="m">301</span> https://<span class="nv">$host$request_uri</span><span class="p">;</span>    <span class="c1"># Causes http to redirect to https</span>
+  listen        <span class="m">80</span><span class="p">;</span>
+  server_name   your_domain_name<span class="p">;</span>
+  <span class="k">return</span>        <span class="m">301</span> https://<span class="nv">$host$request_uri</span><span class="p">;</span>    <span class="c1"># Causes http to redirect to https</span>
 <span class="o">}</span>
 
 server <span class="o">{</span>
    listen       <span class="m">443</span> ssl http2<span class="p">;</span>
    listen       <span class="o">[</span>::<span class="o">]</span>:443 ssl http2<span class="p">;</span>
    server_name  your_domain_name<span class="p">;</span>
-   <span class="c1">#root         /usr/share/nginx/html;</span>
 
    ssl_certificate <span class="s2">&quot;/etc/letsencrypt/live/your_domain_name/cert.pem&quot;</span><span class="p">;</span>
    ssl_certificate_key <span class="s2">&quot;/etc/letsencrypt/live/your_domain_name/privkey.pem&quot;</span><span class="p">;</span>
@@ -1185,10 +1188,10 @@ sudo systemctl restart nginx
 <li>to create a user who has access, go to the AWS service <strong>IAM</strong> (in the drop-down list of services under <strong>Security, Identity &amp; Compliance</strong>) </li>
 <li>in the left side-bar select <strong>Users</strong> then click the blue button <strong>Add user</strong></li>
 <li>provide a user name and select <strong>Programmatic access</strong></li>
-<li>select <strong>Attach existing policies directly</strong> then search for <strong>SES</strong> and select <strong>AmazonSESFUllAccess</strong></li>
+<li>select <strong>Attach existing policies directly</strong> then search for <strong>SES</strong> and select <strong>AmazonSESFullAccess</strong></li>
 <li>(optional) add a tag</li>
 <li>review and click blue button <strong>Create user</strong></li>
-<li>Important: record the <strong>Access key ID</strong> and <strong>Secret access key</strong></li>
+<li>important: record the <strong>Access key ID</strong> and <strong>Secret access key</strong></li>
 <li>in your .env file add 
 <div class="highlight"><pre><span></span><code>AWS_SES_ACCESS_KEY_ID=your_access_key_id
 AWS_SES_SECRET_ACCESS_KEY=your_secret_access_key
@@ -1222,7 +1225,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart gunicorn.service
 sudo systemctl restart nginx
 </code></pre></div></li>
-<li>in your browser go to <a href="http://your_domain_name">http://your_domain_name</a> </li>
+<li>in your browser go to <a href="https://your_domain_name">https://your_domain_name</a> </li>
 </ul>
                 
               
