@@ -11,10 +11,14 @@ Warwick McNaughton's
 
 [Helios Voting Google Group](https://groups.google.com/forum/#!forum/helios-voting) 
 
-**Installation:**
-
-Follow the installation guide in the left side-bar.
-
 **Motivation**
 
-Helios is an important milestone in the development of secure online voting.  As someone who has is involved in running elections this is something I am keen to see being progressed. If people are going to run elections online it is important they use the most secure systems available. Hopefully this documentation helps to make Helios more accessible for those wishing to deploy Helios.  
+Helios is an important milestone in the development of secure online voting.  As someone who is involved in running elections at a local government level this is something I am keen to see being progressed. If people are going to run elections online it is important they use the most secure systems available. The motivation for creating this documentation is to make Helios more accessible for those wishing to deploy Helios.  It is based on my own exploration of Helios and does not purport to be official documentation.
+
+**Source**
+
+The documentation source code is on Github: [https://github.com/wrmack/helios-server-docs](https://github.com/wrmack/helios-server-docs)
+
+Please leave any comments for improvements under Issues.
+
+Warwick
