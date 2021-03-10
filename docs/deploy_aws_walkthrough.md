@@ -2,7 +2,7 @@ Deploying Helios to AWS (Amazon Web Services)
 
 ## Introduction
 
-AWS provides a large range of different services.  This deployment uses the following services:
+AWS provides a large range of services.  This deployment uses the following services:
 
 - Elastic Compute, or EC2, which provides a virtual server instance
 - Elastic Block Store, or EBS, which provides the 'hard drive' for the server instance

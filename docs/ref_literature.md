@@ -61,7 +61,7 @@ Oksana Kulyk, Vanessa Teague, and Melanie Volkamer
 Véronique Cortier, David Galindo, Stéphane Glondu and Malika Izabachène
 
 ## 2016
-**[Internet voting with Helios](https://pdfs.semanticscholar.org/84d2/477c92d054ca02cdcd79c7f6480b8984a53f.pdf?_ga=2.145867508.194133291.1556955935-1456367824.1555042003)**  
+**[Internet voting with Helios](http://www.uclouvain.be/crypto/services/download/publications.pdf.9f0ecdd41f6c72bc.636831312e706466.pdf)**  
 Olivier Pereira  
 *Chapter in: Feng Hao and Peter Y. A. Ryan (Eds.), [Real-World Electronic Voting: Design, Analysis and Deployment](https://www.dcs.warwick.ac.uk/~fenghao/index.php?page=book), 2016*
 
