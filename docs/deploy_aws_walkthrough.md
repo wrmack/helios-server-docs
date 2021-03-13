@@ -430,3 +430,31 @@ sudo systemctl restart gunicorn.service
 sudo systemctl restart nginx
 ```
 - in your browser go to https://your_domain_name 
+
+## Deamonise Celery to start automatically
+
+- create /etc/systemd/system/celery.service
+```
+sudo nano /etc/systemd/system/celery.service
+```
+- content of celery.service:
+```
+[Unit]
+Description=Celery Service
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/helios-server-master
+ExecStart=/home/ec2-user/helios-server-master/venv/bin/celery -A helios worker -l INFO
+
+[Install]
+WantedBy=multi-user.target
+```
+- then
+```
+sudo systemctl daemon-reload          # Get systemd to recognise celery.service
+sudo systemctl enable celery.service  # Get celery.servce to run whenver rebooted
+sudo systemctl start celery.service   # Start Celery
+```
