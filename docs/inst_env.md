@@ -15,14 +15,14 @@ If not already installed:
 
 then:
 
-* download helios-server (usually from the master branch, however these instructions are currently for the wm-upgrade-python3 branch until it is merged into the master branch)
+* download helios-server 
 
 * cd into the helios-server directory
 
 * create a virtual environment:
 
 ```
-python -m venv venv  
+python3 -m venv venv  
 ```
 
 * activate the virtual environment:
@@ -35,7 +35,7 @@ source venv/bin/activate
 * install dependency requirements:
 
 ```
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 

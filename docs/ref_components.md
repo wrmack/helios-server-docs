@@ -19,7 +19,7 @@ The helios app presents all pages relating to an election. It holds the list of 
 The helios_auth app handles authentication. 
 
 ### Voting booth
-When a voter clicks on the button to vote in the chosen election, the server presents the voter with a page which is updated through javascript provided with the page.  There are not further network requests to the server until the voter decides to cast their vote.  The voting booth is decoupled from the server.
+Once an admin has uploaded a csv file of voters the admin will cause an email to be sent to voters which contains their login name and password and an url to the election.  When a voter clicks on the url the server presents the voter with the voting booth which is updated by javascript as the voter works through their voting selections.  The vote is encrypted in the browser.  There are no further network requests to the server until the voter decides to cast their vote.  The voting booth is decoupled from the server.
 
 
 
