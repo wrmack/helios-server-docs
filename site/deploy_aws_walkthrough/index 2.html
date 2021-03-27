@@ -1,0 +1,1348 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
+    
+    
+      
+        <title>AWS walk-through - Helios server documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.75751829.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        <script async defer data-website-id="39eeb5ee-6305-44c3-8df5-224310ef89be" src="https://umami.wrmack.com/umami.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Helios server documentation" class="md-header-nav__button md-logo" aria-label="Helios server documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Helios server documentation
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              AWS walk-through
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Helios server documentation" class="md-nav__button md-logo" aria-label="Helios server documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Helios server documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    
+    <label class="md-nav__link" for="nav-2">
+      Installation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../inst_env/" class="md-nav__link">
+      Environment essentials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../inst_auth/" class="md-nav__link">
+      Setup authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../inst_django/" class="md-nav__link">
+      Prepare Django
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../inst_dev/" class="md-nav__link">
+      Local development
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../inst_virtualbox/" class="md-nav__link">
+      Walk-through with Ubuntu
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+
+  
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Deployment
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Deployment" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../deploy_heroku/" class="md-nav__link">
+      Heroku
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../deploy_heroku_walkthrough/" class="md-nav__link">
+      Heroku walk-through
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        AWS walk-through
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      AWS walk-through
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-ec2-instance" class="md-nav__link">
+    Create an EC2 instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-helios" class="md-nav__link">
+    Upload Helios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-python-postgresql-helios-requirements-rabbitmq" class="md-nav__link">
+    Install python, postgresql, helios requirements, rabbitmq
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-settingspy" class="md-nav__link">
+    Update settings.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-site-loads-1" class="md-nav__link">
+    Check if site loads - 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-site-to-https" class="md-nav__link">
+    Convert site to https
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-site-loads-2" class="md-nav__link">
+    Check if site loads - 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-email" class="md-nav__link">
+    Set up email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-site-loads-3" class="md-nav__link">
+    Check if site loads - 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deamonise-celery-to-start-automatically" class="md-nav__link">
+    Deamonise Celery to start automatically
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    
+    <label class="md-nav__link" for="nav-4">
+      Concepts
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Concepts" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../con_e2ev/" class="md-nav__link">
+      Verifiability
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../con_coercion/" class="md-nav__link">
+      Coercion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../con_helios/" class="md-nav__link">
+      Helios
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+    
+    <label class="md-nav__link" for="nav-5">
+      Use cases
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Use cases" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Use cases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../use_create_election/" class="md-nav__link">
+      Admin creates an election
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../use_admin_tallies_ballots/" class="md-nav__link">
+      Admin tallies ballots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../use_register_voter/" class="md-nav__link">
+      Voter registers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../use_voter_votes/" class="md-nav__link">
+      Voter votes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+    
+    <label class="md-nav__link" for="nav-6">
+      Reference
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Reference" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../ref_terms/" class="md-nav__link">
+      Terms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../ref_components/" class="md-nav__link">
+      Components
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../ref_models/" class="md-nav__link">
+      Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../ref_literature/" class="md-nav__link">
+      Academic papers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../faq_faq1/" class="md-nav__link">
+      FAQs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../acknowledgements/" class="md-nav__link">
+      Acknowledgements
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-ec2-instance" class="md-nav__link">
+    Create an EC2 instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-helios" class="md-nav__link">
+    Upload Helios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-python-postgresql-helios-requirements-rabbitmq" class="md-nav__link">
+    Install python, postgresql, helios requirements, rabbitmq
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-settingspy" class="md-nav__link">
+    Update settings.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-site-loads-1" class="md-nav__link">
+    Check if site loads - 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-site-to-https" class="md-nav__link">
+    Convert site to https
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-site-loads-2" class="md-nav__link">
+    Check if site loads - 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-email" class="md-nav__link">
+    Set up email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-site-loads-3" class="md-nav__link">
+    Check if site loads - 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deamonise-celery-to-start-automatically" class="md-nav__link">
+    Deamonise Celery to start automatically
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>AWS walk-through</h1>
+                
+                <p>Deploying Helios to AWS (Amazon Web Services)</p>
+<h2 id="introduction">Introduction</h2>
+<p>AWS provides a large range of services.  This deployment uses the following services:</p>
+<ul>
+<li>Elastic Compute, or EC2, which provides a virtual server instance</li>
+<li>Elastic Block Store, or EBS, which provides the 'hard drive' for the server instance</li>
+<li>Elastic IP Address, which provides a persistent IP address (the IP address associated with an EC2 instance may change if the instance is stopped and restarted)</li>
+<li>Route 53 for obtaining a domain name (required for setting up https)</li>
+<li>Simple Email Service, or SES, for sending emails </li>
+<li>Identity and Access Management, or IAM, for obtaining keys for programmatic access to the SES API</li>
+</ul>
+<p>All of these services are in the free tier except for a domain name which costs $12 USD per year for a .com name.  The free tier includes services which are always free and services which are only free for the first 12 months.  The most expensive service of the above is the EC2 instance which is free for 12 months.  Once outside the free tier's 12 month period if you are paying on demand you might consider stopping the instance when you are not using it (eg if you are only using it for development purposes).  Data persists provided the EBS remains attached.</p>
+<p>Other options might include:</p>
+<ul>
+<li>Lightsail, instead of EC2, which provides an easier setup process and has an option for Django framworks</li>
+<li>Relational Database Service, or RDS, for providing a postgresql database (our deployment will simply install postgresql on the EC2 instance)</li>
+</ul>
+<p>This deployment assumes:</p>
+<ul>
+<li>you have created an account on AWS and are logged into the management console</li>
+<li>you have set up authentication for Google OAuth (to allow logging in to Helios)</li>
+</ul>
+<p>Caveat: this deployment has not been tested with a real election.  It may help to get you started.</p>
+<h2 id="create-an-ec2-instance">Create an EC2 instance</h2>
+<ul>
+<li>click on <strong>Services</strong> in the top menu bar and from the drop-down select <strong>EC2</strong> under <strong>Compute</strong></li>
+<li>click on the red button <strong>Launch instance</strong></li>
+<li>select the free tier <strong>Amazon Linux 2</strong> AMI (should be the very first one)</li>
+<li>for instance type select the free tier <strong>t2.micro</strong> then click the button <strong>Configure Instance</strong></li>
+<li>no changes, click button <strong>Add Storage</strong>; this is the EBS volume to be attached to your EC2 instance with a default size of 8 GB</li>
+<li>no changes, click button <strong>Add Tags</strong>; adding tags is optional</li>
+<li>click button <strong>Configure Security Group</strong> which configures which ports should be open</li>
+<li>add these rules to the default SSH one:<ul>
+<li>Postgresql (from drop-down) (port 5432, source 0.0.0.0/0)</li>
+<li>HTTP</li>
+<li>HTTPS</li>
+</ul>
+</li>
+<li>click button <strong>Review and Launch</strong></li>
+<li>click button <strong>Launch</strong> which pops up a window for creating a key pair</li>
+<li>create a new key pair, give it a name and download the private key (.pem file), then click <strong>Launch</strong></li>
+<li>click on <strong>View Instances</strong> to go to the EC2 Instances page</li>
+<li>click on the Instance ID to view detailed information about the instance</li>
+<li>get an Elastic IP which will persist: <ul>
+<li>in left side-bar click Elastic IPs</li>
+<li>click red button <strong>Allocate Elastic IP address</strong></li>
+<li>click red button <strong>Allocate</strong></li>
+<li>on Elastic IP addresses page select the Elastic IP address then in the <strong>Actions</strong> drop-down select <strong>Associate Elastic IP address</strong></li>
+<li>in the <strong>Instance</strong> box select your instance then click the red button <strong>Associate</strong></li>
+</ul>
+</li>
+<li>you now have remote SSH access to your instance using its <strong>Elastic IP address</strong> or <strong>Public IPv4 DNS</strong></li>
+<li>EC2 users are all <code>ec2-user</code>
+<div class="highlight"><pre><span></span><code>ssh -i path_to_keypair.pem ec2-user@elastic_ip_address
+</code></pre></div></li>
+<li>the following shows the virtual disk space on your EBS volume:
+<div class="highlight"><pre><span></span><code>sudo df -h /
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1      <span class="m">8</span>.0G  <span class="m">1</span>.4G  <span class="m">6</span>.7G  <span class="m">18</span>% /
+</code></pre></div></li>
+</ul>
+<h2 id="upload-helios">Upload Helios</h2>
+<ul>
+<li>download master branch of Helios to a local directory </li>
+<li>use rsync to upload to your EC2 instance (substitute correct values for path_to_keypair.pem, path_to/helios-server-master, elastic_ip_address):
+<div class="highlight"><pre><span></span><code>rsync -av -e <span class="s2">&quot;ssh -i path_to_keypair.pem&quot;</span> path_to/helios-server-master  ec2-user@elastic_ip_address:/home/ec2-user
+</code></pre></div></li>
+</ul>
+<h2 id="install-python-postgresql-helios-requirements-rabbitmq">Install python, postgresql, helios requirements, rabbitmq</h2>
+<ul>
+<li>do the following:
+<div class="highlight"><pre><span></span><code># ssh into your instance (if not already in it) 
+ssh -i path_to_keypair.pem ec2-user@elastic_ip_address
+
+# python3
+sudo yum install python3 -y
+
+# postgresql
+sudo yum install postgresql-server -y
+sudo postgresql-setup initdb
+sudo systemctl enable postgresql.service
+sudo systemctl start postgresql.service
+sudo -i -u postgres
+psql postgres
+CREATE USER &quot;ec2-user&quot; WITH SUPERUSER;
+CREATE DATABASE helios WITH OWNER &quot;ec2-user&quot;;
+\q
+exit
+
+# rabbitmq
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash
+sudo yum install erlang -y
+sudo yum install rabbitmq-server -y
+sudo /sbin/service rabbitmq-server start
+
+# requirements.txt
+sudo yum install gcc -y               # Required to build psycopg2 from source
+sudo yum install python3-devel -y     # Required to build psycopg2 from source
+sudo yum install postgresql-devel -y  # Required to build psycopg2 from source
+cd ~/helios-server-master
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install wheel
+python3 -m pip install -r requirements.txt
+python3 -m pip install django-environ  # So can use environ module
+python3 manage.py migrate              # Initialise the helios database
+
+
+# start celery (still in venv environment)
+celery -A helios worker -l INFO
+</code></pre></div></li>
+</ul>
+<h2 id="nginx">Nginx</h2>
+<ul>
+<li>if you wish to leave celery running then open another termimal and 
+<div class="highlight"><pre><span></span><code>ssh -i path_to_keypair.pem ec2-user@elastic_ip_address
+</code></pre></div></li>
+<li>install Nginx
+<div class="highlight"><pre><span></span><code>sudo amazon-linux-extras install nginx1 -y
+</code></pre></div></li>
+<li>create /etc/systemd/system/gunicorn.socket
+<div class="highlight"><pre><span></span><code>sudo nano /etc/systemd/system/gunicorn.socket
+</code></pre></div></li>
+<li>content of gunicorn.socket
+<div class="highlight"><pre><span></span><code>[Unit]      
+Description=gunicorn socket
+
+[Socket]      
+ListenStream=/run/gunicorn.sock
+
+[Install]      
+WantedBy=sockets.target
+</code></pre></div></li>
+<li>
+<p>create /etc/systemd/system/gunicorn.service
+<div class="highlight"><pre><span></span><code>sudo nano /etc/systemd/system/gunicorn.service
+</code></pre></div></p>
+</li>
+<li>
+<p>content of gunicorn.service
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/helios-server-master
+ExecStart=/home/ec2-user/helios-server-master/venv/bin/gunicorn \
+--access-logfile - \
+--workers 3 \
+--bind unix:/run/gunicorn.sock \
+wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></p>
+</li>
+<li>
+<p>open /etc/nginx/nginx.conf
+<div class="highlight"><pre><span></span><code>sudo nano /etc/nginx/nginx.conf
+</code></pre></div></p>
+</li>
+<li>
+<p>content of nginx.conf 
+<div class="highlight"><pre><span></span><code>user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;
+                      &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;
+                      &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    include            /etc/nginx/conf.d/*.conf;
+    include            /etc/nginx/sites-enabled/*;   
+
+    server {
+        listen         80;
+        listen         [::]:80;
+        server_name    _;
+        root           /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include        /etc/nginx/default.d/*.conf;
+
+        error_page 404 /404.html;
+            location = /40x.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+            location = /50x.html {
+        }
+    }
+}
+</code></pre></div></p>
+</li>
+<li>create directory /etc/nginx/sites-available
+<div class="highlight"><pre><span></span><code>sudo mkdir /etc/nginx/sites-available
+</code></pre></div></li>
+<li>create /etc/nginx/sites-available/helios
+<div class="highlight"><pre><span></span><code>sudo nano /etc/nginx/sites-available/helios
+</code></pre></div></li>
+<li>content of helios (replace your_elastic_ip with your own)
+<div class="highlight"><pre><span></span><code>server {
+    listen        80;
+    server_name   your_elastic_ip;
+
+    location =    /favicon.ico { access_log off; log_not_found off; }
+
+    location / {
+      proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}
+</code></pre></div></li>
+<li>link sites-enabled to sites-available
+<div class="highlight"><pre><span></span><code>sudo ln -s /etc/nginx/sites-available /etc/nginx/sites-enabled
+</code></pre></div></li>
+</ul>
+<h2 id="update-settingspy">Update settings.py</h2>
+<ul>
+<li>these keys should have these values (replace your_elastic_ip with your own)
+<div class="highlight"><pre><span></span><code>ALLOWED_HOSTS = [&#39;your_elastic_ip&#39;,&#39;localhost&#39;]
+
+CELERY_BROKER_URL = get_from_env(&#39;CELERY_BROKER_URL&#39;, &#39;amqp://localhost&#39;)
+</code></pre></div></li>
+</ul>
+<h2 id="check-if-site-loads-1">Check if site loads - 1</h2>
+<ul>
+<li>start services
+<div class="highlight"><pre><span></span><code>sudo systemctl start gunicorn.socket
+sudo systemctl enable gunicorn.socket
+sudo systemctl daemon-reload
+sudo systemctl start gunicorn.service
+sudo systemctl start nginx
+</code></pre></div></li>
+<li>in your browser go to <a href="http://your_elastic_ip_address">http://your_elastic_ip_address</a></li>
+<li>it will not be possible to log in because we have not yet set up Google authentication which requires SSL</li>
+<li>options for troubleshooting and viewing error messages:
+<div class="highlight"><pre><span></span><code>sudo nginx -t  # Checks configuration of Nginx
+sudo systemctl status nginx.service
+sudo cat /var/log/nginx/error.log
+sudo cat /var/log/nginx/access.log
+sudo journalctl -xe
+</code></pre></div></li>
+</ul>
+<h2 id="convert-site-to-https">Convert site to https</h2>
+<ul>
+<li>we use certbot which blacklists AWS instance names (because they are ephemeral) so we need a permanent domain name</li>
+<li>there is a <a href="https://console.aws.amazon.com/route53/home#DomainRegistration:example.com">cost of $12 USD</a> per year for a .com name</li>
+<li>obtain a domain name by going to the Route 53 service<ul>
+<li>click the <strong>Services</strong> drop-down on the AWS menubar </li>
+<li>select <strong>Route 53</strong> under <strong>Networking and Content Delivery</strong></li>
+<li>in the left side-bar select <strong>Registered domains</strong> then click the blue button <strong>Register Domain</strong></li>
+<li>follow the prompts to purchase a domain name</li>
+<li>back on the Route 53 home page select <strong>Hosted zones</strong> in the left side-bar</li>
+<li>under <strong>Quick create record</strong> create a subdomain name (eg helios to give helios.your_domain.com)</li>
+<li>record type should be <strong>A</strong> and <strong>Value type</strong> should be your elastic ip</li>
+<li>click the red button <strong>Create records</strong></li>
+<li>you have now associated your sub-domain with your elastic ip address</li>
+</ul>
+</li>
+<li>update /etc/nginx/sites-available/helios to automatically redirect http requests to https and add a server block for https (replace your_domain_name with your own one - there are four):
+<div class="highlight"><pre><span></span><code>server <span class="o">{</span>
+  listen        <span class="m">80</span><span class="p">;</span>
+  server_name   your_domain_name<span class="p">;</span>
+  <span class="k">return</span>        <span class="m">301</span> https://<span class="nv">$host$request_uri</span><span class="p">;</span>    <span class="c1"># Causes http to redirect to https</span>
+<span class="o">}</span>
+
+server <span class="o">{</span>
+   listen       <span class="m">443</span> ssl http2<span class="p">;</span>
+   listen       <span class="o">[</span>::<span class="o">]</span>:443 ssl http2<span class="p">;</span>
+   server_name  your_domain_name<span class="p">;</span>
+
+   ssl_certificate <span class="s2">&quot;/etc/letsencrypt/live/your_domain_name/cert.pem&quot;</span><span class="p">;</span>
+   ssl_certificate_key <span class="s2">&quot;/etc/letsencrypt/live/your_domain_name/privkey.pem&quot;</span><span class="p">;</span>
+   ssl_session_cache shared:SSL:1m<span class="p">;</span>
+   ssl_session_timeout  10m<span class="p">;</span>
+   ssl_ciphers HIGH:SEED:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!RSAPSK:!aDH:!aECDH:!EDH-DSS-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA:!SRP<span class="p">;</span>
+   ssl_prefer_server_ciphers on<span class="p">;</span>
+
+   <span class="c1"># Load configuration files for the default server block.</span>
+   include /etc/nginx/default.d/*.conf<span class="p">;</span>
+
+   error_page <span class="m">404</span> /404.html<span class="p">;</span>
+       <span class="nv">location</span> <span class="o">=</span> /40x.html <span class="o">{</span>
+   <span class="o">}</span>
+
+   error_page <span class="m">500</span> <span class="m">502</span> <span class="m">503</span> <span class="m">504</span> /50x.html<span class="p">;</span>
+       <span class="nv">location</span> <span class="o">=</span> /50x.html <span class="o">{</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></li>
+<li>install <a href="https://certbot.eff.org/lets-encrypt/otherpip-nginx">certbot</a>
+<div class="highlight"><pre><span></span><code>sudo python3 -m venv /opt/certbot/
+sudo /opt/certbot/bin/pip install --upgrade pip
+sudo /opt/certbot/bin/pip install certbot certbot-nginx
+sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
+sudo certbot --nginx
+
+# Automatic renewal - optional
+echo &quot;0 0,12 * * * root /opt/certbot/bin/python -c &#39;import random; import time; time.sleep(random.random() * 3600)&#39; &amp;&amp; certbot renew -q&quot; | sudo tee -a /etc/crontab &gt; /dev/null
+</code></pre></div></li>
+<li>that should automatically check for correct configuration, if it fails for any reason you may need to manually put the certificate and key in the correct directory</li>
+<li>you should have a .env file in your helios root directory for keeping secret credentials:
+<div class="highlight"><pre><span></span><code>GOOGLESECRET=xxxxxxxxxxxxxxxxxx
+GOOGLEID=xxxxxxxxxxxxxxxxxx
+</code></pre></div></li>
+<li>update settings.py - these seem to be the key changes to make:
+<div class="highlight"><pre><span></span><code># Read in secrets from your .env file
+import environ
+env = environ.Env()
+environ.Env.read_env()
+GOOGLESECRET = env(&#39;GOOGLESECRET&#39;)
+GOOGLEID = env(&#39;GOOGLEID&#39;)
+
+DEBUG = (get_from_env(&#39;DEBUG&#39;, &#39;0&#39;) == &#39;0&#39;)
+
+ALLOWED_HOSTS = [&#39;localhost&#39;,&#39;&#39;your_elastic_ip&#39;,&#39;your_domain_name&#39;]
+
+URL_HOST = get_from_env(&quot;URL_HOST&quot;, &quot;https://your_domain_name).rstrip(&quot;/&quot;)
+
+GOOGLE_CLIENT_ID = get_from_env(&#39;GOOGLE_CLIENT_ID&#39;, GOOGLEID)
+GOOGLE_CLIENT_SECRET = get_from_env(&#39;GOOGLE_CLIENT_SECRET&#39;, GOOGLESECRET)
+</code></pre></div></li>
+<li>if you use Google for authentication you will need to add your new domain name to authorised urls in Google <a href="https://console.developers.google.com/apis/credentials">credentials</a></li>
+</ul>
+<h2 id="check-if-site-loads-2">Check if site loads - 2</h2>
+<ul>
+<li>start celery in venv environment if not already running
+<div class="highlight"><pre><span></span><code>celery -A helios worker -l INFO
+</code></pre></div></li>
+<li>restart all services
+<div class="highlight"><pre><span></span><code>sudo systemctl restart gunicorn.socket
+sudo systemctl daemon-reload
+sudo systemctl restart gunicorn.service
+sudo systemctl restart nginx
+</code></pre></div></li>
+<li>in your browser go to <a href="https://your_domain_name">https://your_domain_name</a></li>
+<li>if that loads without error check that http redirects to https:  <a href="http://your_domain_name">http://your_domain_name</a></li>
+<li>try logging on with Google</li>
+<li>if all this succeeds you should be able to set up an election but not be able to email voters yet</li>
+</ul>
+<h2 id="set-up-email">Set up email</h2>
+<ul>
+<li>AWS provides the AWS Simple Email Serivce (SES)</li>
+<li>there is a django backend (<a href="https://github.com/django-ses/django-ses">django-SES</a>) that talks to this service</li>
+<li>to use this, it is necessary to have programmatic access to AWS SES APIs</li>
+<li>to create a user who has access, go to the AWS service <strong>IAM</strong> (in the drop-down list of services under <strong>Security, Identity &amp; Compliance</strong>) </li>
+<li>in the left side-bar select <strong>Users</strong> then click the blue button <strong>Add user</strong></li>
+<li>provide a user name and select <strong>Programmatic access</strong></li>
+<li>select <strong>Attach existing policies directly</strong> then search for <strong>SES</strong> and select <strong>AmazonSESFullAccess</strong></li>
+<li>(optional) add a tag</li>
+<li>review and click blue button <strong>Create user</strong></li>
+<li>important: record the <strong>Access key ID</strong> and <strong>Secret access key</strong></li>
+<li>in your .env file add 
+<div class="highlight"><pre><span></span><code>AWS_SES_ACCESS_KEY_ID=your_access_key_id
+AWS_SES_SECRET_ACCESS_KEY=your_secret_access_key
+</code></pre></div></li>
+<li>in settings.py include the following entries:
+<div class="highlight"><pre><span></span><code>AWS_SES_REGION_NAME = &#39;us-east-1&#39;                              # change this if you use a different region
+AWS_SES_REGION_ENDPOINT = &#39;email.us-east-1.amazonaws.com&#39;      # change this if you use a different region
+AWS_SES_ACCESS_KEY_ID = env(&#39;AWS_SES_ACCESS_KEY_ID&#39;)
+AWS_SES_SECRET_ACCESS_KEY = env(&#39;AWS_SES_SECRET_ACCESS_KEY&#39;)
+
+EMAIL_BACKEND = &#39;django_ses.SESBackend&#39;
+</code></pre></div></li>
+<li>AWS SES initially places your SES account in a sandbox (it has restrictions) and requires email senders to be verified</li>
+<li>on the Amazon SES page, in the left side-bar, select <strong>Verified identities</strong> and add email addresses for verification</li>
+<li>the system sends an email to each address asking for verification by reply</li>
+<li>make sure <strong>DEFAULT_FROM_EMAIL</strong> in settings.py is a verified email address</li>
+<li>optionally, in your venv environment, test email works with:
+<div class="highlight"><pre><span></span><code>python manage.py shell
+&gt;&gt;&gt; from django.core.mail import send_mail
+&gt;&gt;&gt; send_mail(&#39;Subject&#39;, &#39;Message&#39;, &#39;one_of_your_verified_email_addresses_as_sender&#39;, [&#39;one_of_your_verified_email_addresses_as_receiver&#39;])
+</code></pre></div></li>
+</ul>
+<h2 id="check-if-site-loads-3">Check if site loads - 3</h2>
+<ul>
+<li>start celery in venv environment if not already running
+<div class="highlight"><pre><span></span><code>celery -A helios worker -l INFO
+</code></pre></div></li>
+<li>restart all services
+<div class="highlight"><pre><span></span><code>sudo systemctl restart gunicorn.socket
+sudo systemctl daemon-reload
+sudo systemctl restart gunicorn.service
+sudo systemctl restart nginx
+</code></pre></div></li>
+<li>in your browser go to <a href="https://your_domain_name">https://your_domain_name</a> </li>
+</ul>
+<h2 id="deamonise-celery-to-start-automatically">Deamonise Celery to start automatically</h2>
+<ul>
+<li>create /etc/systemd/system/celery.service
+<div class="highlight"><pre><span></span><code>sudo nano /etc/systemd/system/celery.service
+</code></pre></div></li>
+<li>content of celery.service:
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=Celery Service
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/helios-server-master
+ExecStart=/home/ec2-user/helios-server-master/venv/bin/celery -A helios worker -l INFO
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></li>
+<li>then
+<div class="highlight"><pre><span></span><code>sudo systemctl daemon-reload          # Get systemd to recognise celery.service
+sudo systemctl enable celery.service  # Get celery.servce to run whenver rebooted
+sudo systemctl start celery.service   # Start Celery
+</code></pre></div></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../deploy_heroku_walkthrough/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Heroku walk-through
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../con_e2ev/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Verifiability
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
