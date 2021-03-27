@@ -1,0 +1,1 @@
+I use [Umami](https://umami.is), an open source application, to track visits to pages.  This records which pages were viewed, location of users (countries), referrers, the operating systems and browsers of users.  It does not record any identifying information.  

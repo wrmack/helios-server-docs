@@ -14,7 +14,7 @@
     
     
       
-        <title>Prepare Django - Helios server documentation</title>
+        <title>Privacy - Helios server documentation</title>
       
     
     
@@ -59,11 +59,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#django-installation" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +87,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Prepare Django
+              Privacy
             
           </span>
         </div>
@@ -182,14 +177,12 @@
       
 
 
-  
-
 
   
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     
     <label class="md-nav__link" for="nav-2">
       Installation
@@ -234,70 +227,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Prepare Django
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../inst_django/" class="md-nav__link">
       Prepare Django
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#settingspy" class="md-nav__link">
-    settings.py
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collectstatic" class="md-nav__link">
-    collectstatic
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#makemigrations" class="md-nav__link">
-    makemigrations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reset-database" class="md-nav__link">
-    reset database
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -656,6 +590,26 @@
   </li>
 
     
+      
+      
+      
+
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Privacy
+    </a>
+    
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -663,121 +617,15 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#settingspy" class="md-nav__link">
-    settings.py
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collectstatic" class="md-nav__link">
-    collectstatic
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#makemigrations" class="md-nav__link">
-    makemigrations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reset-database" class="md-nav__link">
-    reset database
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="django-installation">Django installation</h1>
-<h3 id="settingspy">settings.py</h3>
-<p>Customise the following in settings.py:</p>
-<pre><code>ADMINS
-HOSTS
-DATABASES
-TIME, LANGUAGE
-HELP_EMAIL_ADDRESS
-Authentication systems
-GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET
-Email settings
-</code></pre>
-<h3 id="collectstatic">collectstatic</h3>
-<p>What it does:</p>
-<ul>
-<li>collects all static files that are located in the static folders of the installed apps and stores them in the folder that is set as <code>STATIC_ROOT</code> (currently the /static folder).</li>
-</ul>
-<p>When to use:</p>
-<ul>
-<li>the <code>STATIC_ROOT</code> folder is empty </li>
-<li>or you have changed the static files in one of the installed app's static folders</li>
-</ul>
-<p>How to use:</p>
-<ul>
-<li>to completely refresh the files held in <code>STATIC_ROOT</code>, empty it first</li>
-<li>in terminal: </li>
-</ul>
-<div class="highlight"><pre><span></span><code>collectstatic
-</code></pre></div>
-<h3 id="makemigrations">makemigrations</h3>
-<p>What it does:</p>
-<ul>
-<li>Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. <code>makemigrations</code> creates new migrations based on the changes you have made to your models.</li>
-</ul>
-<p>When to use:</p>
-<ul>
-<li>After you make a change to your models.</li>
-</ul>
-<p>How to use:</p>
-<ul>
-<li>in a terminal: 
-<div class="highlight"><pre><span></span><code>python manage.py makemigrations
-</code></pre></div></li>
-</ul>
-<h3 id="reset-database">reset database</h3>
-<p>What it does:</p>
-<ul>
-<li>deletes your helios database, creates a new helios database and migrates your models to the database.</li>
-</ul>
-<p>When to use:</p>
-<ul>
-<li>After you have run <code>makemigrations</code></li>
-</ul>
-<p>How to use:</p>
-<div class="highlight"><pre><span></span><code>./reset.sh
-</code></pre></div>
+                  <h1>Privacy</h1>
+                
+                <p>I use <a href="https://umami.is">Umami</a>, an open source application, to track visits to pages.  This records which pages were viewed, location of users (countries), referrers, the operating systems and browsers of users.  It does not record any identifying information.  </p>
                 
               
               
@@ -796,7 +644,7 @@ Email settings
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../inst_auth/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../acknowledgements/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -805,25 +653,11 @@ Email settings
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Setup authentication
+                Acknowledgements
               </div>
             </div>
           </a>
         
-        
-          <a href="../inst_dev/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Local development
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
         
       </nav>
     </div>

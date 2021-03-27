@@ -27,6 +27,7 @@ nav:
     - 'Academic papers' : 'ref_literature.md'
   - 'FAQs' : 'faq_faq1.md'
   - 'Acknowledgements' : 'acknowledgements.md'
+  - 'Privacy' : 'privacy.md'
 
 theme:
   name: 'material'
