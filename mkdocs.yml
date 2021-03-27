@@ -52,9 +52,9 @@ markdown_extensions:
   - pymdownx.tilde
   - footnotes
 
-google_analytics: 
-  - 'UA-150810154-1'
-  - 'auto'
+# google_analytics: 
+#   - 'UA-150810154-1'
+#   - 'auto'
 
 
 ###
