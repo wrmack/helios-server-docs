@@ -41,7 +41,7 @@ Véronique Cortier, David Galindo, Stéphane Glondu, Malika Izabachène
 **[Attacking and fixing Helios: An analysis of ballot secrecy](https://bensmyth.com/files/Smyth12-attacking-Helios.pdf)**  
 Véronique Cortier and Ben Smyth  
 
-**[Distributed ElGamal à la Pedersen - Application to Helios](https://izama.github.io/papers/CGGI13.pdf)**    
+**[Distributed ElGamal à la Pedersen - Application to Helios](https://members.loria.fr/VCortier/files/Papers/WPES2013.pdf)**    
 Véronique Cortier, David Galindo, Stéphane Glondu, Malika Izabachène
 
 
@@ -52,6 +52,8 @@ Claudia Z. Acemyan, Philip Kortum, Michael D. Byrne, Dan S. Wallach
 **[Helios Verification: To Alleviate, or to Nominate: Is That The Question, Or Shall We Have Both?](https://www.researchgate.net/publication/262933494_Helios_Verification_To_Alleviate_or_to_Nominate_Is_That_The_Question_Or_Shall_We_Have_Both_to_appear)**    
 Stephan Neumann, M. Maina Olembo, Karen Renaud, and Melanie Volkamer
 
+**[A Security Analysis of the Helios Voting Protocol and Application to the Norwegian County Election](https://core.ac.uk/download/pdf/52106383.pdf)**    
+Kristine Salamonsen (Masters thesis)
 ## 2015
 **[Extending Helios Towards Private Eligibility Verifiability](https://www.researchgate.net/publication/281526028_Extending_Helios_Towards_Private_Eligibility_Verifiability)**  
 Oksana Kulyk, Vanessa Teague, and Melanie Volkamer  

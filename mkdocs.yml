@@ -109,3 +109,21 @@ markdown_extensions:
 
 #   gtag('config', 'UA-150810154-1');
 # </script>
+
+##
+## Umami
+##
+
+# Overide template block as per here: https://squidfunk.github.io/mkdocs-material/customization/#overriding-blocks
+# add to theme:
+# custom_dir: overrides
+# In overrides create main.html with 
+#
+#     {% extends "base.html" %}
+#
+#     {% block analytics %}
+#       <!-- Add custom analytics integration here -->
+#       <script async defer data-website-id="39eeb5ee-6305-44c3-8df5-224310ef89be" src="https://umami.wrmack.com/umami.js"></script>
+#     {% endblock %}
+
+
