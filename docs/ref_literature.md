@@ -137,3 +137,9 @@ Véronique Cortier, Joseph Lallemand, Bogdan Warinschi
 
 **[Election Verifiability Revisited: Automated Security Proofs and Attacks on Helios and Belenios](https://eprint.iacr.org/2020/982.pdf)**     
 Sevdenur Baloglu, Sergiu Bursuc, Sjouke Mauw, Jun Pang
+
+**[The Secure I-Voting System Helios++](https://journal.uob.edu.bh/handle/123456789/3963)**    
+Noor Hamad Abid, Sufyan T. Faraj Al-Janabi
+
+**[Verifiable Public Credentials for Stronger End-to-End Verifiability](https://www.researchgate.net/publication/352001420_Verifiable_Public_Credentials_for_Stronger_End-to-End_Verifiability)**    
+Sevdenur Baloglu
