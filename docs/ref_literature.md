@@ -89,6 +89,9 @@ Oksana Kulyk, Karola Marky, Stephan Neumann, Melanie Volkamer
 **[Apollo – End-to-end Verifiable Internet Voting with Recovery from Vote Manipulation](https://eprint.iacr.org/2016/1037.pdf)**     
 Dawid Gawel, Maciej Kosarzecki, Poorvi L. Vora, Hua Wu, and Filip Zagórski
 
+**[Cryptographic Voting — A Gentle Introduction](https://eprint.iacr.org/2016/765.pdf)**     
+David Bernhard, Bogdan Warinschi
+
 ## 2017
 
 **[Machine-Checked Proofs of Privacy for Electronic Voting Protocols](https://ieeexplore.ieee.org/document/7958621)**    
