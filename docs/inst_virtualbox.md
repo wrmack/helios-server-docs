@@ -87,7 +87,7 @@
     - `python3 manage.py makemigrations`
     - `./reset.sh`
     - `python3 manage.py runserver`
-    - in a browser go to `127.0.0.1:8000` or `localhost:8000`
+    - in a browser go to `localhost:8000` (alternatively go to `127.0.0.1:8000` but change references to localhost in settings.py to 127.0.0.1 and in Google OAuth authentication replace localhost with 127.0.0.1)
 
 
 
