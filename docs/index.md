@@ -19,6 +19,8 @@ Helios is an important milestone in the development of secure online voting.  As
 
 The documentation source code is on Github: [https://github.com/wrmack/helios-server-docs](https://github.com/wrmack/helios-server-docs)
 
-Please leave any comments for improvements under Issues.
+Please leave any questions about this documentation or suggestions for improving this documentation under [Discussions](https://github.com/wrmack/helios-server-docs/discussions).  Also share your own experience with setting up an election.
+
+Please leave any comments about technical problems running this documentation under [Issues](https://github.com/wrmack/helios-server-docs/issues).
 
 Warwick

@@ -15,7 +15,7 @@ All of these services are in the free tier except for a domain name which costs 
 
 Other options might include:
 
-- Lightsail, instead of EC2, which provides an easier setup process and has an option for Django framworks
+- Lightsail, instead of EC2, which provides an easier setup process and has an option for Django frameworks
 - Relational Database Service, or RDS, for providing a postgresql database (our deployment will simply install postgresql on the EC2 instance)
 
 This deployment assumes:
@@ -431,7 +431,7 @@ sudo systemctl restart nginx
 ```
 - in your browser go to https://your_domain_name 
 
-## Deamonise Celery to start automatically
+## Daemonise Celery to start automatically
 
 - create /etc/systemd/system/celery.service
 ```

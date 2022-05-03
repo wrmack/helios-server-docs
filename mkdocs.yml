@@ -11,6 +11,9 @@ nav:
     - Heroku: 'deploy_heroku.md'
     - Heroku walk-through: 'deploy_heroku_walkthrough.md'
     - AWS walk-through: 'deploy_aws_walkthrough.md'
+  # - How it works:
+  #   - Overview: 'how_overview.md'
+  #   - Security features: 'how_security.md'
   - Concepts:
     - 'Verifiability' : 'con_e2ev.md'
     - 'Coercion' : 'con_coercion.md'
@@ -25,8 +28,8 @@ nav:
     - 'Components' : 'ref_components.md'
     - 'Models' : 'ref_models.md'
     - 'Academic papers' : 'ref_literature.md'
-  - 'FAQs' : 'faq_faq1.md'
-  - 'Acknowledgements' : 'acknowledgements.md'
+  # - 'FAQs' : 'faq_faq1.md'
+  # - 'Acknowledgements' : 'acknowledgements.md'
   - 'Privacy' : 'privacy.md'
 
 theme:
@@ -46,11 +49,13 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
   - footnotes
+
+#   - pymdownx.superfences
+
 
 # google_analytics: 
 #   - 'UA-150810154-1'

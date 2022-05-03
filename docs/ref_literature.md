@@ -131,18 +131,22 @@ Noor Hamad Abid, Sufyan T. Faraj Al-Janabi
 **[A simple alternative to Benaloh challenge for the cast-as-intended property in Helios/Belenios](https://hal.inria.fr/hal-02346420/document)**    
 Véronique Cortier, Jannik Dreier, Pierrick Gaudry, Mathieu Turuani
 
-**[Election Verifiability: Cryptographic Definitions and an Analysis of Helios, Helios-C, and JCJ](https://eprint.iacr.org/2015/233.pdf)**    
-Ben Smyth, Steven Frink, Michael R. Clarkson
-
 ## 2020
 **[Fifty Shades of Ballot Privacy: Privacy against a Malicious Board](https://eprint.iacr.org/2020/127.pdf)**      
 Véronique Cortier, Joseph Lallemand, Bogdan Warinschi
-
-**[Election Verifiability Revisited: Automated Security Proofs and Attacks on Helios and Belenios](https://eprint.iacr.org/2020/982.pdf)**     
-Sevdenur Baloglu, Sergiu Bursuc, Sjouke Mauw, Jun Pang
 
 **[The Secure I-Voting System Helios++](https://journal.uob.edu.bh/handle/123456789/3963)**    
 Noor Hamad Abid, Sufyan T. Faraj Al-Janabi
 
 **[Verifiable Public Credentials for Stronger End-to-End Verifiability](https://www.researchgate.net/publication/352001420_Verifiable_Public_Credentials_for_Stronger_End-to-End_Verifiability)**    
 Sevdenur Baloglu
+
+## 2021
+**[Helios: Attacks and Formal Models for Verifiability](https://courses.corelab.ntua.gr/pluginfile.php/7964/course/section/965/Helios%20Verifiability.pdf)**    
+Panagiotis Grontas
+
+**[Election Verifiability Revisited: Automated Security Proofs and Attacks on Helios and Belenios](https://eprint.iacr.org/2020/982.pdf)**     
+Sevdenur Baloglu, Sergiu Bursuc, Sjouke Mauw, Jun Pang
+
+**[Election Verifiability: Cryptographic Definitions and an Analysis of Helios, Helios-C, and JCJ](https://eprint.iacr.org/2015/233.pdf)**    
+Ben Smyth, Steven Frink, Michael R. Clarkson

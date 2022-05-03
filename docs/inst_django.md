@@ -32,7 +32,7 @@ How to use:
 * in terminal: 
 
 ```
-collectstatic
+python manage.py collectstatic
 ```
 
 
