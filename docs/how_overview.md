@@ -4,11 +4,11 @@ This section on "How it works" is based on Ben Adida's documentation, my own exp
 
 The following is a very brief summary of the key screens:
 
-- election setup
-- voting booth
-- election results.
+- pre-voting phase: the election setup
+- voting phase: the voting booth
+- post-voting phase: election results.
 
-## Election setup
+## Pre-voting phase: the election setup
 
 The election administrator: 
 
@@ -26,7 +26,7 @@ If the administrator sets up the election for only those voters whose names are 
 
 <img src="../how_1a.png" style="border: 1px solid grey" />
 
-## Voting
+## Voting phase: the voting booth
 
 The voter:
 
@@ -49,13 +49,8 @@ Your password: ********
 
 ![asdf](how_2.png)
 
-The url is of the form:    
 
-```
-https://[helios site]/booth/vote.html?election_url=%2Fhelios%2Felections%2F9a9f4d4a-802a-11eb-ad7a-0e2e98b7568d
-```
-
-## Election results
+## Post-voting phase: the election results
 
 Once voting is over, the election administrator causes the votes to be tallied.  The election administrator can send an email to each voter giving them a link to this screen:
 

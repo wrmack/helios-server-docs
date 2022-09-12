@@ -466,6 +466,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    Postgresql
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -498,14 +518,14 @@
       
       
         <label class="md-nav__link" for="__nav_4">
-          Concepts
+          Secure elections
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Concepts" data-md-level="1">
+      <nav class="md-nav" aria-label="Secure elections" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Concepts
+          Secure elections
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -543,8 +563,36 @@
   
   
     <li class="md-nav__item">
-      <a href="../con_helios/" class="md-nav__link">
-        Helios
+      <a href="../how_simple/" class="md-nav__link">
+        Simple encryption
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec_helios/" class="md-nav__link">
+        Helios cryptography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_security/" class="md-nav__link">
+        asdfasdfaf
       </a>
     </li>
   
@@ -574,12 +622,60 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          How Helios works
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="How Helios works" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          How Helios works
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           Use cases
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Use cases" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Use cases
         </label>
@@ -658,18 +754,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_7">
           Reference
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Reference" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Reference
         </label>
@@ -857,6 +953,26 @@
   <a href="#daemonise-celery-to-start-automatically" class="md-nav__link">
     Daemonise Celery to start automatically
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    Postgresql
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1354,6 +1470,12 @@ WantedBy=multi-user.target
 sudo systemctl enable celery.service  # Get celery.servce to run whenver rebooted
 sudo systemctl start celery.service   # Start Celery
 </code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="postgresql">Postgresql</h3>
+<ul>
+<li>you may need to edit pg_hba.conf (located at /var/lib/pgsql/data/pg_hba.conf) </li>
+<li>for lines commencing <code>host</code> change the METHOD from <code>ident</code> to <code>md5</code></li>
+</ul>
 
               
             </article>

@@ -458,3 +458,7 @@ sudo systemctl daemon-reload          # Get systemd to recognise celery.service
 sudo systemctl enable celery.service  # Get celery.servce to run whenver rebooted
 sudo systemctl start celery.service   # Start Celery
 ```
+## Troubleshooting
+### Postgresql
+- you may need to edit pg_hba.conf (located at /var/lib/pgsql/data/pg_hba.conf) 
+- for lines commencing `host` change the METHOD from `ident` to `md5`

@@ -13,7 +13,7 @@
     
     
       
-        <title>Voter registers - Helios server documentation</title>
+        <title>Helios cryptography - Helios server documentation</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#person-registers-as-voter" class="md-skip">
+        <a href="#helios-cryptography" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Voter registers
+              Helios cryptography
             
           </span>
         </div>
@@ -371,12 +371,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -439,11 +441,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../sec_helios/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Helios cryptography
       </a>
+      
     </li>
   
 
@@ -523,14 +535,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
@@ -579,21 +589,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../use_register_voter/" class="md-nav__link">
         Voter registers
       </a>
-      
     </li>
   
 
@@ -756,14 +756,31 @@
                 
 
 
-<h1 id="person-registers-as-voter">Person registers as voter</h1>
-<p>When an election admin creates an election there is a 'Voters &amp; ballots' section where the admin can choose to:</p>
+<h1 id="helios-cryptography">Helios cryptography</h1>
 <ul>
-<li>allow any member of the public to vote; or,</li>
-<li>upload a list of eligible voters</li>
+<li>The election administrator sets up the election and generates a public - private key pair.</li>
+<li>The election has a set of trustees, each having a share of the private key but no-one holding the full private key.</li>
+<li>The public key is published.</li>
+<li>To cast a vote, the user runs a browser script that inputs her vote and creates a ballot that is encrypted with the public key of the election. The ballot includes a ZKP (Zero Knowledge Proof) that the ballot represents an allowed vote.</li>
+<li>The user can audit the ballot to check if it really represents a vote for her chosen candidate; if she elects to do this, the script provides her with the random data used in the ballot creation. She can then independently verify that the ballot was correctly constructed, but the ballot is now invalid and she has to create another one.</li>
+<li>When the voter has decided to cast her ballot, the voter’s browser submits it along with her pseudo-identity to the server. The server checks the ZKPs of the ballots, and publishes them on a bulletin board.</li>
+<li>Individual voters can check that their ballots appear on the bulletin board. Any observer can check that the ballots that appear on the bulletin board represent allowed votes, by checking the ZKPs.</li>
+<li>The server homomorphically combines the ballots, and publishes the encrypted tally. Anyone can check that this tally is done correctly.</li>
+<li>The server submits the encrypted tally to each of the trustees, and obtains their share of the decryption key for that particular ciphertext, together with a proof that the key share is well-formed. The server publishes these key shares along with the proofs. Anyone can check the proofs.</li>
+<li>The server decrypts the tally and publishes the result. Anyone can check this decryption.</li>
 </ul>
-<p>If the election is open to any member of the public, the voter logs in using one of the Helios authentication options (Google, Facebook etc) prior to casting a vote.</p>
-<p>If eligibility is by way of being on a list of eligible voters - this list is uploaded by the election admin at the time of creating the election.  The Helios application does not provide a facility for a person to register as an eligible voter.</p>
+<p>There is also a good explanation in <a href="http://static.usenix.org/events/evtwote11/tech/final_files/Karayumak7-8-11.pdf">Usability Analysis of Helios - An Open Source Verifiable Remote Electronic Voting System</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://documentation.heliosvoting.org/verification-specs/helios-v4">Helios documentation</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>This description is taken from <a href="https://bensmyth.com/files/Smyth10-definition-verifiability.LNCS.pdf">https://bensmyth.com/files/Smyth10-definition-verifiability.LNCS.pdf</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -777,7 +794,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../use_admin_tallies_ballots/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Admin tallies ballots" rel="prev">
+        <a href="../how_simple/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Simple encryption" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -786,20 +803,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Admin tallies ballots
+              Simple encryption
             </div>
           </div>
         </a>
       
       
         
-        <a href="../use_voter_votes/" class="md-footer__link md-footer__link--next" aria-label="Next: Voter votes" rel="next">
+        <a href="../how_security/" class="md-footer__link md-footer__link--next" aria-label="Next: asdfasdfaf" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Voter votes
+              asdfasdfaf
             </div>
           </div>
           <div class="md-footer__button md-icon">

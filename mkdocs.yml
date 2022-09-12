@@ -11,13 +11,18 @@ nav:
     - Heroku: 'deploy_heroku.md'
     - Heroku walk-through: 'deploy_heroku_walkthrough.md'
     - AWS walk-through: 'deploy_aws_walkthrough.md'
-  # - How it works:
-  #   - Overview: 'how_overview.md'
-  #   - Security features: 'how_security.md'
-  - Concepts:
-    - 'Verifiability' : 'con_e2ev.md'
-    - 'Coercion' : 'con_coercion.md'
-    - 'Helios' : 'con_helios.md'
+  - Secure elections: 
+    - Verifiability: 'con_e2ev.md'
+    - Coercion: 'con_coercion.md'
+    - Simple encryption: 'how_simple.md' 
+    - Helios cryptography: 'sec_helios.md'
+    - asdfasdfaf: 'how_security.md'
+  - How Helios works:
+    - Overview: 'how_overview.md'
+  # - Concepts:
+  #   - 'Verifiability' : 'con_e2ev.md'
+  #   - 'Coercion' : 'con_coercion.md'
+  #   - 'Helios' : 'con_helios.md'
   - Use cases:
     - 'Admin creates an election' : 'use_create_election.md'   
     - 'Admin tallies ballots' : 'use_admin_tallies_ballots.md'
@@ -79,7 +84,7 @@ markdown_extensions:
 # Upgrade pip:
 # python3 -m pip install --upgrade pip
 
-# Install mkdocs:
+# Install mkdocs (first time only):
 # python3 -m pip install mkdocs
 # python3 -m pip install mkdocs-material
 
@@ -88,6 +93,11 @@ markdown_extensions:
 
 # Build docs into site folder
 # mkdocs build
+
+# Github pages
+# Github repository helios-server-docs is published to  https://wrmack.github.io/helios-server-docs/
+# The documentation url is  https://wrmack.github.io/helios-server-docs/site/ 
+# After doing mkdocs build, push to remote and changes will appear. 
 
 # Upgrade material theme
 # python3 -m pip install --upgrade mkdocs-material
