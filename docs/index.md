@@ -2,6 +2,8 @@ Warwick McNaughton's
 
 # Helios server documentation
 
+Github: [https://github.com/wrmack/helios-server-docs](https://github.com/wrmack/helios-server-docs)
+
 **For earlier documentation see:**
 
 [Helios Voting Installation](https://github.com/benadida/helios-server/blob/master/INSTALL.md)    

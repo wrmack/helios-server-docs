@@ -16,7 +16,7 @@ nav:
     - Coercion: 'con_coercion.md'
     - Simple encryption: 'how_simple.md' 
     - Helios cryptography: 'sec_helios.md'
-    - asdfasdfaf: 'how_security.md'
+    - Security features: 'how_security.md'
   - How Helios works:
     - Overview: 'how_overview.md'
   # - Concepts:
