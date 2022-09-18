@@ -1,11 +1,50 @@
 Deploying Helios to Heroku.
 
-## Introduction
-
-This walk-through uses Heroku's free tier and uses free versions of add-ons for the database, process worker and email.
 
 
-It assumes:
+## Caveats
+I put this walk-through together when Heroku had a free tier. From November 2022 [Heroku no longer has a free tier](https://blog.heroku.com/next-chapter) and I have removed my apps.  Therefore I have not tested this deployment recently under the new arrangements.  
+
+Also, it has not been tested with a real election.  
+
+However the walk-through might help to get you started.
+
+## About Heroku
+
+Heroku is a subsidiary of salesforce.com. Its servers are hosted on Amazon's EC2 cloud-computing platform.
+
+When an app is deployed it runs in a container called a ‘dyno’.  There is no direct access to its filesystem.  There is more about dynos [here](https://www.heroku.com/dynos).
+
+**Deployment**
+
+There are options for deploying an app.  One option is to link to a Github repository so that a push to Github triggers a build and deployment.
+
+**Configuration**
+
+There is one required configuration file - Procfile.  This tells Heroku what to run when an app is deployed.  I use the following for running one web server process and one Celery worker process:
+
+```
+web: gunicorn wsgi
+worker: celery worker -A helios -l info
+```
+
+**Building and debugging**
+
+Build logs can be viewed through Heroku’s web interface, but for anything more than that it is important to become familiar with the Heroku CLI application.  Heroku CLI can also run a psql shell for examining the database. Run this for a real-time display of logs generated on the Heroku site (if helios-heroku is the name of your app on Heroku):
+
+```
+heroku logs --tail -a helios-heroku
+```
+
+ **Helios requirements**
+
+For tasks, Celery may be used and there are options for a broker (for example Redis).
+
+For sending email, an add-on, [SendGrid](https://elements.heroku.com/addons/sendgrid), can be used. This is free up to 12,000 emails per month. 
+
+
+
+## Assumptions
 
 - helios server is installed locally
 - helios server is managed through git
@@ -13,9 +52,9 @@ It assumes:
 - you have created an account on Heroku and are logged in
 - you have downloaded and installed [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) which we will use for accessing the database.
 
-Caveat: this deployment has not been tested with a real election.  It may help to get you started.
 
-## Create a web app to run the helios server on Heroku by using Heroku dashboard
+
+## Create a web app to run the Helios server on Heroku by using Heroku dashboard
 
 - go to [https://dashboard.heroku.com](https://dashboard.heroku.com)
 - go to New - **Create new app**
@@ -42,14 +81,16 @@ worker: celery worker --app helios --events --beat --concurrency 1
 - if you added a `.env` file and imported `environ` into `settings.py` for local development, remove them for deployment to Heroku
 - go to the **Settings** tab on Heroku's dashboard page for your app and select **Reveal Config Vars**
 - add your authentication credentials, eg in `settings.py` you might have:
-          ```shell
+          
+```shell
           GOOGLE_CLIENT_ID = os.environ['GOOGLEID']
-          GOOGLE_CLIENT_SECRET = os.environ['GOOGLESECRET']
-          ```
-    in which case you would add the keys GOOGLEID and GOOGLESECRET as 'config vars' and enter the appropriate values for each.
+          GOOGLE_CLIENT_SECRET = os.environ['GOOGLESECRET']       
+```
+in which case you would add the keys GOOGLEID and GOOGLESECRET as 'config vars' and enter the appropriate values for each.
     
-    Make sure that in [Google console](https://console.developers.google.com/apis/credentials) you enter the correct uris: 
-    ```shell
+- make sure that in [Google console](https://console.developers.google.com/apis/credentials) you enter the correct uris: 
+    
+```shell
     # Authorised JavaScript origins
 
     https://APPNAME.herokuapp.com
@@ -57,7 +98,8 @@ worker: celery worker --app helios --events --beat --concurrency 1
     #Authorised redirect URIs
 
     https://APPNAME.herokuapp.com/auth/after/
-    ```
+    
+```
 
 
 **Settings**
@@ -72,7 +114,7 @@ worker: celery worker --app helios --events --beat --concurrency 1
     URL_HOST = get_from_env("URL_HOST", "https://APPNAME.herokuapp.com").rstrip("/")
     ```
     - database settings should be:
-    ```shell
+```shell
     DATABASES = {
       'default': {
           'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -86,7 +128,7 @@ worker: celery worker --app helios --events --beat --concurrency 1
       import dj_database_url
       DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
       DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
-    ```
+```
 
 
 **Celery**

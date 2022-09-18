@@ -2,7 +2,8 @@ Warwick McNaughton's
 
 # Helios server documentation
 
-Github: [https://github.com/wrmack/helios-server-docs](https://github.com/wrmack/helios-server-docs)
+For problems, suggestions and discussion:     
+[https://github.com/wrmack/helios-server-docs/discussions](https://github.com/wrmack/helios-server-docs/discussions)
 
 **For earlier documentation see:**
 

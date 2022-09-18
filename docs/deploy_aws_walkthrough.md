@@ -30,7 +30,11 @@ Caveat: this deployment has not been tested with a real election.  It may help t
 - click on **Services** in the top menu bar and from the drop-down select **EC2** under **Compute**
 - click on the red button **Launch instance**
 - select the free tier **Amazon Linux 2** AMI (should be the very first one)
-- for instance type select the free tier **t2.micro** then click the button **Configure Instance**
+- for instance type, select the free tier **t2.micro** then click the button **Configure Instance**
+    - if you are not eligible for the free tier for some reason, a relatively cheap alternative is a **t4g.micro** instance
+    - it is a bit cheaper than t2.micro
+    - its architecture is ARM64 
+    - after the free 12 months I moved to a t4g.micro instance and was able to install Helios
 - no changes, click button **Add Storage**; this is the EBS volume to be attached to your EC2 instance with a default size of 8 GB
 - no changes, click button **Add Tags**; adding tags is optional
 - click button **Configure Security Group** which configures which ports should be open
@@ -62,9 +66,17 @@ Filesystem      Size  Used Avail Use% Mounted on
 ```
 
 
-## Upload Helios 
+## Install Helios 
 
-- download master branch of Helios to a local directory 
+**Option: Clone from Github**
+
+```shell
+# ssh into your instance (if not already in it) 
+ssh -i path_to_keypair.pem ec2-user@elastic_ip_address
+git clone https://github.com/benadida/helios-server.git
+```
+
+**Option: Upload from a local directory** 
 - use rsync to upload to your EC2 instance (substitute correct values for path_to_keypair.pem, path_to/helios-server-master, elastic_ip_address):
 ```shell
 rsync -av -e "ssh -i path_to_keypair.pem" path_to/helios-server-master  ec2-user@elastic_ip_address:/home/ec2-user
@@ -85,32 +97,46 @@ sudo yum install postgresql-server -y
 sudo postgresql-setup initdb
 sudo systemctl enable postgresql.service
 sudo systemctl start postgresql.service
-sudo -i -u postgres
-psql postgres
+sudo -i -u postgres psql postgres
 CREATE USER "ec2-user" WITH SUPERUSER;
 CREATE DATABASE helios WITH OWNER "ec2-user";
 \q
 exit
 
-# rabbitmq
+# rabbitmq - option 1 (if you have version incompatabilities try option 2)
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash
 sudo yum install erlang -y
 sudo yum install rabbitmq-server -y
 sudo /sbin/service rabbitmq-server start
 
-# requirements.txt
+# rabbitmq - option 2
+# I needed this option instead of option 2 in order to get compatible versions of erlang and rabbitmq-server 
+# Following disables all repos except epel and disables the priorities plugin
+sudo yum --disablerepo='*' --enablerepo='epel' --disableplugin=priorities install erlang rabbitmq-server
+sudo /sbin/service rabbitmq-server start
+
+# install Helios dependencies and initialise database
 sudo yum install gcc -y               # Required to build psycopg2 from source
 sudo yum install python3-devel -y     # Required to build psycopg2 from source
 sudo yum install postgresql-devel -y  # Required to build psycopg2 from source
-cd ~/helios-server-master
+cd ~/helios-server
 python3 -m venv venv
 source venv/bin/activate
 python3 -m pip install wheel
+
+nano requirements.txt
+# Set version of django-ses==2.0.0 if version lower than this
+# Delete boto (django-ses v2.0.0 will result in boto3 being installed)
+# This implements AWS signature4 scheme. Otherwise sending emails will fail.
+
 python3 -m pip install -r requirements.txt
 python3 -m pip install django-environ  # So can use environ module
 python3 manage.py migrate              # Initialise the helios database
 
+# In settings.py
+ALLOWED_HOSTS = ['your_elastic_ip','localhost']
+CELERY_BROKER_URL = get_from_env('CELERY_BROKER_URL', 'amqp://localhost')
 
 # start celery (still in venv environment)
 celery -A helios worker -l INFO
@@ -156,8 +182,8 @@ After=network.target
 [Service]
 User=ec2-user
 Group=ec2-user
-WorkingDirectory=/home/ec2-user/helios-server-master
-ExecStart=/home/ec2-user/helios-server-master/venv/bin/gunicorn \
+WorkingDirectory=/home/ec2-user/helios-server
+ExecStart=/home/ec2-user/helios-server/venv/bin/gunicorn \
 --access-logfile - \
 --workers 3 \
 --bind unix:/run/gunicorn.sock \
@@ -201,7 +227,7 @@ http {
     default_type        application/octet-stream;
 
     include            /etc/nginx/conf.d/*.conf;
-    include            /etc/nginx/sites-enabled/*;   
+    include            /etc/nginx/sites-enabled/*;   # This might not be present by default
 
     server {
         listen         80;
@@ -245,25 +271,24 @@ server {
 ```
 - link sites-enabled to sites-available
 ```
-sudo ln -s /etc/nginx/sites-available /etc/nginx/sites-enabled
+sudo ln -s /etc/nginx/sites-available/helios /etc/nginx/sites-enabled/helios
 ```
 
-## Update settings.py
-
-- these keys should have these values (replace your_elastic_ip with your own)
-```
-ALLOWED_HOSTS = ['your_elastic_ip','localhost']
-
-CELERY_BROKER_URL = get_from_env('CELERY_BROKER_URL', 'amqp://localhost')
-```
 
 ## Check if site loads - 1
 
 - start services
 ```
-sudo systemctl start gunicorn.socket
-sudo systemctl enable gunicorn.socket
-sudo systemctl daemon-reload
+# Enable services to run when system boots
+sudo systemctl enable gunicorn.socket  
+sudo systemctl enable gunicorn.service
+sudo systemctl enable nginx
+
+# Make system aware of changes
+sudo systemctl daemon-reload          
+
+# Start or restart services
+sudo systemctl start gunicorn.socket   
 sudo systemctl start gunicorn.service
 sudo systemctl start nginx
 ```
@@ -292,7 +317,14 @@ sudo journalctl -xe
     - record type should be **A** and **Value type** should be your elastic ip
     - click the red button **Create records**
     - you have now associated your sub-domain with your elastic ip address
-- update /etc/nginx/sites-available/helios to automatically redirect http requests to https and add a server block for https (replace your_domain_name with your own one - there are four):
+- install certbot
+- followed AWS [doc](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt)
+```shell
+sudo yum install -y certbot python2-certbot-nginx
+sudo certbot
+```
+- your `/etc/nginx/sites-available/helios should now look like:
+
 ```shell
 server {
   listen        80;
@@ -324,18 +356,16 @@ server {
    }
 }
 ```
-- install [certbot](https://certbot.eff.org/lets-encrypt/otherpip-nginx)
-```
-sudo python3 -m venv /opt/certbot/
-sudo /opt/certbot/bin/pip install --upgrade pip
-sudo /opt/certbot/bin/pip install certbot certbot-nginx
-sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
-sudo certbot --nginx
 
-# Automatic renewal - optional
-echo "0 0,12 * * * root /opt/certbot/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew -q" | sudo tee -a /etc/crontab > /dev/null
+### Automatic renewal - optional
+- to automatically renew the certificate when it expires
+- edit `/etc/crontab` and add:
+```bash
+39      1,13    *       *       *       root    certbot renew --no-self-upgrade
 ```
 - that should automatically check for correct configuration, if it fails for any reason you may need to manually put the certificate and key in the correct directory
+
+## Google authentication
 - you should have a .env file in your helios root directory for keeping secret credentials:
 ```
 GOOGLESECRET=xxxxxxxxxxxxxxxxxx
@@ -370,8 +400,8 @@ celery -A helios worker -l INFO
 ```
 - restart all services
 ```
-sudo systemctl restart gunicorn.socket
 sudo systemctl daemon-reload
+sudo systemctl restart gunicorn.socket
 sudo systemctl restart gunicorn.service
 sudo systemctl restart nginx
 ```
@@ -424,8 +454,8 @@ celery -A helios worker -l INFO
 ```
 - restart all services
 ```
-sudo systemctl restart gunicorn.socket
 sudo systemctl daemon-reload
+sudo systemctl restart gunicorn.socket
 sudo systemctl restart gunicorn.service
 sudo systemctl restart nginx
 ```
@@ -446,8 +476,8 @@ After=network.target
 [Service]
 User=ec2-user
 Group=ec2-user
-WorkingDirectory=/home/ec2-user/helios-server-master
-ExecStart=/home/ec2-user/helios-server-master/venv/bin/celery -A helios worker -l INFO
+WorkingDirectory=/home/ec2-user/helios-server
+ExecStart=/home/ec2-user/helios-server/venv/bin/celery -A helios worker -l INFO
 
 [Install]
 WantedBy=multi-user.target
