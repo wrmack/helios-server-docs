@@ -44,7 +44,7 @@ theme:
   custom_dir: overrides
   icon:
     repo: fontawesome/brands/github
-
+  favicon: img/favicon.ico
 markdown_extensions:
   - pymdownx.arithmatex
   - pymdownx.betterem:
