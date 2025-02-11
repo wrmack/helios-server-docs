@@ -1,2 +1,0 @@
-# Election admin announces results
-

@@ -1,1 +1,0 @@
-I use [Umami](https://umami.is), an open source application, to count visits to pages.  This records which pages were viewed, a user's country, referrers, the operating systems and browsers of users.  It does not record any personal information.  It does not use this information for any other purpose than providing a dashboard displaying these statistics.
